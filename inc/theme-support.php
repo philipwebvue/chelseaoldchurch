@@ -72,8 +72,7 @@ if ( ! function_exists( 'creativestream_setup' ) ) {
             array(
                 'primary' => esc_html__( 'Primary menu', 'creativestream' ),
                 'header'  => __( 'Secondary menu', 'creativestream' ),
-                'footer'  => __( 'Footer menu', 'creativestream' ),
-                'loggedin'  => __( 'Logged in menu', 'creativestream' ),
+                'footer'  => __( 'Footer menu', 'creativestream' )
             )
         );
 
@@ -163,13 +162,13 @@ add_action( 'after_setup_theme', 'creativestream_setup' );
 add_action( 'customize_register', 'creativestream_customize_register_second_logo_settings', 10 );
 if ( ! function_exists( 'creativestream_customize_register_second_logo_settings' ) ) :
     function creativestream_customize_register_second_logo_settings($wp_customize){
-        $wp_customize->add_setting('secondary_logo');
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'secondary_logo', array(
-            'label' => 'Alternative Logo',
-            'section' => 'title_tagline',
-            'settings' => 'secondary_logo',
-            'priority' => 8
-        )));
+//        $wp_customize->add_setting('secondary_logo');
+//        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'secondary_logo', array(
+//            'label' => 'Alternative Logo',
+//            'section' => 'title_tagline',
+//            'settings' => 'secondary_logo',
+//            'priority' => 8
+//        )));
         $wp_customize->add_setting('footer_logo');
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', array(
             'label' => 'Footer Logo',
@@ -180,9 +179,17 @@ if ( ! function_exists( 'creativestream_customize_register_second_logo_settings'
 
         $wp_customize->add_setting('default_image');
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'default_image', array(
-            'label' => 'Default Image',
+            'label' => 'Default Featured Image',
             'section' => 'title_tagline',
             'settings' => 'default_image',
+            'priority' => 20
+        )));
+
+        $wp_customize->add_setting('footer_image');
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_image', array(
+            'label' => 'Footer Image',
+            'section' => 'title_tagline',
+            'settings' => 'footer_image',
             'priority' => 20
         )));
     }

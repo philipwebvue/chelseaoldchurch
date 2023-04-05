@@ -17,7 +17,6 @@ $default_args = [
     'show_date' => false,
     'date_format' => get_option('date_format')
 ];
-
 $args = array_merge($default_args, $args);
 
 $image = apply_filters('cs_display_featured_image',get_the_ID());

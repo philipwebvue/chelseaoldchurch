@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package webvue
+ * @package chelseaoldchurch
  */
 
 get_header();
@@ -28,7 +28,7 @@ endif;
         elseif(is_search() || is_404()):
             get_template_part('templates/banners/banner','search');
         elseif(is_archive() || is_home()):
-            get_template_part('templates/banners/banner','archive-'.$post_type);
+            get_template_part('templates/banners/banner-archive',$post_type);
         else:
             get_template_part('templates/banners/banner',$post_type);
         endif;
@@ -36,6 +36,7 @@ endif;
     </div>
     <div id="content" class="site-content">
         <main id="primary" class="site-main  min-h-default">
+            <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'top']); ?>
             <?php
             if (is_front_page()):
                 get_template_part('templates/pages/home');
@@ -51,7 +52,7 @@ endif;
                 get_template_part('templates/pages/page',get_post_type());
             endif;
             ?>
-
+            <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'bottom']); ?>
         </main><!-- #main -->
     </div>
 

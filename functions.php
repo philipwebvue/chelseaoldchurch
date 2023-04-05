@@ -1,10 +1,10 @@
 <?php
 /**
- * webvue functions and definitions
+ * creativestream functions and definitions
  *
  * Please try to keep this file as clean as possible instead populate the inc folder files to help updating and diagnostics
  *
- * @package webvue
+ * @package chelseaoldchurch
  */
 if ( ! defined( 'ABSPATH' ) )
 {

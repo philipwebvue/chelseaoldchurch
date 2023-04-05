@@ -79,7 +79,7 @@
           "name": "Base Font"
         },
         {
-          "fontFamily": "sans-serif",
+          "fontFamily": "'Prata', serif",
           "slug": "heading-font",
           "name": "Heading Font"
         }
@@ -110,7 +110,7 @@
         {
           "name": "Blackety Black",
           "slug": "black",
-          "color": "#2E2E2D"
+          "color": "#000000"
         },
         {
           "name": "Betty White",
@@ -118,19 +118,19 @@
           "color": "#ffffff"
         },
         {
-          "name": "CS Blue",
+          "name": "Primary",
           "slug": "primary",
-          "color": "#0082ca"
+          "color": "#900942"
         },
         {
-          "name": "CS Grey",
+          "name": "Secondary",
           "slug": "secondary",
-          "color": "#54585a"
+          "color": "#DDDBDB"
         },
         {
           "name": "Rhino's Breath",
           "slug": "gray",
-          "color": "#EEEEEE"
+          "color": "#F2F0F5"
         }
       ]
     },
@@ -188,7 +188,7 @@
             {
               "name": "Blackety Black",
               "slug": "black",
-              "color": "#2E2E2D"
+              "color": "#000000"
             },
             {
               "name": "Betty White",
@@ -196,19 +196,19 @@
               "color": "#ffffff"
             },
             {
-              "name": "CS Blue",
+              "name": "Primary",
               "slug": "primary",
-              "color": "#0082ca"
+              "color": "#900942"
             },
             {
-              "name": "CS Grey",
+              "name": "Secondary",
               "slug": "secondary",
-              "color": "#54585a"
+              "color": "#DDDBDB"
             },
             {
               "name": "Rhino's Breath",
               "slug": "gray",
-              "color": "#EEEEEE"
+              "color": "#F2F0F5"
             }
           ]
         }
@@ -221,7 +221,7 @@
             {
               "name": "Blackety Black",
               "slug": "black",
-              "color": "#2E2E2D"
+              "color": "#000000"
             },
             {
               "name": "Betty White",
@@ -229,19 +229,19 @@
               "color": "#ffffff"
             },
             {
-              "name": "CS Blue",
+              "name": "Primary",
               "slug": "primary",
-              "color": "#0082ca"
+              "color": "#900942"
             },
             {
-              "name": "CS Grey",
+              "name": "Secondary",
               "slug": "secondary",
-              "color": "#54585a"
+              "color": "#DDDBDB"
             },
             {
               "name": "Rhino's Breath",
               "slug": "gray",
-              "color": "#EEEEEE"
+              "color": "#F2F0F5"
             }
           ]
         }
@@ -278,7 +278,6 @@
       },
       "h1": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading-font)",
@@ -288,7 +287,6 @@
       },
       "h2": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading-font)",
@@ -298,7 +296,6 @@
       },
       "h3": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading-font)",
@@ -345,7 +342,7 @@
       },
       "cite": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
+          "text": "var(--wp--preset--color--black)"
         },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--normal)",
@@ -356,6 +353,7 @@
     },
     "blocks": {
       "core/group": {
+
       },
       "core/paragraph": {
         "spacing": {
@@ -367,7 +365,7 @@
       },
       "core/pullquote": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
+          "text": "var(--wp--preset--color--black)"
         },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--quote)",
@@ -379,7 +377,7 @@
       },
       "core/quote": {
         "color": {
-          "text": "var(--wp--preset--color--secondary)"
+          "text": "var(--wp--preset--color--black)"
         },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--quote)",
@@ -403,8 +401,7 @@
       },
       "core/list": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--normal)",
-          "fontWeight": "600"
+          "fontSize": "var(--wp--preset--font-size--normal)"
         }
       }
     }

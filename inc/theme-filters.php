@@ -14,10 +14,13 @@ add_filter('cs_display_featured_image','creativestream_display_featured_image_fu
 
 function creativestream_display_featured_image_function($post_id=null){
 
+
     if(!$post_id){
         $post_id = get_the_ID();
     }
+
     $position = get_post_meta($post_id,'featured_image_position',true)??0;
+
     $position_class=$position?'object-'.$position:'object-center';
     $image_args=array( 'class'=>'w-full h-full object-cover '.$position_class );
     $size = 'medium_large';
@@ -29,4 +32,10 @@ function creativestream_display_featured_image_function($post_id=null){
     }
 
     return $image;
+}
+
+add_filter("manage_edit-event_columns", "main_cat_edit_columns",10, 1 );
+function main_cat_edit_columns($columns) {
+    $columns['event_date_time'] = "Date & Time";
+    return $columns;
 }

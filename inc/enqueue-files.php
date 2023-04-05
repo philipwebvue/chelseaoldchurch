@@ -17,7 +17,7 @@ function creativestream_enqueue_styles() {
     wp_enqueue_style( 'theme-css', get_template_directory_uri() . '/assets/css/theme.css', array('common-theme-css','theme-style'), _THEME_VERSION );
 
     /** Fonts */
-    wp_enqueue_style( 'google-barlow-font-css', "//fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap",false );
+    wp_enqueue_style( 'google-prata-font-css', "//fonts.googleapis.com/css2?family=Prata&display=swap",false );
     wp_enqueue_style( 'fontawesome-5', "//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" );
 
     /** slick slider styling */
@@ -55,7 +55,7 @@ add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_admin_scripts' );
 
 function creativestream_enqueue_admin_styles(  ) {
     /** Fonts */
-    wp_enqueue_style( 'google-barlow-font-css', "//fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap",false );
+    wp_enqueue_style( 'google-prata-font-css', "//fonts.googleapis.com/css2?family=Prata&display=swap",false );
     wp_enqueue_style( 'fontawesome-5', "//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" );
 }
 add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_admin_styles' );

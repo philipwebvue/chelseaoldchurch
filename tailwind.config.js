@@ -24,7 +24,7 @@ module.exports = {
         },
         fontFamily: {
             'theme': ['"Barlow"', 'sans-serif'],
-            'times-new-roman': ['"Times New Roman"', 'Times', 'serif'],
+            'prata': ['"Prata"', 'serif'],
             'fontawesome': ['"Font Awesome 5 Free"'],
         },
         borderWidth: {
@@ -50,13 +50,13 @@ module.exports = {
                 '2000': '2000ms',
             },
             colors: {
-                'black' : '#2E2E2D',
+                'black' : '#000000',
                 'white' : '#ffffff',
                 'primary': {
-                    DEFAULT:'#0082ca'
+                    DEFAULT:'#900942'
                 },
                 'secondary': {
-                    DEFAULT:'#54585a'
+                    DEFAULT:'#DDDBDB'
                 },
             },
             spacing: {
@@ -117,8 +117,8 @@ module.exports = {
                 'base': [0, 1.5],
                 'lg': [1, 1.5],
                 'xl': [2, 1.5],
-                '2xl': [3, 1.5],
-                '3xl': [4, 1.2],
+                '2xl': [3.80178402, 1.5],
+                '3xl': [4.32454272, 1.2],
                 '4xl': [5, 1.1],
                 '5xl': [6, 1.1],
                 '6xl': [7, 1.1],
