@@ -1,0 +1,55 @@
+@import "tailwindcss/base";
+
+@layer base {
+    h1{
+        @apply text-5xl;
+    }
+    h2{
+        @apply text-4xl;
+    }
+    h3{
+        @apply text-3xl;
+    }
+    h4{
+        @apply text-2xl;
+    }
+    h5{
+        @apply text-xl;
+    }
+    h6{
+        @apply text-lg;
+    }
+    p,a,li{
+        @apply text-base;
+    }
+}
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import 'typography';
+@import 'gutenburg';
+@import 'components';
+
+#banner-container{
+    @apply bg-primary;
+}
+
+/** header **/
+/** Desktop header navigation **/
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item{
+    @apply pr-4 last:pr-0;
+}
+/** Mobile header navigation **/
+
+/** content **/
+section{
+    @apply mt-8 last:mb-8;
+}
+
+/** Footer **/
+/** footer navigation **/
+#footer-quick-links #footer-navigation ul > li{
+    @apply pr-4 last:pr-0;
+}
