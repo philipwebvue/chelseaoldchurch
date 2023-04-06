@@ -23,7 +23,7 @@ module.exports = {
             '3xl': '1630px',
         },
         fontFamily: {
-            'theme': ['"Barlow"', 'sans-serif'],
+            'theme': ['"serenity"', 'sans-serif'],
             'prata': ['"Prata"', 'serif'],
             'fontawesome': ['"Font Awesome 5 Free"'],
         },

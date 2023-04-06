@@ -103,9 +103,9 @@ function chelseaoldchurch_create_staff_post_type()
     register_post_type( 'staff', array(
         'labels'              => $labels,
         'public'              => true,
-        'has_archive'         => false,
+        'has_archive'         => true,
         'exclude_from_search' => false,
-        'hierarchical'        => FALSE,
+        'hierarchical'        => false,
         'menu_icon'           => 'dashicons-businessman',
         'menu_position'       => 26,
         'show_in_nav_menus'   => true,
@@ -117,38 +117,38 @@ function chelseaoldchurch_create_staff_post_type()
     ) );
 }
 
-add_action( 'init', 'chelseaoldchurch_create_clergy_post_type' );
-function chelseaoldchurch_create_clergy_post_type()
+add_action( 'init', 'chelseaoldchurch_create_news_post_type' );
+function chelseaoldchurch_create_news_post_type()
 {
     $labels = [
-        'name'               => _x( 'Clergy', 'post type general name', 'chelseaoldchurch' ),
-        'singular_name'      => _x( 'Clergy', 'post type singular name', 'chelseaoldchurch' ),
+        'name'               => _x( 'News', 'post type general name', 'chelseaoldchurch' ),
+        'singular_name'      => _x( 'News', 'post type singular name', 'chelseaoldchurch' ),
         'add_new'            => __( 'Add New', 'chelseaoldchurch' ),
         'add_new_item'       => __( 'Add New', 'chelseaoldchurch' ),
         'edit_item'          => __( 'Edit', 'chelseaoldchurch' ),
         'new_item'           => __( 'New', 'chelseaoldchurch' ),
-        'all_items'          => __( 'View Clergy', 'chelseaoldchurch' ),
+        'all_items'          => __( 'View News', 'chelseaoldchurch' ),
         'view_item'          => __( 'View', 'chelseaoldchurch' ),
         'search_items'       => __( 'Search', 'chelseaoldchurch' ),
-        'not_found'          => __( 'No clergy found', 'chelseaoldchurch' ),
-        'not_found_in_trash' => __( 'No ministry found in Trash', 'chelseaoldchurch' ),
+        'not_found'          => __( 'No News found', 'chelseaoldchurch' ),
+        'not_found_in_trash' => __( 'No news found in Trash', 'chelseaoldchurch' ),
         'parent_item_colon'  => '',
-        'menu_name'          => __( 'Clergy', 'chelseaoldchurch' ),
+        'menu_name'          => __( 'News', 'chelseaoldchurch' ),
     ];
 
-    register_post_type( 'clergy', array(
+    register_post_type( 'news', array(
         'labels'              => $labels,
         'public'              => true,
-        'has_archive'         => false,
+        'has_archive'         => true,
         'exclude_from_search' => false,
         'hierarchical'        => false,
-        'menu_icon'           => 'dashicons-businessman',
+        'menu_icon'           => 'dashicons-format-aside',
         'menu_position'       => 26,
         'show_in_nav_menus'   => true,
         'publicly_queryable'  => true,
         'show_ui'             => true,
         'show_in_rest'        => true,
-        'rewrite'             => array( 'slug' => 'clergy', 'with_front' => false ),
+        'rewrite'             => array( 'slug' => 'news', 'with_front' => false ),
         'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author' ), //,excerpt,author,editor
     ) );
 }
@@ -213,7 +213,7 @@ function chelseaoldchurch_register_event_taxonomy()
             'hierarchical'      => false,
             'show_admin_column' => true,
             'query_var'         => true,
-            'rewrite'           => array( 'slug' => 'event-category' ),
+            'rewrite'           => array( 'slug' => 'event-category', 'with_front' => false ),
         )
     );
 }
@@ -242,7 +242,65 @@ function chelseaoldchurch_register_story_taxonomy()
             'hierarchical'      => false,
             'show_admin_column' => true,
             'query_var'         => true,
-            'rewrite'           => array( 'slug' => 'story-category' ),
+            'rewrite'           => array( 'slug' => 'story-category', 'with_front' => false ),
+        )
+    );
+}
+
+add_action( 'init', 'chelseaoldchurch_register_staff_taxonomy' );
+function chelseaoldchurch_register_staff_taxonomy()
+{
+    $labels = [
+        'name'                       => _x( 'Staff Categories', 'taxonomy general name', 'chelseaoldchurch' ),
+        'singular_name'              => _x( 'Staff Category', 'taxonomy singular name', 'chelseaoldchurch' ),
+        'search_items'               => __( 'Search Staff Category', 'chelseaoldchurch' ),
+        'popular_items'              => __( 'Popular Staff Category', 'chelseaoldchurch' ),
+        'all_items'                  => __( 'All Staff Categories', 'chelseaoldchurch' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit Staff Category', 'chelseaoldchurch' ),
+        'update_item'                => __( 'Update Staff Category', 'chelseaoldchurch' ),
+        'add_new_item'               => __( 'Add New Staff Category', 'chelseaoldchurch' ),
+        'new_item_name'              => __( 'New Staff Category Name', 'chelseaoldchurch' ),
+        'separate_items_with_commas' => __( 'Separate Staff Category with commas', 'chelseaoldchurch' ),
+        'add_or_remove_items'        => __( 'Add or remove Staff Category', 'chelseaoldchurch' ),
+        'choose_from_most_used'      => __( 'Choose from the most used Staff Category', 'chelseaoldchurch' ),
+    ];
+    register_taxonomy( 'staff_category', array( 'staff' ), array(
+            'labels'            => $labels,
+            'hierarchical'      => false,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'staff-category', 'with_front' => false ),
+        )
+    );
+}
+
+add_action( 'init', 'chelseaoldchurch_register_news_taxonomy' );
+function chelseaoldchurch_register_news_taxonomy()
+{
+    $labels = [
+        'name'                       => _x( 'News Categories', 'taxonomy general name', 'chelseaoldchurch' ),
+        'singular_name'              => _x( 'News Category', 'taxonomy singular name', 'chelseaoldchurch' ),
+        'search_items'               => __( 'Search News Category', 'chelseaoldchurch' ),
+        'popular_items'              => __( 'Popular News Category', 'chelseaoldchurch' ),
+        'all_items'                  => __( 'All News Categories', 'chelseaoldchurch' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit News Category', 'chelseaoldchurch' ),
+        'update_item'                => __( 'Update News Category', 'chelseaoldchurch' ),
+        'add_new_item'               => __( 'Add New News Category', 'chelseaoldchurch' ),
+        'new_item_name'              => __( 'New News Category Name', 'chelseaoldchurch' ),
+        'separate_items_with_commas' => __( 'Separate News Category with commas', 'chelseaoldchurch' ),
+        'add_or_remove_items'        => __( 'Add or remove News Category', 'chelseaoldchurch' ),
+        'choose_from_most_used'      => __( 'Choose from the most used News Category', 'chelseaoldchurch' ),
+    ];
+    register_taxonomy( 'news_category', array( 'news' ), array(
+            'labels'            => $labels,
+            'hierarchical'      => false,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'news-category', 'with_front' => false ),
         )
     );
 }

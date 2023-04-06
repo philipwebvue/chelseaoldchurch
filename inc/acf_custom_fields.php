@@ -47,11 +47,11 @@ if ( function_exists( 'acf_add_options_page' ) )
                 'page_name'   => 'acf-options-staff-settings',
                 'parent_slug' => 'edit.php?post_type=staff',
             ],
-            'clergy' => [
-                'post_type'   => 'clergy',
-                'page_title'  => 'Clergy Settings',
-                'page_name'   => 'acf-options-clergy-settings',
-                'parent_slug' => 'edit.php?post_type=clergy',
+            'news' => [
+                'post_type'   => 'news',
+                'page_title'  => 'News Settings',
+                'page_name'   => 'acf-options-news-settings',
+                'parent_slug' => 'edit.php?post_type=news',
             ],
             'story' => [
                 'post_type'   => 'story',

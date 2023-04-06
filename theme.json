@@ -74,7 +74,7 @@
       ],
       "fontFamilies": [
         {
-          "fontFamily": "sans-serif",
+          "fontFamily": "'serenity', sans-serif",
           "slug": "base-font",
           "name": "Base Font"
         },

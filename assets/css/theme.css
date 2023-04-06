@@ -714,11 +714,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.my-9 {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
-}
-
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -765,14 +760,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-9 {
-  margin-top: 2.25rem;
-}
-
-.mb-9 {
-  margin-bottom: 2.25rem;
 }
 
 .block {
@@ -1057,9 +1044,8 @@ video {
   padding-bottom: 2.25rem;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+.pb-9 {
+  padding-bottom: 2.25rem;
 }
 
 .pl-12 {
@@ -1082,16 +1068,12 @@ video {
   padding-top: 1rem;
 }
 
-.pb-9 {
-  padding-bottom: 2.25rem;
-}
-
 .text-center {
   text-align: center;
 }
 
 .font-theme {
-  font-family: "Barlow", sans-serif;
+  font-family: "serenity", sans-serif;
 }
 
 .font-light {
