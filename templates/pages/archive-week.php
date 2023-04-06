@@ -1,51 +1,59 @@
 <?php
+$start_date = get_field('event_week_day');
 $days_of_the_week = [
     'monday'    => [
-        'name' => 'Monday'
+        'name' => 'Monday',
+        'date' => date('jS F', strtotime($start_date.' +1 day'))
     ],
     'tuesday'   => [
-        'name' => 'Tuesday'
+        'name' => 'Tuesday',
+        'date' => date('jS F', strtotime($start_date .' +2 day'))
     ],
     'wednesday' => [
-        'name' => 'Wednesday'
+        'name' => 'Wednesday',
+        'date' => date('jS F', strtotime($start_date .' +3 day'))
     ],
     'thursday'  => [
-        'name' => 'Thursday'
+        'name' => 'Thursday',
+        'date' => date('jS F', strtotime($start_date .' +4 day'))
     ],
     'friday'    => [
-        'name' => 'Friday'
+        'name' => 'Friday',
+        'date' => date('jS F', strtotime($start_date .' +5 day'))
     ],
     'saturday'  => [
-        'name' => 'Saturday'
+        'name' => 'Saturday',
+        'date' => date('jS F', strtotime($start_date .' +6 day'))
     ]
 ]
 ?>
 <section class="">
     <div class=" w-full max-w-content mx-auto"> <?php // xl:max-w-content ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 ">
-            <div class="col-span-2 grid grid-cols-2">
+            <div class="col-span-2 grid grid-cols-2 gap-4 lg:gap-8">
                 <?php foreach ( $days_of_the_week as $key => $day ): ?>
-                    <?php $show_day = get_field( 'show_' . $key . '_section' ) ?? false; ?>
-                    <?php if ( $show_day ): ?>
-                        <div class="text-center">
-                            <h4><?php echo $day[ 'name' ]; ?></h4>
-                            <div>
-                                <?php echo wpautop( get_field( $key . '_information' ) ); ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
+                    <?php
+                    $card_args = [
+                        'key'       => $key,
+                        'name'      => $day[ 'name' ],
+                        'date'      => $day['date'],
+                        'is_sunday' => false,
+                    ];
+                    ?>
+                    <?php get_template_part( 'templates/components/cards/card', 'week-day-events', $card_args ); ?>
                 <?php endforeach; ?>
             </div>
             <div class="">
-                <?php $show_day = get_field( 'show_sunday_section' ) ?? false; ?>
-                <?php if ( $show_day ): ?>
-                    <div class="text-center">
-                        <h4>Sunday</h4>
-                        <div>
-                            <?php echo wpautop( get_field( 'sunday_information' ) ); ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
+                <?php
+                $show_day = get_field( 'show_sunday_section' ) ?? false;
+                $card_args = [
+                    'key'       => 'sunday',
+                    'name'      => 'Sunday',
+                    'date'      => date('jS F', strtotime($start_date .' +7 day')),
+                    'is_sunday' => true,
+                ];
+                ?>
+                <?php get_template_part( 'templates/components/cards/card', 'week-day-events', $card_args ); ?>
             </div>
         </div>
     </div>

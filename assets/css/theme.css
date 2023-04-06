@@ -21,62 +21,167 @@
     list-style-type: decimal
 }
 /** Card **/
+
 .card {
+
     position: relative;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     --tw-bg-opacity: 1;
+
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
     padding: 1rem;
+
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
+
 .card:hover {
+
     --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
+
 @media (min-width: 768px) {
+
     .card {
+
         padding: 0px
     }
 }
 
 .card .card-header {
+
     position: relative;
+
     aspect-ratio: 4 / 3;
+
     width: 100%;
+
     overflow: hidden
 }
 
 @media (min-width: 1630px) {
+
     .card .card-header {
+
         aspect-ratio: 15 / 9
     }
 }
 .card .card-body {
+
     margin-left: 1rem;
+
     width: 100%;
+
     padding-left: 1rem;
+
     padding-right: 1rem;
+
     padding-top: 0.5rem;
+
     padding-bottom: 0.5rem
 }
 @media (min-width: 768px) {
+
     .card .card-body {
+
         margin-left: 0px
     }
 }
 .card .card-body .date {
+
     margin-top: 0.5rem;
+
     margin-bottom: 0.5rem;
+
     font-weight: 600
 }
 
 .card .card-body .excerpt {
+
     display: block
+}
+
+.card-week-day-event {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+
+    padding: 1rem;
+
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+@media (min-width: 1024px) {
+
+    .card-week-day-event {
+
+        padding: 2rem
+    }
+}
+
+.card-week-day-event .card-header {
+
+    width: 100%;
+
+    text-align: center
+}
+.card-week-day-event .card-body p {
+
+    font-weight: 300;
+
+    font-style: italic;
+
+    --tw-text-opacity: 1;
+
+    color: rgb(144 9 66 / var(--tw-text-opacity));
+
+    font-size: clamp(1.125rem, calc(1.125rem + ((1.25 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
+
+    line-height: 1.5
+}
+
+.card-week-day-event.is-sunday {
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(144 9 66 / var(--tw-bg-opacity));
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.card-week-day-event.is-sunday .card-body p {
+
+    --tw-text-opacity: 1;
+
+    color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 /*
 ! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
@@ -472,6 +577,9 @@ video {
   line-height: 1.5;
 }
     h4 {
+  font-family: "serenity", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   font-size: clamp(1.125rem, calc(1.125rem + ((1.25 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
   line-height: 1.5;
 }
@@ -1104,6 +1212,10 @@ video {
   text-transform: uppercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .leading-8 {
   line-height: 2rem;
 }
@@ -1116,6 +1228,10 @@ video {
   line-height: 1.5;
 }
 
+.tracking-\[0\.1em\] {
+  letter-spacing: 0.1em;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -1123,6 +1239,11 @@ video {
 .\!text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(144 9 66 / var(--tw-text-opacity));
 }
 
 .text-white {

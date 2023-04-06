@@ -11,7 +11,7 @@
         @apply text-lg font-prata;
     }
     h4{
-        @apply text-base;
+        @apply text-base font-medium font-theme tracking-[0.1em];
     }
     h5{
         @apply text-lg;

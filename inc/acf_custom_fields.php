@@ -454,7 +454,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
         );
         $weekday_settings[] = array(
             'key'               => 'field_642ecb16c7341',
-            'label'             => 'Event Week Day',
+            'label'             => 'Monday of this week',
             'name'              => 'event_week_day',
             'type'              => 'date_picker',
             'instructions'      => '',
