@@ -13,7 +13,7 @@ $args = [
         array(
             'key'     => 'event_week_day',
             'value'   => $monday,
-            'type' =>'DATE',
+            'type'    => 'DATE',
             'compare' => '=',
         )
     ),
@@ -27,7 +27,7 @@ if ( $latest_posts->have_posts() ) :
         $days_of_the_week = [
             'monday'    => [
                 'name' => 'Monday',
-                'date' => date( 'l jS F', strtotime( $start_date  ) )
+                'date' => date( 'l jS F', strtotime( $start_date ) )
             ],
             'tuesday'   => [
                 'name' => 'Tuesday',
@@ -53,6 +53,8 @@ if ( $latest_posts->have_posts() ) :
         ?>
         <section class="">
             <div class=" w-full max-w-content mx-auto"> <?php // xl:max-w-content ?>
+                <?php get_template_part('templates/navigation/menu','next-previous'); ?>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 ">
                     <div class="col-span-2 grid grid-cols-2 gap-4 lg:gap-8">
                         <?php foreach ( $days_of_the_week as $key => $day ): ?>
