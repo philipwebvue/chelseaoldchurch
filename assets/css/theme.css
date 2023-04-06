@@ -145,18 +145,16 @@
         padding: 2rem
     }
 }
-
 .card-week-day-event .card-header {
 
     width: 100%;
 
     text-align: center
 }
+
 .card-week-day-event .card-body p {
 
     font-weight: 300;
-
-    font-style: italic;
 
     --tw-text-opacity: 1;
 
@@ -166,7 +164,16 @@
 
     line-height: 1.5
 }
+.card-week-day-event .card-body .introduction p {
 
+    font-style: italic
+}
+.card-week-day-event .card-body p.event-meta {
+
+    --tw-text-opacity: 1;
+
+    color: rgb(0 0 0 / var(--tw-text-opacity))
+}
 .card-week-day-event.is-sunday {
 
     --tw-bg-opacity: 1;
@@ -1249,6 +1256,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .no-underline {

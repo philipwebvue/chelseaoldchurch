@@ -2165,3 +2165,35 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 
 
 endif;
+
+/* Filter post data in for event in week */
+function relationship_options_filter($options, $field, $the_post) {
+    $options['post_status'] = array('publish');
+    $options['meta_key'] = 'event_date_time';
+    $options['orderby'] = 'meta_value';
+    $options['order'] = 'ASC';
+    return $options;
+}
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_monday_day_events_relationship', 'relationship_options_filter', 10, 3); // home - featured course
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_tuesday_day_events_relationship', 'relationship_options_filter', 10, 3);
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_wednesday_day_events_relationship', 'relationship_options_filter', 10, 3);
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_thursday_day_events_relationship', 'relationship_options_filter', 10, 3);
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_friday_day_events_relationship', 'relationship_options_filter', 10, 3);
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_saturday_day_events_relationship', 'relationship_options_filter', 10, 3);
+add_filter('acf/fields/relationship/query/key=field_weekly_planner_show_sunday_day_events_relationship', 'relationship_options_filter', 10, 3);
+
+
+function relationship_options_result_filter( $title, $post, $field, $post_id ) {
+    $event_date_format = '';
+    $event_date = get_field('event_date_time', $post->ID);
+    $event_date_format = !empty($event_date) ? date('l jS F Y', strtotime($event_date)) : '';
+    $title .= ' - ' . $event_date_format;
+    return $title;
+}
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_monday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_tuesday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_wednesday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_thursday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_friday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_saturday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
+add_filter('acf/fields/relationship/result/key=field_weekly_planner_show_sunday_day_events_relationship', 'relationship_options_result_filter', 10, 4);
