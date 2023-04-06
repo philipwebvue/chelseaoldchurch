@@ -74,11 +74,11 @@ function chelseaoldchurch_create_week_post_type()
         'menu_icon'           => 'dashicons-editor-paste-word',
         'menu_position'       => 26,
         'show_in_nav_menus'   => false,
-        'publicly_queryable'  => false,
+        'publicly_queryable'  => true,
         'show_ui'             => true,
         'show_in_rest'        => true,
         'rewrite'             => array( 'slug' => 'weeks', 'with_front' => false ),
-        'supports'            => array( 'title', 'thumbnail' ),
+        'supports'            => array( 'title', 'thumbnail','editor' ),
     ) );
 }
 

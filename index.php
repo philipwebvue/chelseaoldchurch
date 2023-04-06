@@ -47,7 +47,7 @@ endif;
             elseif(is_tax()):
                 get_template_part('templates/pages/taxonomies',get_queried_object()->taxonomy);
             elseif(is_archive() || is_home()):
-                get_template_part('templates/pages/archive',get_post_type());
+                get_template_part('templates/pages/archive',get_queried_object()->name??null);
             else:
                 get_template_part('templates/pages/page',get_post_type());
             endif;

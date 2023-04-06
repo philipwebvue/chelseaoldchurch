@@ -1,10 +1,7 @@
 <?php
-$terms = get_terms( 'category', array(
-    'hide_empty' => true,
-) );
-$current_term = get_category( get_query_var( 'cat' ) );
 
 ?>
+
 <section class="">
     <div class=" w-full max-w-content mx-auto"> <?php // xl:max-w-content ?>
         <?php if ( have_posts() ): ?>
