@@ -53,7 +53,13 @@ if ( $latest_posts->have_posts() ) :
         ?>
         <section class="">
             <div class=" w-full max-w-content mx-auto"> <?php // xl:max-w-content ?>
-                <?php get_template_part('templates/navigation/menu','next-previous'); ?>
+                <?php
+                $args = [
+                    'next' => 'Next Week',
+                    'prev' => 'Previous Week',
+                ];
+                get_template_part( 'templates/navigation/menu', 'next-previous',$args );
+                ?>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 ">
                     <div class="col-span-2 grid grid-cols-2 gap-4 lg:gap-8">
