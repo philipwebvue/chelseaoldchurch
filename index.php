@@ -13,18 +13,23 @@
  */
 
 get_header();
+
 if (is_front_page()):
     get_template_part('templates/headers/header', 'home');
+
 else:
     get_template_part('templates/headers/header');
 endif;
+
 ?>
-    <div id="banner-container" >
+    <div id="banner-container" class="">
         <?php
+        
         $post_type = get_queried_object()->name??get_post_type();
 
+
         if (is_front_page()):
-            get_template_part('templates/banners/banner', 'home');
+           get_template_part('templates/banners/banner', 'home');
         elseif(is_search() || is_404()):
             get_template_part('templates/banners/banner','search');
         elseif(is_archive() || is_home()):
@@ -32,14 +37,15 @@ endif;
         else:
             get_template_part('templates/banners/banner',$post_type);
         endif;
+
         ?>
     </div>
-    <div id="content" class="site-content">
+    <div id="content" class="site-content  max-w-content mx-auto ">
         <main id="primary" class="site-main  min-h-default">
             <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'top']); ?>
             <?php
             if (is_front_page()):
-                get_template_part('templates/pages/home');
+                get_template_part('templates/pages/page','home');
             elseif(is_404()):
                 get_template_part('templates/pages/404');
             elseif(is_search()):

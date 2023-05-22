@@ -1,2 +1,4 @@
 /** font sizes Default **/
-
+p a{
+    @apply text-primary;
+}

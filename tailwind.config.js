@@ -13,7 +13,27 @@ module.exports = {
         './resources/css/*.css',
         './resources/js/*.js',
     ],
+    safelist: [
+        'object-bottom',
+        'object-center',
+        'object-left',
+        'object-left-bottom',
+        'object-left-top',
+        'object-right',
+        'object-right-bottom',
+        'object-right-top',
+        'object-top',
+    ],
     theme: {
+        fluidFontSize: {
+            'xs': [0.75, 0.75], //12px
+            'sm': [0.875, 0.875], //14px
+            'base': [1, 1.25],
+            'lg': [1, 1.5],
+            'xl': [1.25, 1.875],
+            '2xl': [1.5, 2.5], //40px
+            '3xl': [2, 2.75], //44px
+        },
         screens: {
             'sm': '640px',
             'md': '768px',
@@ -44,6 +64,7 @@ module.exports = {
                 '21/9': '21 / 9',
                 '4/3': '4 / 3',
                 '15/9': '15 / 9',
+                'banner': '1676 / 650'
             },
             transitionDuration: {
                 '0': '0ms',
@@ -64,10 +85,10 @@ module.exports = {
             },
             maxWidth: {
                 'page': '1920px',
-                'content': '1630px',
+                'content': '1680px',
                 'content-left': '1090px',
                 'content-right':'540px',
-                'content-single': '948px',
+                'content-single': '1115px',
                 '3/5' : '60%',
                 '1/2' : '50%',
                 '1/3' : '33.33%',
@@ -93,42 +114,11 @@ module.exports = {
         fontSize: false
     },
     plugins: [
-        require('tailwindcss-fluid-type')({
-            // your fluid type settings
-            // works only with unitless numbers
-            // This numbers are the defaults settings
-            settings: {
-                fontSizeMin: 1.125, // 1.125rem === 18px
-                fontSizeMax: 1.25, // 1.25rem === 20px
-                ratioMin: 1.125, // Multiplicator Min
-                ratioMax: 1.2, // Multiplicator Max
-                screenMin: 20, // 20rem === 320px
-                screenMax: 96, // 96rem === 1536px
-                unit: 'rem', // default is rem but it's also possible to use 'px'
-                prefix: '', // set a prefix to use it alongside the default font sizes
-                extendValues: true, // When you set extendValues to true it will extend the default values. Set it to false to overwrite the values.
-            },
-            // Creates the text-xx classes
-            // This are the default settings and analog to the tailwindcss defaults
-            // Each `lineHeight` is set unitless and we think that's the way to go especially in context with fluid type.
-            values: {
-                'xs': [-2, 1.5],
-                'sm': [-1, 1.5],
-                'base': [0, 1.5],
-                'lg': [1, 1.5],
-                'xl': [2, 1.5],
-                '2xl': [3.80178402, 1.5],
-                '3xl': [4.32454272, 1.2],
-                '4xl': [5, 1.1],
-                '5xl': [6, 1.1],
-                '6xl': [7, 1.1],
-                '7xl': [8, 1],
-                '8xl': [9, 1],
-                '9xl': [10, 1],
-            },
+        require("@wolves.ink/tailwindcss-fluid-fontsize")({
+            screenMin: 20, // 20rem === 320px
+            screenMax: 96, // 96rem === 1536px
+            unit: "rem", // default is rem but it's also possible to use 'px'
+            prefix: "", // set a prefix to use it alongside the default font sizes
         }),
-    ],
-    variants: {
-        fluidType: ['responsive']
-    }
+    ]
 }

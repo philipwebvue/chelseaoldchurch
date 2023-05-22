@@ -28,12 +28,12 @@ if ( function_exists( 'acf_add_options_page' ) )
             'redirect'   => false
         ) );
 
-        acf_add_options_sub_page( array(
-            'page_title'  => "Weekly Tab Settings",
-            'menu_title'  => "Weekly Tab",
-            'parent_slug' => 'edit.php?post_type=week',
-            'position'    => '2',
-        ) );
+//        acf_add_options_sub_page( array(
+//            'page_title'  => "Weekly Tab Settings",
+//            'menu_title'  => "Weekly Tab",
+//            'parent_slug' => 'edit.php?post_type=week',
+//            'position'    => '2',
+//        ) );
         $post_types_settings_pages = [
             'week'  => [
                 'post_type'   => 'week',
@@ -232,23 +232,6 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
             'title'                 => 'Event information',
             'fields'                => array(
                 array(
-                    'key'               => 'field_5c0f766463c27',
-                    'label'             => 'Event Information',
-                    'name'              => '',
-                    'aria-label'        => '',
-                    'type'              => 'tab',
-                    'instructions'      => '',
-                    'required'          => 0,
-                    'conditional_logic' => 0,
-                    'wrapper'           => array(
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ),
-                    'placement'         => 'top',
-                    'endpoint'          => 0,
-                ),
-                array(
                     'key'               => 'field_5e710e61d37fb',
                     'label'             => 'Date & Time',
                     'name'              => 'event_date_time',
@@ -295,99 +278,6 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
                     'instructions'      => '',
                     'required'          => 0,
                     'conditional_logic' => 0,
-                    'wrapper'           => array(
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ),
-                    'default_value'     => '',
-                    'tabs'              => 'all',
-                    'toolbar'           => 'full',
-                    'media_upload'      => 1,
-                    'delay'             => 0,
-                ),
-                array(
-                    'key'               => 'field_5c0f7686dc725',
-                    'label'             => 'More event info',
-                    'name'              => '',
-                    'aria-label'        => '',
-                    'type'              => 'tab',
-                    'instructions'      => '',
-                    'required'          => 0,
-                    'conditional_logic' => 0,
-                    'wrapper'           => array(
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ),
-                    'placement'         => 'top',
-                    'endpoint'          => 0,
-                ),
-                array(
-                    'key'               => 'field_5c0f76b0dc728',
-                    'label'             => 'Display extra info on red background?',
-                    'name'              => 'show_event_info',
-                    'aria-label'        => '',
-                    'type'              => 'true_false',
-                    'instructions'      => '',
-                    'required'          => 0,
-                    'conditional_logic' => 0,
-                    'wrapper'           => array(
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ),
-                    'message'           => '',
-                    'default_value'     => 0,
-                    'ui'                => 1,
-                    'ui_on_text'        => '',
-                    'ui_off_text'       => '',
-                ),
-                array(
-                    'key'               => 'field_5c0f768fdc726',
-                    'label'             => 'Event Title (red background)',
-                    'name'              => 'event_info_title',
-                    'aria-label'        => '',
-                    'type'              => 'text',
-                    'instructions'      => '',
-                    'required'          => 1,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field'    => 'field_5c0f76b0dc728',
-                                'operator' => '==',
-                                'value'    => '1',
-                            ),
-                        ),
-                    ),
-                    'wrapper'           => array(
-                        'width' => '',
-                        'class' => '',
-                        'id'    => '',
-                    ),
-                    'default_value'     => '',
-                    'placeholder'       => '',
-                    'prepend'           => '',
-                    'append'            => '',
-                    'maxlength'         => '',
-                ),
-                array(
-                    'key'               => 'field_5c0f7699dc727',
-                    'label'             => 'Event content (red background)',
-                    'name'              => 'event_info_content',
-                    'aria-label'        => '',
-                    'type'              => 'wysiwyg',
-                    'instructions'      => '',
-                    'required'          => 1,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field'    => 'field_5c0f76b0dc728',
-                                'operator' => '==',
-                                'value'    => '1',
-                            ),
-                        ),
-                    ),
                     'wrapper'           => array(
                         'width' => '',
                         'class' => '',
@@ -1182,7 +1072,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
     /**
      * ACF Banner fields
      */
-    add_action( 'init', 'chelseaoldchurch_add_weekly_tab_options_meta_box', 10 );
+    //add_action( 'init', 'chelseaoldchurch_add_weekly_tab_options_meta_box', 10 );
     function chelseaoldchurch_add_weekly_tab_options_meta_box()
     {
         acf_add_local_field_group( array(

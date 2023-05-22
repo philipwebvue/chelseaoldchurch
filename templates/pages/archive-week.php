@@ -74,6 +74,22 @@ if ( $latest_posts->have_posts() ) :
                             ?>
                             <?php get_template_part( 'templates/components/cards/card', 'week-day-events', $card_args ); ?>
                         <?php endforeach; ?>
+                        <div class="col-span-2">
+                            <div class="flex">
+                                <div class=" w-1/2 overflow-hidden">
+                                    <?php
+                                    $attachment_id = get_field('image');
+                                    $img_atts = wp_get_attachment_image_src( $attachment_id, 'medium_large' );
+                                    ?>
+                                    <img class="object-cover" src="<?php echo $img_atts[0]; ?>" />
+                                </div>
+                                <div class="w-1/2">
+                                    <?php echo get_field('section_title'); ?>
+                                    <?php echo get_field('title'); ?>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="">
                         <?php

@@ -1,4 +1,6 @@
 {
     "/assets/js/app.js": "/assets/js/app.js",
-    "/assets/css/theme.css": "/assets/css/theme.css"
+    "/assets/css/theme.css": "/assets/css/theme.css",
+    "/assets/js/slick.js": "/assets/js/slick.js",
+    "/assets/js/select2.js": "/assets/js/select2.js"
 }

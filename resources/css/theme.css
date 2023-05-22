@@ -14,20 +14,21 @@
         @apply text-base font-medium font-theme tracking-[0.1em];
     }
     h5{
-        @apply text-lg;
+        @apply text-lg font-bold;
     }
     h6{
-        @apply text-lg;
+        @apply text-base;
     }
-    p,a,li{
-        @apply text-lg;
-    }
+
 }
 
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
 
+@import "slick";
+@import "slick-theme";
+@import "select2";
 @import 'typography';
 @import 'gutenburg';
 @import 'components';
@@ -39,7 +40,7 @@
 /** header **/
 /** Desktop header navigation **/
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item{
-    @apply pr-4 last:pr-0;
+    @apply pr-4 text-black last:pr-0;
 }
 /** Mobile header navigation **/
 

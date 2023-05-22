@@ -9,6 +9,7 @@
  * @since 1.0
  * @updated 1.0
  */
+
 ?>
 <i class="text-2xl fas fa-bars"></i>
 <span class="text-xs">Menu</span>

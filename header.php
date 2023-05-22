@@ -31,7 +31,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('font-theme text-base leading-normal'); ?>>
+<body <?php body_class('text-lg font-theme font-light leading-normal'); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 
