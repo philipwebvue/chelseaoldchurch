@@ -39,9 +39,27 @@
 }
 
 /** header **/
+.site-header .logo-container{
+    @apply w-[3.75rem] xl:w-40 xl:w-48;
+}
 /** Desktop header navigation **/
+.topbar{
+    @apply bg-[#F2F0F5];
+}
+.topbar .support-link a{
+    @apply font-prata text-primary text-base no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
+}
+.top-navigation ul > li{
+    @apply bg-[#F2F0F5] relative px-5 last:pr-0 before:content-[''] before:w-0.5 before:h-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:bg-black;
+}
+.top-navigation ul > li > a{
+    @apply text-base text-primary uppercase font-medium font-theme no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
+}
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item{
-    @apply pr-4 text-black last:pr-0;
+    @apply pr-24 text-neutral-800 last:pr-0;
+}
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item > a{
+    @apply font-theme pb-1.5 text-lg tracking-[0.01em] uppercase font-medium no-underline relative after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
 }
 /** Mobile header navigation **/
 
