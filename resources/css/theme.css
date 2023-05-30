@@ -32,6 +32,7 @@
 @import 'typography';
 @import 'gutenburg';
 @import 'components';
+@import 'blocks/example-block.css';
 
 #banner-container{
     @apply bg-primary;

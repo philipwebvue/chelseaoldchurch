@@ -35,6 +35,7 @@ $theme_includes = array(
     '/register-image-sizes.php',                // Register image sizes
     '/breadcrumbs.php',                         // Breadcrumbs
     '/pagination/numeric-pagination.php',       // Pagination
+    '/acf_register_blocks.php',                  // ACF Custom Gutenberg block registration
 );
 
 foreach ( $theme_includes as $file )

@@ -41,9 +41,9 @@ add_action( 'wp_enqueue_scripts', 'creativestream_enqueue_scripts' );
  */
 function creativestream_enqueue_admin_scripts()
 {
-    wp_enqueue_script( 'extend-react-functionality', get_template_directory_uri() . '/assets/js/admin/extend-react-functionality.js', array(), _THEME_VERSION );
+    wp_enqueue_script( 'extend-react-functionality', get_template_directory_uri() . '/assets/js/admin/extend-react-functionality.js', array('wp-element'), _THEME_VERSION );
 }
-add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_admin_scripts' );
+//add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_admin_scripts' );
 
 function creativestream_enqueue_fonts_styles()
 {

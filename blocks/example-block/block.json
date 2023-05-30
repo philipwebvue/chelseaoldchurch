@@ -1,0 +1,25 @@
+{
+    "name": "acf/example-block",
+    "title": "ACF Example block",
+    "description": "A custom ACF Example block.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "admin-comments",
+    "keywords": ["ACF Example"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false
+        }
+    }
+}
