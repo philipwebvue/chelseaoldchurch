@@ -19,7 +19,12 @@
     h6{
         @apply text-base;
     }
-
+    p{
+        @apply mb-4;
+    }
+    p:last-child{
+        @apply mb-0;
+    }
 }
 
 @import "tailwindcss/components";
@@ -32,7 +37,8 @@
 @import 'typography';
 @import 'gutenburg';
 @import 'components';
-@import 'blocks/example-block.css';
+@import 'buttons';
+@import 'blocks/blocks';
 
 #banner-container{
     @apply bg-primary;

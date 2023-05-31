@@ -215,3 +215,17 @@ function chelseaoldchurch_archive_post_type_fields( $post_type, $page_name, $tit
         'description'           => '',
     ) );
 }
+
+//Function to create ACF link html.
+function get_acflink_html($link, $class = "") {
+	if($link){
+		$linktext = isset($link['title']) && $link['title']!="" ? $link['title'] : '';
+		$linkurl = isset($link['url']) && $link['url']!="" ? $link['url'] : '';
+		$linktarget = $link['target'] ? 'target="_blank"' : '';
+
+		if($linktext!="" && $linkurl!=""){
+			return sprintf('<a href="%s" class="%s"%s>%s</a>', $linkurl, $class, $linktarget, $linktext);
+		}
+	}
+	return '';
+}

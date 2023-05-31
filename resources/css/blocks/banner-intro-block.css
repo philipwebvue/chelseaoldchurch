@@ -1,0 +1,15 @@
+.banner-intro-block{
+    @apply mt-[-12.375rem] px-3 lg:px-[46px];
+}
+.banner-intro-block .content{
+    @apply max-w-[812px] mx-auto;
+}
+.banner-intro-block .content p{
+    @apply font-light text-lg;
+}
+.banner-intro-block .content p:first-child{
+    @apply font-medium first-letter:text-4xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5;
+}
+.banner-intro-block .content p:nth-child(2){
+    @apply clear-both;
+}

@@ -1,0 +1,25 @@
+{
+    "name": "acf/banner-intro-block",
+    "title": "Banner Intro Block",
+    "description": "Banner Intro Block to display ovarlap on banner.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "media-text",
+    "keywords": ["Intro text", "Text block"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

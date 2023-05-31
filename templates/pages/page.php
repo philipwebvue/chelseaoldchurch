@@ -16,8 +16,8 @@
 //$position_class=$position?'object-'.$position:'object-center';
 //echo get_the_post_thumbnail( get_the_ID(), 'large', array( 'class'=>$position_class ) );
 ?>
-<section id="page-content" class="">
-        <div id="post-content" class="max-w-content-single mx-auto">
-            <?php the_content(); ?>
-        </div>
+<section id="page-content">
+    <div id="post-content" class="max-w-content-single mx-auto">
+        <?php the_content(); ?>
+    </div>
 </section>
