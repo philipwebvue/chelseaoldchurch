@@ -163,3 +163,9 @@ section{
 .site-footer .social-links li a{
     @apply text-primary text-xl2;
 }
+.site-info a{
+    @apply text-black hover:no-underline hover:text-primary font-light;
+}
+.site-info span{
+    @apply last:hidden;
+}

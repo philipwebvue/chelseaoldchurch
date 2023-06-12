@@ -2883,12 +2883,12 @@ video {
   padding-top: 1rem;
 }
 
-.pt-7 {
-  padding-top: 1.75rem;
-}
-
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
 }
 
 .text-left {
@@ -3033,10 +3033,6 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
-}
-
-.text-sm {
-  font-size: clamp(0.875rem, calc(0.875rem + ((0.875 - 0.875) * ((100vw - 20rem) / (96 - 20)))), 0.875rem);
 }
 
 .text-1xbase {
@@ -3517,6 +3513,19 @@ section:last-child {
   color: rgb(144 9 66 / var(--tw-text-opacity));
   font-size: clamp(1.25rem, calc(1.25rem + ((2.25 - 1.25) * ((100vw - 20rem) / (96 - 20)))), 2.25rem);
 }
+.site-info a {
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.site-info a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(144 9 66 / var(--tw-text-opacity));
+  text-decoration-line: none;
+}
+.site-info span:last-child {
+  display: none;
+}
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -3648,6 +3657,9 @@ section:last-child {
   --tw-content: '';
   content: var(--tw-content);
 }
+.last\:hidden:last-child {
+  display: none;
+}
 .last\:pr-0:last-child {
   padding-right: 0px;
 }
@@ -3661,6 +3673,10 @@ section:last-child {
 .hover\:text-\[\#FAE2B7\]:hover {
   --tw-text-opacity: 1;
   color: rgb(250 226 183 / var(--tw-text-opacity));
+}
+.hover\:text-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(144 9 66 / var(--tw-text-opacity));
 }
 .hover\:no-underline:hover {
   text-decoration-line: none;
@@ -4040,10 +4056,6 @@ section:last-child {
 
   .lg\:text-right {
     text-align: right;
-  }
-
-  .lg\:text-base {
-    font-size: clamp(1rem, calc(1rem + ((1.25 - 1) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
   }
 
   .lg\:after\:w-\[100px\]::after {

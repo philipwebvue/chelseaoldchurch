@@ -53,12 +53,12 @@ $contatPageLink['link'] = get_theme_mod('creativestream_contact_url');
         </ul>
     </div>
 </div>
-<div id="" class=" site-info flex flex-col lg:flex-row justify-between items-center lg:items-stretch  text-sm w-full max-w-content  my-4 px-6 mx-auto text-sm lg:text-base">
-    <p class="mb-4 lg:mb-0 text-center lg:text-left text-sm">
+<div class=" site-info flex flex-col lg:flex-row justify-between items-center lg:items-stretch w-full max-w-content my-4 px-6 mx-auto text-base">
+    <p class="mb-4 lg:mb-0 text-center lg:text-left text-base">
         Copyright &copy; <?php echo date( 'Y' ); ?> <?php echo $business[ 'name' ]; ?> <span class="px-2">|</span>
         <?php get_template_part( 'templates/navigation/menu', 'static-footer' ); ?>
     </p>
-    <p class="mb-4 lg:mb-0 flex flex-col lg:flex-row items-center text-sm text-center">
+    <p class="mb-4 lg:mb-0 flex flex-col lg:flex-row items-center text-base text-center">
         Website design by
         <a class="no-underline flex items-center ml-1" href="//creativestream.co.uk" target="_blank">
             <img class="mt-2 lg:-mt-1"
