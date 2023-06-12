@@ -17,7 +17,10 @@
 //echo get_the_post_thumbnail( get_the_ID(), 'large', array( 'class'=>$position_class ) );
 ?>
 <section id="page-content">
-    <div id="post-content" class="max-w-content-single mx-auto">
+    <?php /*
+    <div id="post-content" class="mx-auto">
         <?php the_content(); ?>
     </div>
+    */ ?>
+    <?php the_content(); ?>
 </section>

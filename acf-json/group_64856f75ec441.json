@@ -1,9 +1,9 @@
 {
-    "key": "group_647717598f86d",
-    "title": "Banner Intro block",
+    "key": "group_64856f75ec441",
+    "title": "Banner Intro Block",
     "fields": [
         {
-            "key": "field_6477175a51908",
+            "key": "field_64856f76d9276",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -23,12 +23,12 @@
             "append": ""
         },
         {
-            "key": "field_647717abb29be",
+            "key": "field_64856fb0d9277",
             "label": "Title tag",
             "name": "title_tag",
             "aria-label": "",
             "type": "button_group",
-            "instructions": "",
+            "instructions": "Select title tag depends your page SEO requirement.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -43,7 +43,7 @@
                 "h4": "H4",
                 "h5": "H5",
                 "h6": "H6",
-                "div": "div"
+                "div": "Div"
             },
             "default_value": "h1",
             "return_format": "value",
@@ -51,7 +51,7 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_64771ad74a108",
+            "key": "field_648570103bc4b",
             "label": "Content",
             "name": "content",
             "aria-label": "",
@@ -67,11 +67,11 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1,
+            "media_upload": 0,
             "delay": 0
         },
         {
-            "key": "field_64772d58485fa",
+            "key": "field_648570233bc4c",
             "label": "Link",
             "name": "link",
             "aria-label": "",
@@ -85,6 +85,29 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_64857055311cc",
+            "label": "Content width",
+            "name": "content_width",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Select width of content visibility area.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "single": "Single",
+                "desktop": "Desktop"
+            },
+            "default_value": "single",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -105,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685532016
+    "modified": 1686466771
 }

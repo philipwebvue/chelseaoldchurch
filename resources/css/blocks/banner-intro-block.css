@@ -1,14 +1,20 @@
 .banner-intro-block{
-    @apply mt-[-12.375rem] px-3 lg:px-[46px];
+    @apply mt-[-12.375rem] px-3 md:px-[46px];
 }
 .banner-intro-block .content{
     @apply max-w-[812px] mx-auto;
 }
+.banner-intro-block .content.large{
+    @apply max-w-[1024px];
+}
 .banner-intro-block .content p{
     @apply font-light text-lg;
 }
+.banner-intro-block .content p a{
+    @apply font-medium;
+}
 .banner-intro-block .content p:first-child{
-    @apply font-medium first-letter:text-4xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5;
+    @apply font-medium first-letter:text-5xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5;
 }
 .banner-intro-block .content p:nth-child(2){
     @apply clear-both;

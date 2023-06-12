@@ -1,0 +1,30 @@
+.latest-week-block{
+    @apply mb-10 lg:mb-28;
+}
+
+.latest-week-block .latest-week-events{
+    @apply max-h-[209px] xl:max-h-[302px] 2xl:max-h-[418px] 3xl:max-h-[500px] overflow-y-auto pr-3 mb-4 xl:mb-8 border-b-[1px] border-b-white/[.5];
+}
+
+.latest-week-block .latest-week-events::-webkit-scrollbar {
+    @apply w-[14px];
+}
+  
+/* Track */
+.latest-week-block .latest-week-events::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+   
+/* Handle */
+.latest-week-block .latest-week-events::-webkit-scrollbar-thumb {
+    @apply bg-white/[.79] rounded-[14px];
+}
+  
+/* Handle on hover */
+.latest-week-block .latest-week-events::-webkit-scrollbar-thumb:hover {
+    @apply bg-white cursor-pointer; 
+}
+
+.latest-week-block .latest-week-events ul li{
+    @apply py-5 border-b-[1px] border-b-white/[.5] last:border-b-0;
+}

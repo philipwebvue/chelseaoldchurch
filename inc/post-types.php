@@ -149,7 +149,7 @@ function chelseaoldchurch_create_news_post_type()
         'show_ui'             => true,
         'show_in_rest'        => true,
         'rewrite'             => array( 'slug' => 'news', 'with_front' => false ),
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author' ), //,excerpt,author,editor
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author', 'excerpt' ), //,excerpt,author,editor
     ) );
 }
 
@@ -185,7 +185,7 @@ function chelseaoldchurch_create_story_post_type()
         'show_ui'             => true,
         'show_in_rest'        => true,
         'rewrite'             => array( 'slug' => 'story', 'with_front' => false ),
-        'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author' ), //,excerpt,author,editor
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author', 'excerpt' ), //,excerpt,author,editor
     ) );
 }
 

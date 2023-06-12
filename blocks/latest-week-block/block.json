@@ -1,0 +1,25 @@
+{
+    "name": "acf/latest-week-block",
+    "title": "Latest Week",
+    "description": "Latest week block to display latest event with image wuth links and latest week view.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "calendar",
+    "keywords": ["Latest week", "Week block"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

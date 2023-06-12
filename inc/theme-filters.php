@@ -39,3 +39,19 @@ function main_cat_edit_columns($columns) {
     $columns['event_date_time'] = "Date & Time";
     return $columns;
 }
+
+function event_archive_pre_get_posts( $query ) {
+  
+    if( is_admin() ) {
+      return $query; 
+    }
+    if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' && $query->is_main_query() ) {
+      
+      $query->set('orderby', 'meta_value'); 
+      $query->set('meta_key', 'event_date_time');   
+      $query->set('order', 'DESC'); 
+      
+    }
+    return $query;
+}
+add_action('pre_get_posts', 'event_archive_pre_get_posts');

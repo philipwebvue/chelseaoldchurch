@@ -1,6 +1,8 @@
 const mix = require('laravel-mix');
 
-mix.copy([
+mix.options({
+        processCssUrls: false
+    }).copy([
         'node_modules/slick-carousel-latest/slick/slick.js',
         'node_modules/select2/dist/js/select2.js',
     ], 'assets/js')

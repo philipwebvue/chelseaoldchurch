@@ -26,7 +26,7 @@ $args = array_merge( $default_args, $args );
     <?php if(!empty($categories)): ?>
     <ul class="taxonomy-list inline-flex">
     <?php foreach ( $categories as $category ): ?>
-        <li class="mr-4"><a href="<?php echo get_term_link($category,$category->taxonomy);?>"><?php echo $category->name ?></a> </li>
+        <li class="mr-5"><a href="<?php echo get_term_link($category,$category->taxonomy);?>"><?php echo $category->name ?></a> </li>
 
     <?php endforeach; ?>
         <li><a href="#">Select All</a></li>

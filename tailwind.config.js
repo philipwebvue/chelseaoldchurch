@@ -31,12 +31,16 @@ module.exports = {
         fluidFontSize: {
             'xs': [0.75, 0.75], //12px
             'sm': [0.875, 0.875], //14px
+            '1xbase': [0.75, 1.125], //14px
             'base': [1, 1.25], //20px
             'lg': [1, 1.5], //24px
-            'xl': [1.25, 1.875],
+            'mxl': [1.125, 1.75], //28px
+            'xl': [1.25, 1.875], //30px
+            'xl2': [1.25, 2.25], //36px
             '2xl': [1.5, 2.5], //40px
             '3xl': [2, 2.75], //44px
-            '4xl': [2.313, 4.063] //65px
+            '4xl': [1.875, 3.125], //50px
+            '5xl': [2.313, 4.063] //65px
         },
         screens: {
             'sm': '640px',
@@ -83,6 +87,9 @@ module.exports = {
                 'secondary': {
                     DEFAULT:'#DDDBDB'
                 },
+                'tertiary':{
+                    DEFAULT: '#FAE2B7'
+                }
             },
             spacing: {
                 'breakout': 'calc(50% - 50vw)',
@@ -93,6 +100,7 @@ module.exports = {
                 'content-left': '1090px',
                 'content-right':'540px',
                 'content-single': '1115px',
+                'content-desktop': '1380px',
                 '3/5' : '60%',
                 '1/2' : '50%',
                 '1/3' : '33.33%',
@@ -112,6 +120,9 @@ module.exports = {
                 'relaxed': '1.625',
                 'loose': '2'
             },
+            boxShadow: {
+                'theme': '3px 3px 15px rgba(0, 0, 0, 0.16)',
+            }
         },
     },
     corePlugins: {

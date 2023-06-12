@@ -1,20 +1,20 @@
 @import "tailwindcss/base";
 
 @layer base {
-    h1{
+    h1, .h1{
         @apply text-3xl font-prata;
     }
-    h2{
+    h2, .h2{
         @apply text-2xl font-prata;
     }
-    h3{
+    h3, .h3{
         @apply text-lg font-prata;
     }
     h4{
         @apply text-base font-medium font-theme tracking-[0.1em];
     }
     h5{
-        @apply text-lg font-bold;
+        @apply text-lg font-medium;
     }
     h6{
         @apply text-base;
@@ -40,32 +40,50 @@
 @import 'buttons';
 @import 'blocks/blocks';
 
+#page.site{
+    @apply bg-[url('../images/footer-bg-mobile.png')] md:bg-[url('../images/footer-bg.png')] bg-no-repeat bg-[center_bottom] bg-contain 2xl:bg-auto;
+}
+
 #banner-container{
     @apply bg-primary;
 }
 
+.home #banner-container{
+    @apply bg-transparent;
+}
+
 /** header **/
+.site-header{
+    @apply max-w-[1920px] mx-auto;
+}
 .site-header .logo-container{
-    @apply w-[3.75rem] xl:w-40 xl:w-48;
+    @apply w-[3.75rem] md:w-[5.5rem] xl:w-40 xl:w-48;
 }
 /** Desktop header navigation **/
-.topbar{
+.home .topbar{
     @apply bg-[#F2F0F5];
 }
 .topbar .support-link a{
     @apply font-prata text-primary text-base no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
 }
 .top-navigation ul > li{
-    @apply bg-[#F2F0F5] relative px-5 last:pr-0 before:content-[''] before:w-0.5 before:h-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:bg-black;
+    @apply relative px-5 last:pr-0 before:content-[''] before:w-0.5 before:h-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:my-auto before:bg-black;
 }
 .top-navigation ul > li > a{
     @apply text-base text-primary uppercase font-medium font-theme no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
 }
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item{
-    @apply pr-24 text-neutral-800 last:pr-0;
+    @apply xl:pr-12 2xl:pr-24 text-neutral-800 last:pr-0;
 }
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item > a{
-    @apply font-theme pb-1.5 text-lg tracking-[0.01em] uppercase font-medium no-underline relative after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
+    @apply inline-block font-theme pb-1.5 text-lg tracking-[0.01em] uppercase font-medium no-underline relative after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
+}
+
+.site-branding-col{
+    @apply xl:w-[148px];
+}
+.site-navigation-col{
+    @apply xl:w-[calc(100%_-_296px)];
 }
 /** Mobile header navigation **/
 
@@ -73,9 +91,75 @@
 section{
     @apply mt-8 last:mb-8;
 }
+.taxonomy-list a{
+    @apply text-lg uppercase font-medium !no-underline relative pb-3 inline-block;
+    @apply before:content-[''] before:absolute before:w-full before:h-1 before:left-0 before:bottom-0 before:bg-[#EFEAED] before:rounded-[2px];
+    @apply after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300 after:rounded-[2px];
+}
 
+/** Pagination **/
+
+.pagination-container .navigation .nav-prev{
+    @apply pl-14 lg:pl-[112px] inline relative font-theme font-medium after:absolute after:left-0 after:top-0 after:bg-no-repeat after:bg-contain after:content-[''] after:w-[48px] lg:after:w-[100px] after:h-full;
+}
+.pagination-container .navigation .nav-next{
+    @apply pr-14 lg:pr-[112px] inline relative font-theme font-medium after:absolute after:right-0 after:top-0 after:bg-no-repeat after:bg-contain after:content-[''] after:w-[48px] lg:after:w-[100px] after:h-full;
+}
+.pagination-container .navigation .nav-prev span,
+.pagination-container .navigation .nav-next span{
+    @apply text-lg font-medium;
+}
+.pagination-container .navigation a.nav-prev,
+.pagination-container .navigation a.nav-next{
+    @apply text-primary no-underline hover:no-underline after:origin-top hover:translate-y-0 after:duration-300;
+}
+.pagination-container .navigation a.nav-prev{
+    @apply hover:after:-translate-x-4;
+}
+.pagination-container .navigation a.nav-next{
+    @apply hover:after:translate-x-4;
+}
+.pagination-container .navigation .nav-prev:after{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100.579' height='13' viewBox='0 0 100.579 13'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_9' data-name='Rectangle 9' width='100.579' height='13' fill='%2390095c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='arrow' transform='translate(100.579 13) rotate(180)'%3E%3Cg id='Group_7' data-name='Group 7' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_107' data-name='Path 107' d='M95.125,6.278H7.089c-.308,0-.558-.487-.558-1.089S6.782,4.1,7.089,4.1H95.125c.308,0,.557.488.557,1.089s-.25,1.089-.557,1.089' transform='translate(0.349 1.325)' fill='%2390095c'/%3E%3Cpath id='Path_108' data-name='Path 108' d='M0,13,6.245,6.5,0,0H6.842l6.245,6.5L6.842,13Z' transform='translate(0 0)' fill='%2390095c'/%3E%3Cpath id='Path_109' data-name='Path 109' d='M9.05,13l6.245-6.5L9.05,0h6.842l6.245,6.5L15.892,13Z' transform='translate(0.484 0)' fill='%2390095c'/%3E%3Cpath id='Path_110' data-name='Path 110' d='M18.1,13l6.245-6.5L18.1,0h6.842l6.245,6.5L24.942,13Z' transform='translate(0.967 0)' fill='%2390095c'/%3E%3Cpath id='Path_111' data-name='Path 111' d='M82.439.225,96.173,6.441,82.439,12.657a47.054,47.054,0,0,0,1.188-6.216A47.054,47.054,0,0,0,82.439.225' transform='translate(4.406 0.073)' fill='%2390095c'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: left center;
+}
+.pagination-container .navigation .nav-next:after{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100.579' height='13' viewBox='0 0 100.579 13'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_9' data-name='Rectangle 9' width='100.579' height='13' fill='%2390095c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Group_7' data-name='Group 7' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_107' data-name='Path 107' d='M95.125,6.278H7.089c-.308,0-.558-.487-.558-1.089S6.782,4.1,7.089,4.1H95.125c.308,0,.557.488.557,1.089s-.25,1.089-.557,1.089' transform='translate(0.349 1.325)' fill='%2390095c'/%3E%3Cpath id='Path_108' data-name='Path 108' d='M0,13,6.245,6.5,0,0H6.842l6.245,6.5L6.842,13Z' transform='translate(0 0)' fill='%2390095c'/%3E%3Cpath id='Path_109' data-name='Path 109' d='M9.05,13l6.245-6.5L9.05,0h6.842l6.245,6.5L15.892,13Z' transform='translate(0.484 0)' fill='%2390095c'/%3E%3Cpath id='Path_110' data-name='Path 110' d='M18.1,13l6.245-6.5L18.1,0h6.842l6.245,6.5L24.942,13Z' transform='translate(0.967 0)' fill='%2390095c'/%3E%3Cpath id='Path_111' data-name='Path 111' d='M82.439.225,96.173,6.441,82.439,12.657a47.054,47.054,0,0,0,1.188-6.216A47.054,47.054,0,0,0,82.439.225' transform='translate(4.406 0.073)' fill='%2390095c'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: right center;
+}
+.pagination-container .navigation ul{
+    @apply hidden md:flex justify-center;
+}
+.pagination-container .navigation ul li{
+    @apply px-2.5 mr-[1px] last:mr-0;
+}
+.pagination-container .navigation ul li a{
+    @apply font-theme font-light text-xl text-black hover:no-underline hover:text-primary;
+}
+.pagination-container .navigation ul li.active a{
+    @apply font-theme font-medium text-xl text-primary underline hover:no-underline hover:text-primary;
+}
+
+.breadcrumbs{
+    @apply uppercase text-1xbase font-theme text-[#8B8A8A] font-medium mb-4;
+}
+.breadcrumbs a{
+    @apply font-theme text-[#8B8A8A];
+}
 /** Footer **/
+.site-footer{
+    @apply mt-[50%] md:mt-[35%] 2xl:mt-[721px];
+}
 /** footer navigation **/
-#footer-quick-links #footer-navigation ul > li{
-    @apply pr-4 last:pr-0;
+#footer-quick-links ul > li{
+    @apply pr-4 last:pr-0 text-lg font-medium text-center;
+}
+#footer-quick-links ul > li.separator{
+    @apply text-primary hidden lg:block;
+}
+.site-footer .social-links li{
+    @apply pr-7 last:pr-0;
+}
+.site-footer .social-links li a{
+    @apply text-primary text-xl2;
 }

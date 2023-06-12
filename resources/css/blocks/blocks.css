@@ -1,3 +1,7 @@
 /*@import "example-block";*/
 
 @import "banner-intro-block";
+@import "latest-week-block";
+@import "text-image-block";
+@import "images-grid-block";
+@import "faq-block";

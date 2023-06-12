@@ -13,7 +13,7 @@
 
 ?>
 
-    <footer class="">
+    <footer class="site-footer">
         <?php get_template_part('templates/footers/footer',get_post_type()); ?>
     </footer>
 

@@ -43,3 +43,35 @@
 .card-week-day-event.is-sunday .card-body p{
     @apply text-white;
 }
+
+/** Event card **/
+.card-wide{
+    @apply flex flex-col sm:flex-row items-start bg-white shadow-theme hover:shadow-md p-5 mb-7;
+}
+.card-wide .card-header{
+    @apply w-full mb-5 sm:mb-0 sm:w-[200px] md:w-[245px] relative block;
+}
+.card-wide .card-header .image-wrapper{
+    @apply w-full sm:w-[200px] md:w-[245px] aspect-square overflow-hidden relative;
+}
+.card-wide .card-header .image-wrapper img{
+    @apply absolute top-0 left-0 object-cover object-center duration-300;
+}
+.card-wide:hover .card-header .image-wrapper img{
+    @apply scale-110;
+}
+.card-wide .card-body{
+    @apply flex-1 sm:pl-5 lg:pl-[30px];
+}
+.card-wide .card-body .title{
+    @apply text-xl font-prata text-primary mb-2;
+}
+.card-wide .card-body .date{
+    @apply font-medium mb-2;
+}
+.card-wide .card-body .excerpt p{
+    @apply font-light text-lg;
+}
+.card-wide .card-body .excerpt p a{
+    @apply font-medium text-lg;
+}

@@ -481,6 +481,49 @@ if ( ! function_exists( 'creativestream_customize_register_business_settings' ) 
                 )
             )
         );
+
+        $wp_customize->add_setting(
+            'creativestream_contact_link_text',
+            array(
+                'default' => '',
+                'transport'=>'postMessage'
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'creativestream_contact_link_text_control',
+                array(
+                    'label'       => __( 'Contact link text', 'creativestream' ),
+                    'description' => __( 'This link text will display in footer','creativestream' ),
+                    'section'     => 'creativestream_contact_section',
+                    'settings'    => 'creativestream_contact_link_text',
+                    'type'        => 'text',
+                )
+            )
+        );
+
+        $wp_customize->add_setting(
+            'creativestream_contact_url',
+            array(
+                'default' => '',
+                'transport'=>'postMessage'
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'creativestream_contact_url_control',
+                array(
+                    'label'       => __( 'Contact page link', 'creativestream' ),
+                    'section'     => 'creativestream_contact_section',
+                    'settings'    => 'creativestream_contact_url',
+                    'type' => 'dropdown-pages',
+                )
+            )
+        );
     }
 endif;
 

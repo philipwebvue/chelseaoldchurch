@@ -154,6 +154,18 @@
     $(this).find('i').toggleClass('fa-minus');
     $(this).find('i').toggleClass('fa-rotate-180');
   });
+  $(document).on('click', '.faq-question', function (e) {
+    e.preventDefault();
+    if (!$(this).parent().hasClass('expand')) {
+      $(this).parents('.faq-block').find('.faq-accordion.expand .faq-answer').css('max-height', 0);
+      $(this).parents('.faq-block').find('.faq-accordion.expand').removeClass('expand');
+      $(this).parents('.faq-accordion').addClass('expand');
+      $(this).next(".faq-answer").css('max-height', $(this).next(".faq-answer").get(0).scrollHeight + 'px');
+    } else {
+      $(this).parent().removeClass('expand');
+      $(this).next(".faq-answer").css('max-height', 0);
+    }
+  });
   $(document).on('click', '.close-search-modal', function (e) {
     toggle_search_modal();
   });

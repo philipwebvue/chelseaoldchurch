@@ -19,11 +19,11 @@
  * @param $continue String Continue reading ending default is nothing
  * @return string
  */
-function excerpt_limit_words( $string, $word_limit ,$continue = '')
+function excerpt_limit_words( $string, $word_limit = 50 ,$continue = '')
 {
     $string = strip_tags( $string );
     $words = explode( " ", $string );
-    $continue_reading = count($words) > $word_limit ?$continue:'';
+    $continue_reading = count($words) > $word_limit ? $continue: '';
     return implode( " ", array_splice( $words, 0, $word_limit ) ) . $continue_reading;
 }
 

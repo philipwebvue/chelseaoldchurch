@@ -1,0 +1,25 @@
+{
+    "name": "acf/posts-grid-block",
+    "title": "Posts grid",
+    "description": "This block will display list view of selected Post type.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "grid-view",
+    "keywords": ["Posts grid", "Posts", "Events", "News", "Stories"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

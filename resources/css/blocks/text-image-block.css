@@ -1,0 +1,24 @@
+.text-image-block{
+    @apply mb-11 lg:mb-32;
+}
+
+.text-image-block .text-image-imgcol{
+    @apply w-full md:max-w-[488px];
+}
+
+.text-image-block .text-image-imgcol .image-wrapper{
+    width: 100%;
+    padding-top: calc( calc(361/488) * 100% );
+}
+
+.text-image-block .title_primary{
+    @apply mb-4 lg:mb-5;
+}
+
+.text-image-block .title_secondary{
+    @apply mb-1 lg:mb-6 text-primary;
+}
+
+.text-image-block p{
+    @apply text-lg font-theme font-light mb-4 lg:mb-6;
+}

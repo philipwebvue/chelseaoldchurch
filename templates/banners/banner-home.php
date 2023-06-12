@@ -1,5 +1,5 @@
 <div class="max-w-content mx-auto relative">
-    <div class="">
+    <div>
         <?php
         $position = get_post_meta(get_the_ID(),'featured_image_position',true);
         $image_args=[

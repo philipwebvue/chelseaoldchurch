@@ -1,0 +1,25 @@
+{
+    "name": "acf/text-image-block",
+    "title": "Text Image",
+    "description": "Text Image block to display 2 column content with Text/Media or Media/Text.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "align-pull-right",
+    "keywords": ["Text Media", "Text"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

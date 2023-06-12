@@ -1,0 +1,25 @@
+{
+    "name": "acf/images-grid-block",
+    "title": "Images grid",
+    "description": "Images grid block to display 4 images in a row.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "grid-view",
+    "keywords": ["Image grid", "Images"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

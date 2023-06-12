@@ -1,0 +1,29 @@
+{
+    "name": "acf/faq-block",
+    "title": "FAQ Block",
+    "description": "This block will used to create FAQs using Accordion.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "excerpt-view",
+    "keywords": ["FAQ Block", "Accordion"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "styles": [
+        { "name": "gray", "label": "Gray", "isDefault": true },
+        { "name": "darkpink", "label": "Dark Pink" }
+    ],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "link": false
+        }
+    }
+}

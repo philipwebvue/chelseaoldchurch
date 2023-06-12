@@ -10,10 +10,20 @@ function chelseaoldchurch_custom_block_categories($categories) {
 }
 add_filter('block_categories', 'chelseaoldchurch_custom_block_categories', 10, 2);
 
-
+/**
+ * Code to register custom ACF block dynamically based on folders inside blocks folder in theme. It will check for block.json file for register block.
+ */
 add_action( 'init', 'chelseaoldchurch_register_acf_blocks' );
 function chelseaoldchurch_register_acf_blocks() {
-    register_block_type( get_template_directory().'/blocks/example-block' );
-    register_block_type( get_template_directory().'/blocks/banner-intro-block' );
-}
+    $blocksDirectory = get_template_directory().'/blocks/';
+    $blocks = glob($blocksDirectory.'*',GLOB_ONLYDIR);
+    foreach($blocks as $blockpath){
+        $blockfolders = explode('/',$blockpath);
+        $blockFolder = array_pop($blockfolders);
 
+        if(file_exists($blocksDirectory.$blockFolder.'/block.json')){
+            register_block_type($blocksDirectory.$blockFolder);
+        }
+        
+    }    
+}

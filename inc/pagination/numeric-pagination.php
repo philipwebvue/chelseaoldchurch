@@ -32,16 +32,21 @@ function ottra_numeric_posts_nav($query=null) {
         $links[] = $paged + 1;
     }
 
-    echo '<div class="navigation"><ul>' . "\n";
+    echo '<div class="navigation w-full flex justify-between items-center">' . "\n";
 
-    if ( $paged != 1 )
-        echo '<li class="page-num page-num-first"><a href='.get_pagenum_link(1).'><span class="double-chevron" >&laquo;</span></a></li>';
-
+    /*if ( $paged != 1 ):
+        echo '<div class="page-num page-num-first"><a href='.get_pagenum_link(1).'><span class="double-chevron" >&laquo;</span></a></div>';
+        echo '<ul class="hidden md:flex justify-center">'."\n";
+    endif;*/
     /** Previous Post Link */
 
-    if ( ottra_get_previous_posts_link() )
-        printf( '<li>%s</li>' . "\n", ottra_get_previous_posts_link('<span class="single-chevron" >&lsaquo;</span>') ); //;
-
+    if ( ottra_get_previous_posts_link() ):
+        printf( '<div>%s</div>' . "\n", ottra_get_previous_posts_link('<span>Previous</span>') ); //;
+        echo '<ul>'."\n";
+    else:
+        printf( '<div class="nav-prev disable">%s</div>' . "\n",'<span>Previous</span>' ); //;
+        echo '<ul>'."\n";
+    endif;
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
         $class = 1 == $paged ? ' class="active"' : '';
@@ -70,13 +75,18 @@ function ottra_numeric_posts_nav($query=null) {
 
     /** Next Post Link */
 
-    if ( ottra_get_next_posts_link('',0,$query) )
-        printf( '<li>%s</li>' . "\n", ottra_get_next_posts_link('<span class="single-chevron" >&rsaquo;</span>',0,$query) ); //
-
-    if ( $paged != $max )
+    if ( ottra_get_next_posts_link('',0,$query) ):
+        echo '</ul>'. "\n";
+        printf( '<div>%s</div>' . "\n", ottra_get_next_posts_link('<span>Next</span>',0,$query) ); //
+    else:
+        echo '</ul>'. "\n";
+        printf( '<div class="nav-next disable">%s</div>' . "\n", '<span>Next</span>' ); //
+    endif;
+    /*if ( $paged != $max ):
         echo '<li class="page-num page-num-last"><a href='.get_pagenum_link($max).'><span class="double-chevron" >&raquo;</span></a></li>';
-
-    echo '</ul></div>' . "\n";
+        echo '</ul>'. "\n";
+    endif;*/
+    echo '</div>' . "\n";
 
 }
 
@@ -97,7 +107,7 @@ function ottra_get_previous_posts_link( $label = null ) {
          * @param string $attributes Attributes for the anchor tag.
          */
 
-        return '<a href="' . previous_posts( false ) . "\" >" . preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label ) . '</a>';
+        return '<a href="' . previous_posts( false ) . "\" class='nav-prev'>" . preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label ) . '</a>';
     }
 }
 function ottra_get_next_posts_link( $label = null, $max_page = 0 ,$wp_query=null) {
@@ -128,7 +138,7 @@ function ottra_get_next_posts_link( $label = null, $max_page = 0 ,$wp_query=null
          * @param string $attributes Attributes for the anchor tag.
          */
 
-        return '<a href="' . next_posts( $max_page, false ) . "\" >" . preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label ) . '</a>';
+        return '<a href="' . next_posts( $max_page, false ) . "\" class='nav-next'>" . preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label ) . '</a>';
     }
 }
 
