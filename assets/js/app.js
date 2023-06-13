@@ -10,7 +10,7 @@
 (function ($) {
   var current_menu = 'main-menu';
   var menu_start_page = '';
-  $(document).ready(function () {
+  $(function () {
     var current_menu_item = $(document).find('#offcanvas-menu-container .current-menu-item');
     var menu_start_page = current_menu_item.closest('.section-menu').prop('id');
     if (menu_start_page) {
@@ -19,7 +19,7 @@
   });
   // here $ would be point to jQuery object
 
-  $(document).ready(function () {
+  $(function () {
     $('.slick-banner-slider').slick({
       'asNavFor': $('.slick-banner-text')
     });
@@ -55,7 +55,7 @@
   });
   var windowsize = $(window).width();
   var lastWidth = $(window).width();
-  $(document).ready(function () {
+  $(function () {
     if (windowsize < 1280) {
       initialStateShowHide();
     }
@@ -178,12 +178,28 @@
       opacity: "toggle"
     }, 'fast');
   }
-  $(document).ready(function () {
+  $(function () {
     var height = $(document).find('#post-content .column-two').height();
     if (typeof height !== "undefined" && height > 0) {
       $(document).find('#post-content').css('min-height', height + 'px');
     }
     $('.js-select-2-single').select2();
+  });
+  $(window).on('load', function () {
+    $('.open-m-popup').magnificPopup({
+      type: 'inline',
+      gallery: {
+        enabled: true
+      },
+      closeBtnInside: true,
+      mainClass: "magnific-popup-staff",
+      callbacks: {
+        buildControls: function buildControls() {
+          // re-appends controls inside the main container
+          this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+        }
+      }
+    });
   });
 })(jQuery);
 

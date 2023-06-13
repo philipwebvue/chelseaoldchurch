@@ -22,8 +22,6 @@ add_action( 'wp_enqueue_scripts', 'creativestream_enqueue_styles' );
 
 function creativestream_enqueue_scripts()
 {
-
-    wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), _THEME_VERSION );
     wp_enqueue_script( 'jquery-effects-core', false, array( 'jquery' ) );
 
     /** slick slider script */
@@ -31,6 +29,11 @@ function creativestream_enqueue_scripts()
 
     /**  select2 js script */
     wp_enqueue_script( 'select2-js', get_template_directory_uri() . '/assets/js/select2.min.js', array( 'jquery' ), _THEME_VERSION );
+
+    /** magnific popup script */
+    wp_enqueue_script( 'magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), _THEME_VERSION );
+
+    wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), _THEME_VERSION );
 }
 
 add_action( 'wp_enqueue_scripts', 'creativestream_enqueue_scripts' );

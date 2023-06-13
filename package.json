@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@wolves.ink/tailwindcss-fluid-fontsize": "^1.0.1",
+    "magnific-popup": "^1.1.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
     "select2": "^4.1.0-rc.0",

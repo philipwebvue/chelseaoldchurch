@@ -3,7 +3,7 @@
     let current_menu = 'main-menu';
     let menu_start_page = '';
 
-    $(document).ready(function() {
+    $(function() {
         var current_menu_item = $(document).find('#offcanvas-menu-container .current-menu-item');
         var menu_start_page = current_menu_item.closest('.section-menu').prop('id');
         if(menu_start_page){
@@ -12,7 +12,7 @@
     });
     // here $ would be point to jQuery object
 
-    $(document).ready(function() {
+    $(function() {
         $('.slick-banner-slider').slick({
             'asNavFor':$('.slick-banner-text')
         });
@@ -56,7 +56,7 @@
     var lastWidth = $(window).width();
 
 
-    $(document).ready(function() {
+    $(function() {
         if(windowsize < 1280){
             initialStateShowHide()
         }
@@ -103,7 +103,7 @@
         })
 
         $(document).find('.toggle-show-hide').toggleClass('h-0 invisible py-0');
-    })
+    });
 
     $(document).on('click', '#menu-button',function(e){
         animateOpenMenu();
@@ -205,12 +205,29 @@
     }
 
 
-    $(document).ready(function(){
+    $(function() {
         let height = $(document).find('#post-content .column-two').height();
         if(typeof height !== "undefined" && height > 0){
             $(document).find('#post-content').css('min-height', height+'px');
         }
 
         $('.js-select-2-single').select2();
+    });
+
+    $(window).on('load',function(){
+        $('.open-m-popup').magnificPopup({
+            type:'inline',
+            gallery:{
+                enabled:true
+            },
+            closeBtnInside: true,
+            mainClass: "magnific-popup-staff",
+            callbacks: {    
+                buildControls: function() {
+                  // re-appends controls inside the main container
+                  this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
+            }
+        });
     });
 })(jQuery);

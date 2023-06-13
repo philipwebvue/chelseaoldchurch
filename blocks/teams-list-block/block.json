@@ -1,0 +1,25 @@
+{
+    "name": "acf/team-list-block",
+    "title": "Team Member List",
+    "description": "This block will display list view of team members.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "grid-view",
+    "keywords": ["Team", "Team grid", "Team list", "Team members", "Members"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}
