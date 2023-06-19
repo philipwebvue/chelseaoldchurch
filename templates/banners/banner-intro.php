@@ -33,7 +33,7 @@ $header_image = get_field('header_image',$postID);
 if(!empty($title) || !empty($content)):
     $postType = get_post_type();
 ?>
-<div class="banner-intro mx-auto bg-white pt-4 lg:pt-9 relative<?php echo !empty($container_width) ? " max-w-[90vw] lg:max-w-content-left 2xl:max-w-".$container_width : ""?> <?php echo $show_background_image && !empty($header_image) ? 'has-banner' : 'no-banner'; ?>">
+<div class="banner-intro mx-auto bg-white pt-4 lg:pt-9 relative <?php echo !empty($container_width) ? " max-w-[90vw] lg:max-w-content-left 2xl:max-w-".$container_width : ""?> <?php echo $show_background_image && !empty($header_image) ? 'has-banner' : 'no-banner'; ?>">
     <div class="flex justify-center">
         <?php echo custom_breadcrumbs(['separator'=>'<span class="px-1.5">/</span>']);?>
     </div>
@@ -52,6 +52,9 @@ if(!empty($title) || !empty($content)):
     <?php if($heading!=null):?>
         <?php echo $heading;?>
     <?php endif;?>
+    <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ?>
+        <div class="share-this-page flex justify-center items-center pb-5"><div class="text-lg font-medium text-secondary mr-3.5">Share this page</div><?php ADDTOANY_SHARE_SAVE_KIT(); ?></div>
+    <?php } ?>
     <div class="<?php echo $content_class;?>">
         <?php echo $content;?>
     </div>

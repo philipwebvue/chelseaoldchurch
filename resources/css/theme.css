@@ -364,3 +364,12 @@ section{
 #offcanvas-menu-container .top-navigation ul > li:first-child::before{
     @apply hidden;
 }
+
+.share-this-page .addtoany_list{
+    @apply flex items-center;
+}
+.share-this-page .addtoany_list a:not(.addtoany_special_service)>span{
+	border-radius:100% !important;
+	padding: 3px;
+    display: block;
+}
