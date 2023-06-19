@@ -222,3 +222,20 @@ Magnific popup css for image gallery
 .banner-intro .content p:nth-child(2){
     @apply clear-both;
 }
+
+/** Mailchimp form fields **/
+.mc4wp-form-fields{
+    @apply grid grid-cols-1 md:grid-cols-4 gap-1 max-w-[975px];
+}
+.mc4wp-response .mc4wp-alert{
+    @apply text-sm;
+}
+.mc4wp-response .mc4wp-error{
+    @apply text-rose-700;
+}
+.mc4wp-response .mc4wp-success{
+    @apply text-emerald-700;
+}
+.mc4wp-text-paragraph{
+    @apply mb-5 lg:mb-16 pt-5 lg:pt-10 col-span-4 max-w-[715px] text-lg font-medium;
+}

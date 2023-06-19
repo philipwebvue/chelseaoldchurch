@@ -48,6 +48,14 @@ body.home{
     @apply xl:pt-[330px];
 }
 
+input[type="text"],
+input[type="search"],
+input[type="url"],
+input[type="email"],
+input[type="number"]{
+    @apply border-b-4 border-[#D8D8D8] bg-transparent focus:outline-none focus:border-primary text-lg font-light placeholder:text-black placeholder:text-lg placeholder:font-light;
+}
+
 #page.site{
     @apply bg-[url('../images/footer-bg-mobile.png')] md:bg-[url('../images/footer-bg.png')] bg-no-repeat bg-[center_bottom] bg-contain 2xl:bg-auto;
 }
