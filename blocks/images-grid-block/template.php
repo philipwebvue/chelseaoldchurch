@@ -26,7 +26,7 @@ if($images && sizeof($images) > 0):
             foreach($images as $img):
                 $image_html = wp_get_attachment_image( $img['image'], 'medium_large', false, ['class'=>'absolute w-full h-full top-0 left-0 object-cover duration-300'] );
                 ?>
-                <a href="#" class="image-col relative block overflow-hidden">
+                <a href="<?php echo $img['link']['url'];?>" title="<?php echo $img['link']['title'];?>" class="image-col relative block overflow-hidden">
                     <div class="relative aspect-square w-full h-full">
                         <?php echo $image_html;?>
                     </div>

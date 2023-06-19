@@ -5,3 +5,6 @@
 @import "text-image-block";
 @import "images-grid-block";
 @import "faq-block";
+@import "container-block";
+@import "image-gallery-block";
+@import "page-links-block";

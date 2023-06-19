@@ -22,8 +22,16 @@ $args = array_merge($default_args, $args);
 
 $image = apply_filters('cs_display_featured_image',$args['ID']);
 $maincontent = get_the_content($args['ID']);
+$terms_list = get_the_terms( $args['ID'], 'staff_category' );
+
+$termClasses = [];
+if($terms_list):
+    foreach($terms_list as $sterms):
+        $termClasses[]=$sterms->slug;
+    endforeach;
+endif;
 ?>
-<div class="card-wide relative">
+<div class="card-wide card-staff relative <?php echo implode(" ",$termClasses);?>">
     <?php if ($args['show_image']):?>
         <a href="#<?php echo sanitize_title(get_the_title());?>" class="card-header open-m-popup"">
             <div class="image-wrapper">

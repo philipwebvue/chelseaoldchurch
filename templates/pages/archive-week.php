@@ -1,3 +1,16 @@
+<?php $post_type = get_queried_object()->name; ?>
+<div class="banner-intro-block bg-white max-w-content-desktop mx-auto py-4 lg:py-9 relative text-center">
+    <div class="flex justify-center">
+        <?php echo custom_breadcrumbs(['separator'=>'<span class="px-1.5">/</span>']);?>
+    </div>
+    <h1 class="heading font-prata text-3xl text-center mb-4 lg:mb-5"><?php echo get_field( $post_type . '_title', 'option' ) ?? get_the_archive_title(); ?></h1>
+    <?php if ( get_field( $post_type . '_introduction', 'option' ) ): ?>
+        <div class="content large pb-9 text-left">
+            <?php echo wpautop( get_field( $post_type . '_introduction', 'option' ) ); ?>
+        </div>
+    <?php endif; ?>
+    <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
+</div>
 <?php
 //get the post for this monday make an exception for sunday
 if ( wp_date( 'l', current_time( 'timestamp' ) ) !== 'Sunday' ):
@@ -57,10 +70,10 @@ if ( $latest_posts->have_posts() ) :
                 $args = [
                     'next' => 'Next Week',
                     'prev' => 'Previous Week',
+                    'week_start' => date('jS F',strtotime($start_date))
                 ];
-                get_template_part( 'templates/navigation/menu', 'next-previous',$args );
+                get_template_part( 'templates/navigation/menu', 'next-previous-week',$args );
                 ?>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 ">
                     <div class="col-span-2 grid grid-cols-2 gap-4 lg:gap-8">
                         <?php foreach ( $days_of_the_week as $key => $day ): ?>
@@ -75,7 +88,7 @@ if ( $latest_posts->have_posts() ) :
                             <?php get_template_part( 'templates/components/cards/card', 'week-day-events', $card_args ); ?>
                         <?php endforeach; ?>
                         <div class="col-span-2">
-                            <div class="flex">
+                            <div class="flex card-week-feature-art">
                                 <div class=" w-1/2 overflow-hidden">
                                     <?php
                                     $attachment_id = get_field('image');
@@ -84,8 +97,9 @@ if ( $latest_posts->have_posts() ) :
                                     <img class="object-cover" src="<?php echo $img_atts[0]; ?>" />
                                 </div>
                                 <div class="w-1/2">
-                                    <?php echo get_field('section_title'); ?>
-                                    <?php echo get_field('title'); ?>
+                                    <h4 class="mb-4"><?php echo get_field('section_title'); ?></h4>
+                                    <h3><?php echo get_field('title'); ?></h3>
+                                    <?php echo get_field('content');?>
                                 </div>
                             </div>
 

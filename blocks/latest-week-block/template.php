@@ -20,16 +20,34 @@ $links_left_col = get_field('links_left_col');
 $links_right_col = get_field('links_right_col');
 $firstday = date('jS', strtotime("this week"));
 $lastday = date('jS M Y', strtotime("sunday 0 week"));
+
+$qargs = [
+    'post_type'=>['week'],
+    'post_status'=>['publish' ],
+    'posts_per_page' => 1,
+    'meta_query'=>[
+        [
+            'key'=>'event_week_day',
+            'value'=>date('Ymd', strtotime("this week")),
+        ]
+    ]
+];
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container mx-auto 3xl:max-w-content lg:px-5 3xl:px-0 pt-4 lg:pt-9 border-t-2 border-secondary">
+        <?php if(!empty($latest_event)):
+            $latest_event_text = get_the_excerpt($latest_event);
+        ?>
         <div class="flex flex-col justify-center lg:flex-row lg:items-start mb-9">
             <div class="text-center text-xl lg:text-right font-prata text-primary w-full lg:w-auto lg:min-w-max">Latest</div>
-            <div class="text-center text-lg lg:text-left w-full lg:w-auto lg:pl-2.5 lg:pr-6 xl:pr-10 lg:self-center">On Sunday 26th we are having a day of musical events: An organ recital and a Choral Evensong</div>
+            <div class="text-center text-lg lg:text-left w-full lg:w-auto lg:pl-2.5 lg:pr-6 xl:pr-10 lg:self-center"><?php echo $latest_event_text;?></div>
+            <?php if($link_more_events):?>
             <div class="text-center lg:text-left w-full lg:w-auto lg:min-w-max">
-                <a href="#" class="button">Find out more</a>
+                <?php echo get_acflink_html($link_more_events,'button');?>
             </div>
+            <?php endif;?>
         </div>
+        <?php endif;?>
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <div class="col-left">
                 <div class="image-wrapper w-full relative">
@@ -56,7 +74,60 @@ $lastday = date('jS M Y', strtotime("sunday 0 week"));
                     <div class="w-full md:w-auto font-theme text-lg leading-none pb-1"><?php echo $firstday.' - '.$lastday;?></div>
                 </div>
                 <div class="latest-week-events flex-1">
+                    <?php
+                    $weekquery = new WP_Query($qargs);
+                    if($weekquery->have_posts(  )):
+                    ?>
                     <ul>
+                        <?php
+                        while($weekquery->have_posts(  )):
+                            $weekquery->the_post();
+                            $weekID = get_the_ID();
+                            $start_date = get_field( 'event_week_day',$weekID );
+
+                            $days_of_the_week = [
+                                'monday'    => [
+                                    'name' => 'Monday',
+                                    'date' => date( 'l jS F', strtotime( $start_date ) )
+                                ],
+                                'tuesday'   => [
+                                    'name' => 'Tuesday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +1 day' ) )
+                                ],
+                                'wednesday' => [
+                                    'name' => 'Wednesday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +2 day' ) )
+                                ],
+                                'thursday'  => [
+                                    'name' => 'Thursday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +3 day' ) )
+                                ],
+                                'friday'    => [
+                                    'name' => 'Friday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +4 day' ) )
+                                ],
+                                'saturday'  => [
+                                    'name' => 'Saturday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +5 day' ) )
+                                ]
+                            ];
+                            
+                            foreach ( $days_of_the_week as $key => $day ): 
+                                $events_data = get_field( $key . '_day_events',$weekID ) ?? [];
+                                if ( is_array( $events_data ) && sizeof($events_data) > 0 ):
+                                ?>
+                                <li>
+                                    <div class="text-xl font-prata mb-1"><?php echo $day[ 'date' ];?></div>                                    
+                                    <?php foreach ( $events_data as $event_data ): ?>
+                                        <div class="font-theme text-lg font-light"><span class="font-medium"><?php echo wp_date( 'h:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></span> <?php echo get_field( 'event_meta', $event_data->ID ); ?></div>
+                                    <?php endforeach; ?>                            
+                                </li>
+                                <?php endif;?>
+                            <?php endforeach; ?>
+                            <?php
+                        endwhile;
+                        /*
+                        ?>
                         <li>
                             <div class="text-xl font-prata mb-1">Thursday 9th February</div>
                             <div class="font-theme text-lg font-light"><span class="font-medium">8.00 am: Holy Communion</span> Revd Max Bayliss</div>                            
@@ -71,7 +142,12 @@ $lastday = date('jS M Y', strtotime("sunday 0 week"));
                             <div class="font-theme text-lg font-light"><span class="font-medium mr-2.5">8.00 am: Holy Communion</span> Revd Max Bayliss</div>
                             <div class="font-theme text-lg font-light"><span class="font-medium mr-2.5">8.00 am: Holy Communion</span> Revd Max Bayliss</div>
                         </li>
+                        <?php */ ?>
                     </ul>
+                    <?php
+                    endif;
+                    wp_reset_postdata();
+                    ?>
                 </div>
                 <div class="flex flex-col items-end pr-4 lg:pr-0">
                     <?php if(isset($links_right_col['link_primary']) && !empty($links_right_col['link_primary'])):?>

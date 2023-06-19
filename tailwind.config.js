@@ -31,7 +31,7 @@ module.exports = {
         fluidFontSize: {
             'xs': [0.75, 0.75], //12px
             'sm': [0.875, 0.875], //14px
-            '1xbase': [0.75, 1.125], //14px
+            '1xbase': [0.75, 1.125], //18px
             'base': [1, 1.25], //20px
             'lg': [1, 1.5], //24px
             'mxl': [1.125, 1.75], //28px
@@ -81,6 +81,9 @@ module.exports = {
             colors: {
                 'black' : '#000000',
                 'white' : '#ffffff',
+                'gray'  : {
+                    DEFAULT:'#F2F0F5'
+                },
                 'primary': {
                     DEFAULT:'#900942'
                 },

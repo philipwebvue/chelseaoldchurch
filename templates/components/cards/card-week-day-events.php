@@ -23,8 +23,8 @@ $events_data = get_field( $args[ 'key' ] . '_day_events' ) ?? [];
 ?>
 <div class="card-week-day-event <?php echo $args[ 'is_sunday' ] ? 'is-sunday' : ''; ?>">
     <div class="card-header">
-        <h4><?php echo $args[ 'name' ]; ?></h4>
-        <h4><?php echo $args[ 'date' ]; ?></h4>
+        <h4 class="mb-0"><?php echo $args[ 'name' ]; ?></h4>
+        <h4 class="mb-0"><?php echo $args[ 'date' ]; ?></h4>
     </div>
     <?php if ( $show_data ): ?>
         <div class="card-body">

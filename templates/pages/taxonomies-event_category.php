@@ -3,6 +3,9 @@
 ?>
 
 <div class="banner-intro-block bg-white max-w-content-desktop mx-auto py-4 lg:py-9 relative text-center">
+    <div class="flex justify-center">
+        <?php echo custom_breadcrumbs(['separator'=>'<span class="px-1.5">/</span>']);?>
+    </div>
     <h1 class="heading font-prata text-3xl text-center mb-4 lg:mb-5"><?php echo get_field( 'event_title', 'option' ) ?? $term->name; ?></h1>
     <?php if ( get_field( 'event_introduction', 'option' ) ): ?>
         <div class="content large pb-9 text-left">

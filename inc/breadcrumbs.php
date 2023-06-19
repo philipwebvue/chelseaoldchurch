@@ -44,7 +44,7 @@ function custom_breadcrumbs($args=[]) {
 
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 
-            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</span></li>';
+            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . post_type_archive_title(false) . '</span></li>';
 
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 

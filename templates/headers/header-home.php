@@ -10,10 +10,13 @@
  * @updated 1.0
  */
 ?>
-<header id="masthead">
+<header id="masthead" class="w-full absolute top-0 left-0 z-10 bg-white/[.8]">
     <div class="hidden xl:flex justify-between items-center topbar px-8 pt-2 pb-3">
         <div class="support-link">
-            <a href="#">Support Chelsea Old Church</a>
+            <?php
+            $support_link = get_field('support_link','option');
+            echo get_acflink_html($support_link,'');
+            ?>
         </div>
         <div class="flex self-end">
             <div class="mobile-search-box mr-4">

@@ -589,6 +589,33 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
             'maxlength'         => '',
         );
         $weekday_settings[] = array(
+            'key'               => 'field_642ecdf7e5ed2',
+            'label'             => 'Content',
+            'name'              => 'content',
+            'type'              => 'wysiwyg',
+            'instructions'      => '',
+            'required'          => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_642ed1be08e02',
+                        'operator' => '==',
+                        'value'    => '1',
+                    ),
+                ),
+            ),
+            'wrapper'           => array(
+                'width' => '',
+                'class' => '',
+                'id'    => '',
+            ),
+            'default_value'     => '',
+            'tabs'              => 'all',
+            'toolbar'           => 'basic',
+            'media_upload'      => 0,
+            'delay'             => 0,
+        );
+        $weekday_settings[] = array(
             'key'               => 'field_642ece0be5ed2',
             'label'             => 'Image',
             'name'              => 'image',

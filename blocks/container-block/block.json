@@ -1,0 +1,24 @@
+{
+    "name": "acf/container-block",
+    "title": "Container - Block",
+    "description": "Add container arround other blocks.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "keywords": ["Container", "Section"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "background": true,
+            "text": true,
+            "link": true
+        }        
+    }
+}

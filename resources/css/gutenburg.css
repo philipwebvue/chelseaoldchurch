@@ -8,3 +8,28 @@
 #post-content ol{
     @apply list-decimal list-inside;
 }
+
+.alignright{
+    float:right;
+}
+.alignleft{
+    float:left;
+}
+
+.wp-block-pullquote{
+    @apply relative pb-[18px] leading-normal after:content-[''] after:w-1/4 lg:after:w-[184px] after:absolute after:h-[2px] md:after:h-[4px] after:bg-primary after:bottom-0 after:left-0;
+}
+
+figure.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+    @apply text-1xbase font-light pt-3 text-black relative bg-none text-left mt-0 px-0;
+}
+figure.wp-block-gallery.has-nested-images figure.wp-block-image img{
+    @apply h-full max-h-[411px];
+}
+figure.wp-block-gallery.has-nested-images{
+    @apply mb-3.5;
+}
+
+.has-drop-cap:not(:focus) {
+    @apply font-medium first-letter:text-5xl first-letter:leading-normal first-letter:font-prata first-letter:mr-2.5 first-letter:my-0;
+}

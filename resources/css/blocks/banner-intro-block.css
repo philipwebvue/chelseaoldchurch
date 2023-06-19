@@ -1,5 +1,5 @@
 .banner-intro-block{
-    @apply mt-[-12.375rem] px-3 md:px-[46px];
+    @apply -mt-[10%] lg:mt-[-12.375rem] px-3 md:px-[46px];
 }
 .banner-intro-block .content{
     @apply max-w-[812px] mx-auto;

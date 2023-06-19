@@ -36,6 +36,7 @@ $theme_includes = array(
     '/breadcrumbs.php',                         // Breadcrumbs
     '/pagination/numeric-pagination.php',       // Pagination
     '/acf_register_blocks.php',                  // ACF Custom Gutenberg block registration
+    '/navwalker.php',                           // Custom nav walker for mega menu
 );
 
 foreach ( $theme_includes as $file )

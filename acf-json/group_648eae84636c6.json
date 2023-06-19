@@ -1,0 +1,136 @@
+{
+    "key": "group_648eae84636c6",
+    "title": "General Theme Options",
+    "fields": [
+        {
+            "key": "field_648eaebdc3ec8",
+            "label": "General Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_648fdaced1ae4",
+            "label": "Top bar support link",
+            "name": "support_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "This link will display on home page top bar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_648eae84c3ec7",
+            "label": "Events overview page",
+            "name": "events_overview_page",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Select Events Overview page to set for back link to events overview",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_648eaecdc3ec9",
+            "label": "Story overview page",
+            "name": "story_overview_page",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Select Story Overview page to set for back link to Story overview",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_648eaee1c3eca",
+            "label": "News overview page",
+            "name": "news_overview_page",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Select News Overview page to set for back link to News overview",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "default-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1687149409
+}

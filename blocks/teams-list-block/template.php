@@ -30,7 +30,7 @@
     <div class="w-full max-w-[90vw] 2xl:max-w-content-desktop mx-auto px-5"> <?php // xl:max-w-content ?>
         <?php if ( $query->have_posts() ): ?>
             <div class="mb-4 lg:mb-9 flex justify-center flex-wrap">
-                <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => 'staff_category' ] ); ?>
+                <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies-staff_category', [ 'taxonomy' => 'staff_category' ] ); ?>
             </div>
             <div>
                 <?php while ( $query->have_posts() ) : ?>

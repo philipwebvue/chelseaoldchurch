@@ -1,7 +1,7 @@
 .faq-block{
-    @apply py-9;
+    @apply mb-5;
 }
-.faq-block.is-style-gray{
+/*.faq-block.is-style-gray{
     @apply bg-[#F2F0F5] text-black;
 }
 .faq-block.is-style-darkpink{
@@ -9,7 +9,7 @@
 }
 .faq-block.is-style-darkpink a{
     @apply bg-primary text-white;
-}
+}*/
 .faq-block ul{
     @apply list-disc pl-6;
 }

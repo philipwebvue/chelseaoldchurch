@@ -12,10 +12,6 @@
         "mode": "preview",
         "renderTemplate": "template.php"
     },
-    "styles": [
-        { "name": "gray", "label": "Gray", "isDefault": true },
-        { "name": "darkpink", "label": "Dark Pink" }
-    ],
     "supports": {
         "align": false,
         "anchor": true,

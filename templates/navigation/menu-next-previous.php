@@ -10,8 +10,8 @@
  * @updated 1.0
  */
 $default_args=[
-        'next'=>'next',
-        'prev'=>'prev',
+    'next'=>'next',
+    'prev'=>'prev',
 ];
 
 $args = array_merge($default_args, $args);

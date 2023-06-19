@@ -1,0 +1,18 @@
+.container-block{
+    @apply after:content-[''] after:table after:clear-both;
+}
+.container-block.background-gray{
+    @apply bg-gray;
+}
+.container-block.background-primary{
+    @apply bg-primary;
+}
+.container-block.background-secondary{
+    @apply bg-secondary;
+}
+.container-block.background-white{
+    @apply bg-white;
+}
+.container-block.background-black{
+    @apply bg-black;
+}

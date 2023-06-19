@@ -43,6 +43,10 @@ endif;
     </div>
     <div id="content" class="site-content mx-auto ">
         <main id="primary" class="site-main  min-h-default">
+            <?php 
+            if(is_page() || is_singular('event') || is_singular( 'news' ) || is_single( ) || is_singular( 'story' )):
+                get_template_part('templates/banners/banner','intro'); 
+            endif; ?>
             <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'top']); ?>
             <?php
             if (is_front_page()):

@@ -1,0 +1,25 @@
+{
+    "name": "acf/pagelinks-block",
+    "title": "Page Links",
+    "description": "This block will used to display page links with feature image in grid format.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "grid-view",
+    "keywords": ["Page Links", "Links"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "background": false,
+            "text": false,
+            "link": false
+        }
+    }
+}
