@@ -9,18 +9,22 @@
  * @since 1.0
  * @updated 1.0
  */
-?>
 
-<?php
-//$position = get_post_meta(get_the_ID(),'featured_image_position',true)??0;
-//$position_class=$position?'object-'.$position:'object-center';
-//echo get_the_post_thumbnail( get_the_ID(), 'large', array( 'class'=>$position_class ) );
+ $default_args=[
+    'is_archieve'=>false,
+];
+
+$args = array_merge($default_args, $args);
+
 ?>
 <div id="page-content">
-    <?php /*
-    <div id="post-content" class="mx-auto">
-        <?php the_content(); ?>
-    </div>
-    */ ?>
-    <?php the_content(); ?>
+    <?php if($args['is_archieve']):?>
+        <div id="post-content" class="w-full max-w-content-desktop mx-auto px-6 lg:px-5">
+            <?php the_content(); ?>
+        </div>
+    <?php else:?>
+        <div id="post-content" class="mx-auto max-w-content-left px-6 lg:px-8">
+            <?php the_content(); ?>
+        </div>
+    <?php endif;?>
 </div>

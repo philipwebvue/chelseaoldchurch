@@ -3,7 +3,7 @@
     width: 100%;
 }
 .image-gallery-grid .image-item{
-    @apply flex-auto min-w-[240px] mr-3 mb-3 relative;
+    @apply flex-auto min-w-[240px] md:mr-3 mb-3 relative hidden first:block md:block;
 }
 .image-gallery-grid .image-item .image-wrapper{
     @apply w-full h-[316px] overflow-hidden relative;

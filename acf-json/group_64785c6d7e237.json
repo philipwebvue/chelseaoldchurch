@@ -24,7 +24,7 @@
             "label": "Latest event",
             "name": "latest_event",
             "aria-label": "",
-            "type": "post_object",
+            "type": "wysiwyg",
             "instructions": "If not selected than it will display info of first upcoming event.",
             "required": 0,
             "conditional_logic": 0,
@@ -33,15 +33,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "event"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_647887e74d510",
@@ -275,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685623555
+    "modified": 1687497561
 }

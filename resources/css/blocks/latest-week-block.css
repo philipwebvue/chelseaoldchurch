@@ -3,7 +3,7 @@
 }
 
 .latest-week-block .latest-week-events{
-    @apply max-h-[209px] xl:max-h-[302px] 2xl:max-h-[418px] 3xl:max-h-[500px] overflow-y-auto pr-3 mb-4 xl:mb-8 border-b-[1px] border-b-white/[.5];
+    @apply max-h-[209px] min-h-[209px] xl:max-h-[302px] 2xl:max-h-[418px] 3xl:max-h-[530px] overflow-y-auto pr-3 mb-4 xl:mb-8 border-b-[1px] border-b-white/[.5];
 }
 
 .latest-week-block .latest-week-events::-webkit-scrollbar {

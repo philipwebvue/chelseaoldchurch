@@ -97,7 +97,7 @@
       "customSpacingSize": false
     },
     "layout": {
-      "contentSize": "1091px",
+      "contentSize": "1026px",
       "wideSize": "100%"
     },
     "color": {
@@ -367,7 +367,16 @@
     },
     "blocks": {
       "core/group": {
-
+        "spacing": {
+          "margin": {
+            "top": "0",
+            "bottom": "1.25em"
+          },
+          "padding": {
+            "left" : "0",
+            "right" : "0"
+          }
+        }
       },
       "core/paragraph": {
         "spacing": {

@@ -10,7 +10,7 @@
  * @updated 1.0
  */
 ?>
-<header id="masthead" class="w-full absolute top-0 left-0 z-10 bg-white/[.8]">
+<header id="masthead" class="absolute">
     <div class="hidden xl:flex justify-between items-center topbar px-8 pt-2 pb-3">
         <div class="support-link">
             <?php
@@ -25,7 +25,7 @@
             <?php get_template_part( 'templates/navigation/menu', 'static-secondary' ); ?>
         </div>
     </div>
-    <div class="flex xl:flex-col justify-between items-center site-header w-full py-2.5 lg:py-4 xl:py-8 px-4 lg:px-8">
+    <div class="flex xl:flex-col justify-between items-center site-header w-full py-2.5 lg:py-4 xl:pt-8 xl:pb-5 px-4 lg:px-8">
         <div id="site-branding" class="flex xl:justify-center">
             <div id="logo-container" class="logo-container xl:mb-5">
                 <a href="<?php echo home_url( '/' ); ?>">

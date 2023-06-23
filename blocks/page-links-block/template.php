@@ -20,7 +20,7 @@ $page_links  = get_field('page_links');
 if(!empty($page_links)):
 ?>
 <div id="<?php echo $anchor; ?>" class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-3">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <?php
         foreach($page_links as $pglink):
             global $post;

@@ -10,7 +10,7 @@
  * @updated 1.0
  */
 ?>
-<header id="masthead" class="w-full absolute top-0 left-0 z-10 bg-white/[.8]">
+<header id="masthead" class="absolute">
     <div class="flex justify-between xl:justify-start site-header w-full py-2.5 lg:py-4 px-4 lg:px-8 relative">
         <div id="site-branding" class="site-branding-col flex md:pt-1 lg:pt-2">
             <div id="logo-container" class="logo-container md:mb-1 lg:mb-2.5">

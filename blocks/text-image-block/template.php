@@ -34,7 +34,7 @@ $image_position= get_field('image_position');
 
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="container xl:max-w-content-desktop px-5 sm:px-0 md:px-5 mx-auto">
+    <div class="container xl:max-w-content-desktop px-5 mx-auto">
         <div class="flex flex-col <?php echo $image_position=='right' ? 'md:flex-row-reverse': 'md:flex-row';?>">
             <?php if($image):?>
             <div class="text-image-imgcol mb-5 md:mb-0">

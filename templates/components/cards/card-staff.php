@@ -33,7 +33,7 @@ endif;
 ?>
 <div class="card-wide card-staff relative <?php echo implode(" ",$termClasses);?>">
     <?php if ($args['show_image']):?>
-        <a href="#<?php echo sanitize_title(get_the_title());?>" class="card-header open-m-popup"">
+        <a href="#<?php echo sanitize_title(get_the_title());?>" class="card-header staffhead-m-popup"">
             <div class="image-wrapper">
                 <?php echo $image; ?>
             </div>
@@ -53,7 +53,12 @@ endif;
         <?php if ($args['show_body']): ?>
             <div class="excerpt">
                 <?php
-                    $excerpt = get_field('custom_excerpt',$args['ID']);                    
+                    $excerpt = get_field('custom_excerpt',$args['ID']);
+                    if($maincontent!=""):
+                        $excerpt.=sprintf(' <a href=%s class="staff-more-popup">%s</a>','#'.sanitize_title(get_the_title()),'Find Out More');
+                    else:
+                        $excerpt.=sprintf(' <a href=%s class="staff-more-popup hidden">%s</a>','#'.sanitize_title(get_the_title()),'');
+                    endif;                   
                     echo $excerpt;
                 ?>
             </div>

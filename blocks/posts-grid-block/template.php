@@ -21,7 +21,7 @@
  $qrags = [
     'post_type'              => [ $post_type ],
 	'post_status'            => ['publish' ],
-    'posts_per_page'         => 2, //get_option('posts_per_page')
+    'posts_per_page'         => get_option('posts_per_page'),
     'paged' => $paged
  ];
  if($post_type=='event'):
@@ -36,30 +36,28 @@
 ?>
 
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="w-full max-w-[90vw] 2xl:max-w-content-desktop mx-auto px-5"> <?php // xl:max-w-content ?>
-        <?php if ( $query->have_posts() ): ?>
-            <div class="mb-4 lg:mb-9 flex justify-center flex-wrap">
-                <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
-            </div>
-            <div>
-                <?php while ( $query->have_posts() ) : ?>
-                    <?php $query->the_post(); ?>
-                    <?php
-                    $args = [
-                        'show_date' => true,
-                        'show_body' => true,
-                    ];
-                    
-                    get_template_part( 'templates/components/cards/card', get_post_type(), $args );
-                    ?>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-        <div class="pagination-container flex justify-center">
-            <?php ottra_numeric_posts_nav($query); ?>
+    <?php if ( $query->have_posts() ): ?>
+        <div class="mb-4 lg:mb-9">
+            <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
         </div>
-        <?php
-        wp_reset_postdata();
-        ?>
+        <div>
+            <?php while ( $query->have_posts() ) : ?>
+                <?php $query->the_post(); ?>
+                <?php
+                $args = [
+                    'show_date' => true,
+                    'show_body' => true,
+                ];
+                
+                get_template_part( 'templates/components/cards/card', get_post_type(), $args );
+                ?>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+    <div class="pagination-container flex justify-center">
+        <?php ottra_numeric_posts_nav($query); ?>
     </div>
+    <?php
+    wp_reset_postdata();
+    ?>
 </div>

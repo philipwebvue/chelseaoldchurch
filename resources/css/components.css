@@ -194,38 +194,36 @@ Magnific popup css for image gallery
     @apply flex justify-between py-5;
 }
 .magnific-popup-image-gallery .mfp-bottom-bar .mfp-title{
-    @apply text-center flex-1 text-mxl leading-tight uppercase font-medium px-2.5 self-center;
+    @apply text-center flex-1 text-mxl leading-tight tracking-[0.15em] uppercase font-medium px-2.5 self-center;
 }
 
 /** On page banner intro component **/
 .banner-intro{
-    @apply px-3 md:px-5;
+    @apply px-0 max-w-[calc(100%_-_1.5rem)] lg:max-w-[calc(100%_-_3rem)] min-[1200px]:max-w-content-single;
+}
+.banner-intro.archive-intro{
+    @apply min-[1400px]:max-w-content-desktop;
 }
 .banner-intro.has-banner{
     @apply -mt-[10%] lg:mt-[-12.375rem] 
 }
-.banner-intro .content.single{
-    @apply max-w-[812px] mx-auto;
-}
-.banner-intro .content.large{
-    @apply max-w-[1024px];
-}
-.banner-intro .content p{
+
+.banner-intro .content .text-content p{
     @apply font-light text-lg last:mb-2.5;
 }
 .banner-intro .content p a{
     @apply font-medium;
 }
-.banner-intro .content p:first-child{
-    @apply font-medium first-letter:text-5xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5;
+.banner-intro .content .text-content p:first-child{
+    @apply font-medium first-letter:text-5xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5 first-letter:mt-3.5 first-letter:inline-block first-letter:leading-[0.85];
 }
-.banner-intro .content p:nth-child(2){
+.banner-intro .content .text-content p:nth-child(2){
     @apply clear-both;
 }
 
 /** Mailchimp form fields **/
 .mc4wp-form-fields{
-    @apply grid grid-cols-1 md:grid-cols-4 gap-1 max-w-[975px];
+    @apply md:grid md:grid-cols-4 md:gap-3 max-w-[975px];
 }
 .mc4wp-response .mc4wp-alert{
     @apply text-sm;
@@ -236,6 +234,15 @@ Magnific popup css for image gallery
 .mc4wp-response .mc4wp-success{
     @apply text-emerald-700;
 }
+.mc4wp-form-fields > div:not(.mc4wp-text-paragraph){
+    @apply mb-1 md:mb-0;
+}
 .mc4wp-text-paragraph{
     @apply mb-5 lg:mb-16 pt-5 lg:pt-10 col-span-4 max-w-[715px] text-lg font-medium;
+}
+.mc4wp-form-fields .mc4wp-submit-wrap{
+    @apply inline-flex pt-2 md:pt-0 md:block;
+}
+.mc4wp-form-fields .mc4wp-submit-wrap button,.mc4wp-form-fields .mc4wp-submit-wrap input[type="submit"]{
+    @apply mx-auto;
 }

@@ -154,63 +154,6 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_648d9c7168eef",
-            "label": "Container width",
-            "name": "intro_container_width",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "Select width of introduction block which will appear below banner but overlap on banner.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "page": "Page (1920)",
-                "content": "Content (1680)",
-                "content-left": "Content Left (1090)",
-                "content-right": "Content Right (540)",
-                "content-single": "Content Single (1115)",
-                "content-desktop": "Content Desktop (1380)"
-            },
-            "default_value": "content-single",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_648ea0deb85b5",
-            "label": "Content width",
-            "name": "intro_content_width",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "single": "Single",
-                "large": "Desktop",
-                "full": "100%"
-            },
-            "default_value": "single",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -259,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687072376
+    "modified": 1687517135
 }

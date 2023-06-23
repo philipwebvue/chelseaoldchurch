@@ -11,17 +11,19 @@
 //echo get_the_post_thumbnail( get_the_ID(), 'large', array( 'class'=>$position_class ) );
 ?>
 <div id="page-content">
-    <?php the_content(); 
+    <div id="post-content" class="mx-auto max-w-content-left px-6 lg:px-8">
+        <?php the_content(); 
 
-    //View all events page link
-    $eventPageID = get_field('events_overview_page','option');
-    if($eventPageID):
-    ?>
-    <div class="flex justify-center">
-        <div class="px-5">
-            <a href="<?php echo get_permalink( $eventPageID );?>" class="button">View all events</a>
+        //View all events page link
+        $eventPageID = get_field('events_overview_page','option');
+        if($eventPageID):
+        ?>
+        <div class="flex justify-center">
+            <div class="px-5">
+                <a href="<?php echo get_permalink( $eventPageID );?>" class="button">View all events</a>
+            </div>
         </div>
+        <?php
+        endif;?>
     </div>
-    <?php
-    endif;?>
 </div>

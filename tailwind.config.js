@@ -33,7 +33,7 @@ module.exports = {
             'sm': [0.875, 0.875], //14px
             '1xbase': [0.75, 1.125], //18px
             'base': [1, 1.25], //20px
-            'lg': [1, 1.5], //24px
+            'lg': [1.125, 1.5], //24px
             'mxl': [1.125, 1.75], //28px
             'xl': [1.25, 1.875], //30px
             'xl2': [1.25, 2.25], //36px
@@ -102,8 +102,8 @@ module.exports = {
                 'content': '1680px',
                 'content-left': '1090px',
                 'content-right':'540px',
-                'content-single': '1115px',
-                'content-desktop': '1380px',
+                'content-single': '1114px',
+                'content-desktop': '1360px',
                 '3/5' : '60%',
                 '1/2' : '50%',
                 '1/3' : '33.33%',

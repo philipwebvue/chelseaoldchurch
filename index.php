@@ -21,10 +21,21 @@ else:
     get_template_part('templates/headers/header');
 endif;
 
+$post_type = get_queried_object()->name??get_post_type();
+
+//Some global overview page created using gutenberg and load banner-intro based on those pages.
+$events_overview_page = get_field('events_overview_page','option');
+$story_overview_page = get_field('story_overview_page','option');
+$news_overview_page = get_field('news_overview_page','option');
+$staff_overview_page = get_field('staff_overview_page','option');
+$is_archieve = false;
+
+if($post_type=='page' && ($events_overview_page==get_the_ID() || $story_overview_page==get_the_ID() || $news_overview_page==get_the_ID() || $staff_overview_page==get_the_ID())):
+    $is_archieve=true;
+endif;
 ?>
     <div id="banner-container" class="banner-container">
-        <?php        
-        $post_type = get_queried_object()->name??get_post_type();
+        <?php
         if (is_front_page()):
            get_template_part('templates/banners/banner', 'home');
         elseif(is_search() || is_404()):
@@ -38,14 +49,13 @@ endif;
         else:
             get_template_part('templates/banners/banner',$post_type);
         endif;
-
         ?>
     </div>
     <div id="content" class="site-content mx-auto ">
         <main id="primary" class="site-main  min-h-default">
             <?php 
             if(is_page() || is_singular('event') || is_singular( 'news' ) || is_single( ) || is_singular( 'story' )):
-                get_template_part('templates/banners/banner','intro'); 
+                get_template_part('templates/banners/banner','intro',['is_archieve'=>$is_archieve]); 
             endif; ?>
             <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'top']); ?>
             <?php
@@ -60,7 +70,7 @@ endif;
             elseif(is_archive() || is_home()):
                 get_template_part('templates/pages/archive',get_queried_object()->name??null);
             else:
-                get_template_part('templates/pages/page',get_post_type());
+                get_template_part('templates/pages/page',get_post_type(),['is_archieve'=>$is_archieve]);
             endif;
             ?>
             <?php get_template_part('templates/navigation/menu','onpage-links',['position'=>'bottom']); ?>

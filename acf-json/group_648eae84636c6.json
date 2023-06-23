@@ -112,6 +112,32 @@
             "multiple": 0,
             "allow_null": 0,
             "ui": 1
+        },
+        {
+            "key": "field_64959216f1336",
+            "label": "Staff News overview page",
+            "name": "staff_overview_page",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Select News Overview page to set for back link to News overview",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
         }
     ],
     "location": [
@@ -132,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687149409
+    "modified": 1687523889
 }

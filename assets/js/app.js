@@ -235,6 +235,37 @@
       },
       closeBtnInside: true,
       mainClass: "magnific-popup-staff",
+      fixedContentPos: true,
+      callbacks: {
+        buildControls: function buildControls() {
+          // re-appends controls inside the main container
+          this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+        }
+      }
+    });
+    $('.staffhead-m-popup').magnificPopup({
+      type: 'inline',
+      gallery: {
+        enabled: true
+      },
+      closeBtnInside: true,
+      mainClass: "magnific-popup-staff",
+      fixedContentPos: true,
+      callbacks: {
+        buildControls: function buildControls() {
+          // re-appends controls inside the main container
+          this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+        }
+      }
+    });
+    $('.staff-more-popup').magnificPopup({
+      type: 'inline',
+      gallery: {
+        enabled: true
+      },
+      closeBtnInside: true,
+      mainClass: "magnific-popup-staff",
+      fixedContentPos: true,
       callbacks: {
         buildControls: function buildControls() {
           // re-appends controls inside the main container
@@ -249,6 +280,7 @@
         tCounter: ''
       },
       closeBtnInside: true,
+      fixedContentPos: true,
       mainClass: "magnific-popup-image-gallery",
       callbacks: {
         buildControls: function buildControls() {
@@ -259,10 +291,13 @@
       }
     });
     $(document).on('click', '.primary-navigation .dropdown-toggle', function (e) {
+      e.preventDefault();
       if (!$(this).hasClass('fc')) {
-        e.preventDefault();
         $(this).addClass('fc');
         $(this).next('.dropdown-menu').addClass('toggled');
+      } else {
+        $(this).removeClass('fc');
+        $(this).next('.dropdown-menu').removeClass('toggled');
       }
     });
     $(document).on('click', '.close-megamenu', function (e) {

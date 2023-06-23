@@ -29,7 +29,7 @@ endif;
     $categories = get_terms( $args );
     ?>
     <?php if(!empty($categories)): ?>
-    <ul class="taxonomy-list inline-flex">
+    <ul class="taxonomy-list flex flex-wrap justify-center">
     <?php foreach ( $categories as $category ): 
         $active = "";
         if(is_tax()){

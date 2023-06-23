@@ -12,7 +12,7 @@
 
 $default_args = [
     'taxonomy'   => 'staff_category',
-    'hide_empty' => false,
+    'hide_empty' => true,
 ];
 $args = array_merge( $default_args, $args );
 ?>
@@ -23,7 +23,7 @@ $args = array_merge( $default_args, $args );
     $categories = get_terms( $args );
     ?>
     <?php if(!empty($categories)): ?>
-    <ul class="taxonomy-list inline-flex">
+    <ul class="taxonomy-list flex flex-wrap justify-center">
     <?php foreach ( $categories as $category ): 
         $active = "";
         if(is_tax()){

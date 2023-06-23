@@ -35,12 +35,10 @@ $qargs = [
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container mx-auto 3xl:max-w-content lg:px-5 3xl:px-0 pt-4 lg:pt-9 border-t-2 border-secondary">
-        <?php if(!empty($latest_event)):
-            $latest_event_text = get_the_excerpt($latest_event);
-        ?>
+        <?php if(!empty($latest_event)):?>
         <div class="flex flex-col justify-center lg:flex-row lg:items-start mb-9">
             <div class="text-center text-xl lg:text-right font-prata text-primary w-full lg:w-auto lg:min-w-max">Latest</div>
-            <div class="text-center text-lg lg:text-left w-full lg:w-auto lg:pl-2.5 lg:pr-6 xl:pr-10 lg:self-center"><?php echo $latest_event_text;?></div>
+            <div class="text-center text-lg lg:text-left w-full lg:w-auto lg:pl-2.5 lg:pr-6 xl:pr-10 lg:self-center"><?php echo $latest_event;?></div>
             <?php if($link_more_events):?>
             <div class="text-center lg:text-left w-full lg:w-auto lg:min-w-max">
                 <?php echo get_acflink_html($link_more_events,'button');?>
@@ -50,11 +48,11 @@ $qargs = [
         <?php endif;?>
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <div class="col-left">
-                <div class="image-wrapper w-full relative">
+                <div class="image-wrapper w-full relative aspect-square">
                     <?php
                     $img_atts = wp_get_attachment_image_src( $leftcol_image, 'medium_large' );
                     ?>
-                    <img class="object-cover" src="<?php echo $img_atts[0]; ?>" />
+                    <img class="object-cover absolute top-0 left-0 w-full h-full" src="<?php echo $img_atts[0]; ?>" />
                     <div class="absolute w-full h-full left-0 top-0 flex flex-col justify-between pt-7 pb-7 xl:pt-9 xl:pb-11 pl-7 pr-7 xl:pl-11 xl:pr-11 text-white">
                         <div class="w-full font-prata text-4xl leading-none"><?php echo $leftcol_title;?></div>
                         <div class="flex flex-col items-end">
@@ -70,8 +68,8 @@ $qargs = [
             </div>
             <div class="col-right bg-primary pt-7 pb-7 xl:pt-9 xl:pb-11 pl-7 pr-3 xl:pl-11 xl:pr-11 flex flex-col text-white">
                 <div class="flex flex-wrap items-end pb-6 md:pb-8 xl:pb-12 border-b-[1px] border-b-white/[.5] mb-2.5">
-                    <div class="w-full md:w-auto font-prata text-4xl mb-2 sm:mb-0 lg:mr-8 2xl:mr-20 leading-none">This week</div>
-                    <div class="w-full md:w-auto font-theme text-lg leading-none pb-1"><?php echo $firstday.' - '.$lastday;?></div>
+                    <div class="w-full sm:w-auto font-prata text-4xl mb-2 sm:mb-0 sm:mr-5 lg:mr-8 2xl:mr-20 leading-none">This week</div>
+                    <div class="w-full sm:w-auto font-theme text-lg leading-none pb-1"><?php echo $firstday.' - '.$lastday;?></div>
                 </div>
                 <div class="latest-week-events flex-1">
                     <?php
