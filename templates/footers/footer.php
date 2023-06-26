@@ -28,7 +28,7 @@ $contatPageLink['link'] = get_theme_mod('creativestream_contact_url');
         </div>
     </div>
 
-    <div id="footer-quick-links" class="col-span-12 lg:col-span-9 xl:col-span-6 2xl:col-span-8 mb-0 sm:mb-6 order-2">
+    <div id="footer-quick-links" class="col-span-12 lg:col-span-9 xl:col-span-6 2xl:col-span-8 mb-0 sm:mb-6 order-2 xl:flex xl:justify-between">
         <ul class="flex flex-col lg:flex-row justify-center lg:justify-end xl:justify-center">
         <?php if($business[ 'telephone_number' ] ):?>
             <?php echo '<li>'.$business[ 'telephone_number' ].'</li><li class="separator">|</li>'; ?>
@@ -39,10 +39,10 @@ $contatPageLink['link'] = get_theme_mod('creativestream_contact_url');
         <?php if ( $business[ 'address' ] ): ?>
             <?php echo '<li>'.$business[ 'address' ].'</li>'; ?>
         <?php endif; ?>
-        <?php if($contatPageLink['link']):?>
-            <li><a href="<?php echo $contatPageLink['link'];?>" class="contact-page-link"><?php echo $contatPageLink['link_text'];?></a></li>
-        <?php endif;?>
         </ul>
+        <?php if($contatPageLink['link']):?>
+            <div class="text-center"><a href="<?php echo $contatPageLink['link'];?>" class="contact-page-link button"><?php echo $contatPageLink['link_text'];?></a></div>
+        <?php endif;?>
     </div>
 
     <div class="col-span-12 lg:col-span-3 2xl:col-span-2 mb-6 order-0 lg:order-3">

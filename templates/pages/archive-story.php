@@ -13,7 +13,9 @@ $post_type = get_queried_object()->name;
             </div>
         <?php endif; ?>
     </div>
-    <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
+    <div class="mb-4 lg:mb-14 pt-5 lg:pt-7 pb-0.5 flex justify-center flex-wrap">
+        <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
+    </div>
 </div>
 <section class="stories-listview">
     <div class="w-full max-w-content-desktop mx-auto px-6 lg:px-8"> <?php // xl:max-w-content ?>

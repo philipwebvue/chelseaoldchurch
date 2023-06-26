@@ -199,7 +199,7 @@ Magnific popup css for image gallery
 
 /** On page banner intro component **/
 .banner-intro{
-    @apply px-0 max-w-[calc(100%_-_1.5rem)] lg:max-w-[calc(100%_-_3rem)] min-[1200px]:max-w-content-single;
+    @apply px-0 max-w-[calc(100%_-_1.5rem)] lg:max-w-[calc(100%_-_3rem)] min-[1200px]:max-w-content-left;
 }
 .banner-intro.archive-intro{
     @apply min-[1400px]:max-w-content-desktop;

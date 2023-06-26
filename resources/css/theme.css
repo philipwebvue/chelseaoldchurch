@@ -102,6 +102,16 @@ input[type="number"]{
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item > a{
     @apply inline-block font-theme pb-0.5 text-lg tracking-[0.15em] uppercase font-medium no-underline relative after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:rounded-[2px] after:duration-300;
 }
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item > a.fc{
+    @apply after:w-full;
+}
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-item > a,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-parent > a,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-ancestor > a,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-page-ancestor > a,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-page-parent > a{
+    @apply after:w-full;
+}
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item-has-children{
     @apply static;
 }
@@ -169,7 +179,7 @@ section{
     @apply mt-8 last:mb-8;
 }
 .taxonomy-list a{
-    @apply text-lg tracking-[0.15em] uppercase font-medium !no-underline relative pb-3 inline-block;
+    @apply text-lg tracking-[0.15em] uppercase font-medium !no-underline relative pb-1 inline-block;
     @apply before:content-[''] before:absolute before:w-full before:h-1 before:left-0 before:bottom-0 before:bg-[#EFEAED] before:rounded-[2px];
     @apply after:content-[''] after:absolute after:w-0 after:h-1 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300 after:rounded-[2px];
 }

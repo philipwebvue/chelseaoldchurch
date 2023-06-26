@@ -37,7 +37,7 @@
 
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
     <?php if ( $query->have_posts() ): ?>
-        <div class="mb-4 lg:mb-9">
+        <div class="mb-4 lg:mb-14 pt-5 lg:pt-7 pb-0.5 flex justify-center flex-wrap">
             <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
         </div>
         <div>

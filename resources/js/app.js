@@ -332,6 +332,8 @@
         $(document).on('click','.primary-navigation .dropdown-toggle',function(e){
             e.preventDefault();
             if(!$(this).hasClass('fc')){                
+                $(this).parents('.primary-navigation').find('.dropdown-toggle.fc').removeClass('fc');
+                $(this).parents('.primary-navigation').find('.dropdown-menu.toggled').removeClass('toggled');
                 $(this).addClass('fc');
                 $(this).next('.dropdown-menu').addClass('toggled');
             }

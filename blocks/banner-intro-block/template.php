@@ -25,10 +25,8 @@ $title_tag = get_field('title_tag') ? get_field('title_tag') : 'h1';
 $title_class = 'heading font-prata text-3xl text-center';
 
 if($content_width =='single'):
-    $class_name .= ' max-w-[90vw] 2xl:max-w-content-single';
     $title_class .= ' mb-4 lg:mb-5';
 else:
-    $class_name .= ' max-w-[90vw] 2xl:max-w-content-desktop';
     $title_class .= ' mb-4 lg:mb-12';
 endif;
 

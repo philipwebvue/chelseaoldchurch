@@ -32,19 +32,30 @@ if($terms_list):
 endif;
 ?>
 <div class="card-wide card-staff relative <?php echo implode(" ",$termClasses);?>">
-    <?php if ($args['show_image']):?>
+    <?php if ($args['show_image']):
+        if($maincontent!=""):
+        ?>
         <a href="#<?php echo sanitize_title(get_the_title());?>" class="card-header staffhead-m-popup"">
             <div class="image-wrapper">
                 <?php echo $image; ?>
             </div>
         </a>
+        <?php else: ?>
+            <div class="image-wrapper">
+                <?php echo $image; ?>
+            </div>
+        <?php endif;?>
     <?php endif; ?>
     <div class="card-body">
         <?php if ($args['show_title']): ?>
             <h3 class="title">
+                <?php if($maincontent!=""): ?>
                 <a href="#<?php echo sanitize_title(get_the_title());?>" class="open-m-popup">
                     <?php the_title(); ?>
                 </a>
+                <?php else: ?>
+                    <?php the_title(); ?>
+                <?php endif;?>
             </h3>
         <?php endif; ?>
         <?php if (get_field('staff_role',$args['ID'])): ?>

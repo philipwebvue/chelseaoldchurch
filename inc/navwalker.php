@@ -19,7 +19,7 @@ class Chelseoldchurch_Nav_Walker extends Walker_Nav_Menu
             
             if(!empty($item_imageID)){
                 $item_image_html = '<div class="menu-item-image-wrap overflow-hidden aspect-square relative mb-3">';
-                $item_image_html .= wp_get_attachment_image( $item_imageID, 'medium', false, ['class'=>'object-cover absolute left-0 top-0 duration-300'] );
+                $item_image_html .= wp_get_attachment_image( $item_imageID, 'medium', false, ['class'=>'object-cover absolute left-0 top-0 duration-300 w-full h-full'] );
                 $item_image_html .= '</div>';
                 $newitem_html = '<a href="'.$item->url.'" class="menu-item-image-title">'.$item_image_html.'<span>'.$item->title.'</span></a>';
                 $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', $newitem_html, $item_html);
@@ -29,7 +29,7 @@ class Chelseoldchurch_Nav_Walker extends Walker_Nav_Menu
             $item_imageID = get_field('meun_image',$item);            
             if(!empty($item_imageID)){
                 $item_image_html = '<div class="menu-item-image-wrap overflow-hidden aspect-square relative mb-3">';
-                $item_image_html .= wp_get_attachment_image( $item_imageID, 'medium', false, ['class'=>'object-cover absolute left-0 top-0 duration-300'] );
+                $item_image_html .= wp_get_attachment_image( $item_imageID, 'medium', false, ['class'=>'object-cover absolute left-0 top-0 duration-300 w-full h-full'] );
                 $item_image_html .= '</div>';
                 $newitem_html = '<a href="'.$item->url.'" class="menu-item-image-title">'.$item_image_html.'<span>'.$item->title.'</span></a>';
                 $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', $newitem_html, $item_html);

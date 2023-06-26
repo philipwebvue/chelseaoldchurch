@@ -5,7 +5,7 @@ $header_image = get_field('header_image',$postID);
 
 if($show_background_image): 
     if(!empty($header_image)) : ?>
-    <div class="w-full mx-auto">
+    <div class="w-full mx-auto 3xl:max-w-content">
         <div class="relative aspect-banner w-full">
             <?php
             $position = get_field('header_image_position',$postID) ? get_field('header_image_position',$postID) : 'center';            
@@ -20,7 +20,7 @@ if($show_background_image):
     <?php 
     else:
     ?>
-    <div class="max-w-content mx-auto">
+    <div class="w-full mx-auto 3xl:max-w-content">
         <div class="relative aspect-banner w-full">
             <?php
             $position = get_post_meta(get_the_ID(),'featured_image_position',true) ? get_post_meta(get_the_ID(),'featured_image_position',true) : 'center';

@@ -1,5 +1,8 @@
 .banner-intro-block{
-    @apply -mt-[10%] lg:mt-[-12.375rem] px-3 md:px-[46px];
+    @apply -mt-[10%] lg:mt-[-12.375rem] px-0 max-w-[calc(100%_-_2.5rem)] lg:max-w-[calc(100%_-_3rem)] min-[1200px]:max-w-content-single;
+}
+.banner-intro-block .heading{
+    @apply max-w-[1020px] mx-auto;
 }
 .banner-intro-block .content{
     @apply max-w-[812px] mx-auto;

@@ -1905,7 +1905,7 @@ Magnific popup css for image gallery
 @media (min-width: 1200px){
 
     .banner-intro{
-        max-width: 1114px;
+        max-width: 1090px;
     }
 }
 @media (min-width: 1400px){
@@ -2122,19 +2122,25 @@ Magnific popup css for image gallery
 }
 .banner-intro-block {
     margin-top: -10%;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem
-}
-@media (min-width: 768px) {
-    .banner-intro-block {
-        padding-left: 46px;
-        padding-right: 46px
-    }
+    max-width: calc(100% - 2.5rem);
+    padding-left: 0px;
+    padding-right: 0px
 }
 @media (min-width: 1024px) {
     .banner-intro-block {
-        margin-top: -12.375rem
+        margin-top: -12.375rem;
+        max-width: calc(100% - 3rem)
     }
+}
+@media (min-width: 1200px) {
+    .banner-intro-block {
+        max-width: 1114px
+    }
+}
+.banner-intro-block .heading {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1020px
 }
 .banner-intro-block .content {
     margin-left: auto;
@@ -4702,6 +4708,18 @@ input[type="number"] {
   content: var(--tw-content);
   width: 100%;
 }
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item > a.fc::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-item > a::after,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-parent > a::after,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-menu-ancestor > a::after,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-page-ancestor > a::after,
+#header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item.current-page-parent > a::after {
+  content: var(--tw-content);
+  width: 100%;
+}
 #header-navigation .desktop-main-navigation ul#primary-menu-list > li.menu-item-has-children {
   position: static;
 }
@@ -4854,7 +4872,7 @@ section:last-child {
 .taxonomy-list a {
   position: relative;
   display: inline-block;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -5912,6 +5930,10 @@ section:last-child {
     margin-bottom: 3rem;
   }
 
+  .lg\:mb-14 {
+    margin-bottom: 3.5rem;
+  }
+
   .lg\:mb-16 {
     margin-bottom: 4rem;
   }
@@ -5926,10 +5948,6 @@ section:last-child {
 
   .lg\:mb-5 {
     margin-bottom: 1.25rem;
-  }
-
-  .lg\:mb-9 {
-    margin-bottom: 2.25rem;
   }
 
   .lg\:mr-8 {
@@ -5979,6 +5997,10 @@ section:last-child {
 
   .lg\:max-w-\[calc\(100\%_-_3rem\)\] {
     max-width: calc(100% - 3rem);
+  }
+
+  .lg\:max-w-content-single {
+    max-width: 1114px;
   }
 
   .lg\:grid-cols-2 {
@@ -6113,6 +6135,10 @@ section:last-child {
     padding-top: 0.75rem;
   }
 
+  .lg\:pt-7 {
+    padding-top: 1.75rem;
+  }
+
   .lg\:pt-9 {
     padding-top: 2.25rem;
   }
@@ -6141,6 +6167,12 @@ section:last-child {
   .lg\:after\:w-\[184px\]::after {
     content: var(--tw-content);
     width: 184px;
+  }
+}
+@media (min-width: 1200px) {
+
+  .min-\[1200px\]\:max-w-content-single {
+    max-width: 1114px;
   }
 }
 @media (min-width: 1280px) {
@@ -6205,6 +6237,10 @@ section:last-child {
     max-width: 1360px;
   }
 
+  .xl\:max-w-content-single {
+    max-width: 1114px;
+  }
+
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -6223,6 +6259,10 @@ section:last-child {
 
   .xl\:justify-center {
     justify-content: center;
+  }
+
+  .xl\:justify-between {
+    justify-content: space-between;
   }
 
   .xl\:self-end {
