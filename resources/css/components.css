@@ -35,13 +35,10 @@
     @apply italic;
 }
 .card-week-day-event .card-body p.event-meta {
-    @apply text-black;
+    @apply text-black font-light text-lg;
 }
 .card-week-day-event.is-sunday{
     @apply bg-primary text-white;
-}
-.card-week-day-event.is-sunday .card-body p{
-    @apply text-white;
 }
 .card-week-day-event.is-sunday .card-body p{
     @apply text-white;

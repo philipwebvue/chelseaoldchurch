@@ -75,7 +75,10 @@ input[type="number"]{
     @apply md:w-[80px];
 }
 .home .site-header{
-    @apply border-b-0;
+    @apply w-full py-2.5 lg:py-4 xl:pt-8 xl:pb-5 px-4 lg:px-8 border-b-0;
+}
+.home .site-header.is-sticky{
+    @apply xl:pt-4;
 }
 /** Desktop header navigation **/
 #masthead{
@@ -361,7 +364,7 @@ section{
     font-size: 16px;
 }
 #offcanvas-menu-container .support-link a{
-    @apply font-prata text-primary no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
+    @apply font-prata text-primary tracking-[0] no-underline relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-full after:bg-primary after:ease-linear after:duration-300;
     font-size: 14px;
     line-height: 32px;
 }

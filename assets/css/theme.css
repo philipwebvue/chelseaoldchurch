@@ -1483,8 +1483,10 @@ figure.wp-block-gallery.has-nested-images{
     font-style: italic;
 }
 .card-week-day-event .card-body p.event-meta{
+    font-weight: 300;
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity));
+    font-size: clamp(1.125rem, calc(1.125rem + ((1.5 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.5rem);
 }
 .card-week-day-event.is-sunday{
     --tw-bg-opacity: 1;
@@ -3536,10 +3538,6 @@ video {
   max-width: 715px;
 }
 
-.max-w-\[90vw\] {
-  max-width: 90vw;
-}
-
 .max-w-\[975px\] {
   max-width: 975px;
 }
@@ -4252,6 +4250,10 @@ video {
   letter-spacing: 0.15em;
 }
 
+.tracking-\[0\] {
+  letter-spacing: 0;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -4568,7 +4570,32 @@ input[type="number"] {
   }
 }
 .home .site-header {
+  width: 100%;
   border-bottom-width: 0;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 1024px) {
+
+  .home .site-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .home .site-header {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .home .site-header.is-sticky {
+    padding-top: 1rem;
+  }
 }
 /** Desktop header navigation **/
 #masthead {
@@ -5340,6 +5367,7 @@ section:last-child {
 #offcanvas-menu-container .support-link a {
   position: relative;
   font-family: "Prata", serif;
+  letter-spacing: 0;
   --tw-text-opacity: 1;
   color: rgb(144 9 66 / var(--tw-text-opacity));
   text-decoration-line: none;
@@ -5999,10 +6027,6 @@ section:last-child {
     max-width: calc(100% - 3rem);
   }
 
-  .lg\:max-w-content-single {
-    max-width: 1114px;
-  }
-
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -6169,12 +6193,6 @@ section:last-child {
     width: 184px;
   }
 }
-@media (min-width: 1200px) {
-
-  .min-\[1200px\]\:max-w-content-single {
-    max-width: 1114px;
-  }
-}
 @media (min-width: 1280px) {
 
   .xl\:col-span-6 {
@@ -6187,10 +6205,6 @@ section:last-child {
 
   .xl\:mb-2\.5 {
     margin-bottom: 0.625rem;
-  }
-
-  .xl\:mb-5 {
-    margin-bottom: 1.25rem;
   }
 
   .xl\:block {
@@ -6235,10 +6249,6 @@ section:last-child {
 
   .xl\:max-w-content-desktop {
     max-width: 1360px;
-  }
-
-  .xl\:max-w-content-single {
-    max-width: 1114px;
   }
 
   .xl\:grid-cols-4 {
@@ -6371,14 +6381,6 @@ section:last-child {
 
   .\32xl\:w-1\/3 {
     width: 33.333333%;
-  }
-
-  .\32xl\:max-w-content-desktop {
-    max-width: 1360px;
-  }
-
-  .\32xl\:max-w-content-single {
-    max-width: 1114px;
   }
 
   .\32xl\:grid-cols-4 {

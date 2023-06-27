@@ -17,33 +17,32 @@ if ( ! empty( $block['anchor'] ) ) {
     $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
 }
 
-$class_name = 'text-image-block';
+$class_name = 'text-image-block latest-story';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
 
 // Load values and assign defaults.
 $title_primary = get_field('title_primary');
-$title_secondary = get_field('title_secondary');
-$content = get_field('text_content');
-$link_1 = get_field('link_1');
-$link_2 = get_field('link_2');
-$image = get_field('image');
-$image_position= get_field('image_position');
-
-
+$image_position = get_field('image_position');
+$story = get_field('story');
+$link = get_field('link');
+if($story):
+    $imageid = get_post_thumbnail_id($story);
+    $title_secondary = get_the_title( $story );
+    $content = get_the_excerpt( $story );
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container xl:max-w-content-desktop px-5 mx-auto">
         <div class="flex flex-col <?php echo $image_position=='right' ? 'md:flex-row-reverse': 'md:flex-row';?>">
-            <?php if($image):?>
+            <?php if($imageid):?>
             <div class="text-image-imgcol mb-5 md:mb-0">
                 <?php if($title_primary!=''):?>
                 <h2 class="h1 title_primary md:hidden"><?php echo $title_primary;?></h2>
                 <?php endif; ?>
                 <div class="image-wrapper relative">
                     <?php
-                    $img_atts = wp_get_attachment_image_src( $image, 'medium_large' );
+                        $img_atts = wp_get_attachment_image_src( $imageid, 'medium_large' );
                     ?>
                     <img class="absolute object-cover top-0 left-0 w-full h-full" src="<?php echo $img_atts[0]; ?>" width="<?php echo $img_atts[1]; ?>" height="<?php echo $img_atts[2]; ?>" alt="" />
                 </div>
@@ -56,17 +55,12 @@ $image_position= get_field('image_position');
                 <?php if($title_secondary!=''):?>
                 <h3 class="h2 title_secondary"><?php echo $title_secondary;?></h3>
                 <?php endif; ?>
-                <?php echo $content;?>
+                <?php echo wpautop( $content );?>
                 <div class="flex flex-col items-center md:items-start">
+                    <div class="mb-2.5"><a href="<?php echo get_the_permalink( $story );?>" class="button">Read On</a></div>
                     <?php
-                    if($link_1):
-                        ?><div class="mb-2.5"><?php echo get_acflink_html($link_1,'button');?></div>
-                        <?php
-                    endif;
-                    ?>
-                    <?php
-                    if($link_2):
-                        ?><div><?php echo get_acflink_html($link_2,'button');?></div>
+                    if($link):
+                        ?><div><?php echo get_acflink_html($link,'button');?></div>
                         <?php
                     endif;
                     ?>
@@ -75,3 +69,6 @@ $image_position= get_field('image_position');
         </div>
     </div>
 </div>
+<?php
+endif;
+?>

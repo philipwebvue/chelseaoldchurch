@@ -25,9 +25,9 @@
             <?php get_template_part( 'templates/navigation/menu', 'static-secondary' ); ?>
         </div>
     </div>
-    <div class="flex xl:flex-col justify-between items-center site-header w-full py-2.5 lg:py-4 xl:pt-8 xl:pb-5 px-4 lg:px-8">
+    <div class="flex xl:flex-col justify-between items-center site-header">
         <div id="site-branding" class="flex xl:justify-center">
-            <div id="logo-container" class="logo-container xl:mb-5">
+            <div id="logo-container" class="logo-container">
                 <a href="<?php echo home_url( '/' ); ?>">
                     <?php the_custom_logo(); ?>
                 </a>

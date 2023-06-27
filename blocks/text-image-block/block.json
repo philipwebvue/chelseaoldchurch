@@ -1,13 +1,13 @@
 {
     "name": "acf/text-image-block",
-    "title": "Text Image",
-    "description": "Text Image block to display 2 column content with Text/Media or Media/Text.",
+    "title": "Text Image - Latest story",
+    "description": "Text Image block to display 2 column content with fetched from selected story.",
     "style": "",
     "script": "",
     "apiVersion": 2,
     "category": "chelseaoldchurch-blocks",
     "icon": "align-pull-right",
-    "keywords": ["Text Media", "Text"],
+    "keywords": ["Text Media", "Text", "Latest story", "Stories"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "template.php"
