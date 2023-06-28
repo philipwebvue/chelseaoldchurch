@@ -1316,11 +1316,15 @@ figure.wp-block-gallery.has-nested-images figure.wp-block-image img{
 figure.wp-block-gallery.has-nested-images{
     margin-bottom:0.875rem;
 }
-
+.wp-block-image.alignright{
+    margin: 0 0 1em 1em;
+}
+.wp-block-image.alignleft{
+    margin: 0 1em 1em 0;
+}
 .has-drop-cap:not(:focus){
     font-weight:500;
 }
-
 .has-drop-cap:not(:focus)::first-letter{
     float:left;
     margin-right:0.625rem;

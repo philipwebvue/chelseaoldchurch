@@ -38,7 +38,12 @@ figure.wp-block-gallery.has-nested-images figure.wp-block-image img{
 figure.wp-block-gallery.has-nested-images{
     @apply mb-3.5;
 }
-
+.wp-block-image.alignright{
+    margin: 0 0 1em 1em;
+}
+.wp-block-image.alignleft{
+    margin: 0 1em 1em 0;
+}
 .has-drop-cap:not(:focus) {
     @apply font-medium first-letter:text-5xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5 first-letter:mt-3.5 first-letter:inline-block first-letter:leading-[0.85];
 }
