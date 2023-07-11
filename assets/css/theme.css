@@ -1254,6 +1254,7 @@ p a {
 #page-content #post-content blockquote.wp-block-quote{
     border-left-width:0;
 }
+
 #page-content #post-content blockquote.wp-block-quote,
 .wp-block-pullquote{
     position:relative;
@@ -1261,6 +1262,7 @@ p a {
     padding-bottom:0.5rem;
     line-height:1.5;
 }
+
 #page-content #post-content blockquote.wp-block-quote::after,
 .wp-block-pullquote::after{
     position:absolute;
@@ -1273,6 +1275,7 @@ p a {
     --tw-content:'';
     content:var(--tw-content);
 }
+
 @media (min-width: 768px){#page-content #post-content blockquote.wp-block-quote,
 .wp-block-pullquote{
         padding-bottom:1rem;
@@ -1282,12 +1285,19 @@ p a {
         height:4px;
     }
 }
+
 @media (min-width: 1024px){#page-content #post-content blockquote.wp-block-quote::after,
 .wp-block-pullquote::after{
         content:var(--tw-content);
         width:184px;
     }
 }
+
+#page-content #post-content .wp-block-pullquote.alignright,
+#page-content #post-content .wp-block-pullquote.alignleft{
+    margin-top:0px;
+}
+
 #page-content #post-content blockquote.wp-block-quote p:last-child,
 .wp-block-pullquote p:last-child{
     margin-bottom:0px;
@@ -4102,10 +4112,6 @@ video {
   padding-bottom: 2.25rem;
 }
 
-.pb-\[9px\] {
-  padding-bottom: 9px;
-}
-
 .pb-\[calc\(calc\(310\/247\)_\*_100\%\)\] {
   padding-bottom: calc(calc(310 / 247) * 100%);
 }
@@ -4640,6 +4646,16 @@ input[type="number"] {
     padding-top: 2rem;
     padding-bottom: 1.25rem;
   }
+}
+
+.home .site-header .logo-container {
+  margin-bottom: 1rem;
+}
+.home .site-header.is-sticky .logo-container {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 1280px) {
 
   .home .site-header.is-sticky {
     padding-top: 1rem;
@@ -5911,12 +5927,12 @@ section:last-child {
     padding-bottom: 2.5rem;
   }
 
-  .md\:pb-8 {
-    padding-bottom: 2rem;
+  .md\:pb-4 {
+    padding-bottom: 1rem;
   }
 
-  .md\:pb-\[18px\] {
-    padding-bottom: 18px;
+  .md\:pb-8 {
+    padding-bottom: 2rem;
   }
 
   .md\:pl-10 {
@@ -5941,10 +5957,6 @@ section:last-child {
 
   .md\:pt-\[121px\] {
     padding-top: 121px;
-  }
-
-  .md\:pb-4 {
-    padding-bottom: 1rem;
   }
 
   .md\:after\:h-\[3px\]::after {

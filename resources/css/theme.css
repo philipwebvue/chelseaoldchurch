@@ -77,6 +77,14 @@ input[type="number"]{
 .home .site-header{
     @apply w-full py-2.5 lg:py-4 xl:pt-8 xl:pb-5 px-4 lg:px-8 border-b-0;
 }
+
+.home .site-header .logo-container{
+    @apply  mb-4;
+}
+.home .site-header.is-sticky .logo-container{
+    @apply  mb-0;
+}
+
 .home .site-header.is-sticky{
     @apply xl:pt-4;
 }
