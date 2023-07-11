@@ -15,10 +15,9 @@ if ( ! defined( 'ABSPATH' ) )
  * Theme version information, if you have made changes to the css or js files update this to break the caches on the server.
  * Always use _THEME_VERSION when enqueueing styles and scripts
  */
-if ( ! defined( '_THEME_VERSION' ) )
-{
-    // Replace the version number of the theme on each release.
-    define( '_THEME_VERSION', '1.0.0' );
+if (!defined('_THEME_VERSION')) {
+    $theme = wp_get_theme();
+    define('_THEME_VERSION', $theme->Version );//'2.0.3'
 }
 
 $theme_includes = array(
