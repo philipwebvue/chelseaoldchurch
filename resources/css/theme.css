@@ -63,7 +63,7 @@ input[type="number"]{
 
 /** header **/
 .site-header{
-    @apply max-w-[1920px] mx-auto border-b-[5px] lg:border-b-[8px] xl:border-b-[16px] border-b-primary;
+    @apply mx-auto border-b-[5px] lg:border-b-[8px] xl:border-b-[16px] border-b-primary;
 }
 .site-header .logo-container{
     @apply w-[3.75rem] md:w-[5.5rem] xl:w-40 xl:w-48 duration-300;
