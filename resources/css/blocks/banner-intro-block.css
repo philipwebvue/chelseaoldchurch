@@ -17,7 +17,7 @@
     @apply font-medium;
 }
 .banner-intro-block .content p:first-child{
-    @apply font-medium first-letter:text-5xl first-letter:float-left first-letter:font-prata first-letter:mr-2.5;
+    @apply font-medium mb-0 first-letter:text-5xl float-none first-letter:float-left first-letter:font-prata first-letter:leading-none first-letter:mr-2 md:first-letter:mr-5 first-letter:mt-2;
 }
 .banner-intro-block .content p:nth-child(2){
     @apply clear-both;

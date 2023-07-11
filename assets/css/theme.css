@@ -1288,12 +1288,10 @@ p a {
     }
 }
 body .is-layout-constrained > .alignright{
-    -webkit-margin-start:0px;
-            margin-inline-start:0px;
+    margin-inline-start:0px;
 }
 @media (min-width: 768px){body .is-layout-constrained > .alignright{
-        -webkit-margin-start:1rem;
-                margin-inline-start:1rem;
+        margin-inline-start:1rem;
     }
 }
 figure.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{
@@ -2164,13 +2162,22 @@ Magnific popup css for image gallery
     font-weight: 500
 }
 .banner-intro-block .content p:first-child {
+    float: none;
+    margin-bottom: 0px;
     font-weight: 500
 }
 .banner-intro-block .content p:first-child::first-letter {
     float: left;
-    margin-right: 0.625rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
     font-family: "Prata", serif;
+    line-height: 1;
     font-size: clamp(2.313rem, calc(2.313rem + ((4.063 - 2.313) * ((100vw - 20rem) / (96 - 20)))), 4.063rem)
+}
+@media (min-width: 768px) {
+    .banner-intro-block .content p:first-child::first-letter {
+        margin-right: 1.25rem
+    }
 }
 .banner-intro-block .content p:nth-child(2) {
     clear: both
@@ -2536,6 +2543,7 @@ Magnific popup css for image gallery
     }
 }
 .page-links {
+    margin-top: 35px;
     margin-bottom: 35px
 }
 /*@import "example-block";*/
@@ -2923,24 +2931,17 @@ video {
 }
     h2, .h2 {
   font-family: "Prata", serif;
-  font-size: clamp(1.5rem, calc(1.5rem + ((2.5 - 1.5) * ((100vw - 20rem) / (96 - 20)))), 2.5rem);
+  font-size: clamp(1.25rem, calc(1.25rem + ((2.25 - 1.25) * ((100vw - 20rem) / (96 - 20)))), 2.25rem);
 }
     h3, .h3 {
   font-family: "Prata", serif;
   font-size: clamp(1.125rem, calc(1.125rem + ((1.5 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.5rem);
 }
     h4 {
-  margin-bottom: 1rem;
   font-family: "serenity", sans-serif;
   font-weight: 500;
   letter-spacing: 0.15em;
-  font-size: clamp(1.125rem, calc(1.125rem + ((1.75 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.75rem);
-}
-    @media (min-width: 1024px) {
-
-  h4 {
-    margin-bottom: 1.5rem;
-  }
+  font-size: clamp(1.125rem, calc(1.125rem + ((1.75 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.75rem); /*mb-4 lg:mb-6*/
 }
     h5 {
   font-weight: 500;
@@ -3265,6 +3266,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .-mt-\[10\%\] {
   margin-top: -10%;
 }
@@ -3358,8 +3364,7 @@ video {
 }
 
 .ms-0 {
-  -webkit-margin-start: 0px;
-          margin-inline-start: 0px;
+  margin-inline-start: 0px;
 }
 
 .mt-0 {
@@ -3380,6 +3385,14 @@ video {
 
 .mt-\[50\%\] {
   margin-top: 50%;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .block {
@@ -3528,6 +3541,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.min-w-\[288px\] {
+  min-width: 288px;
 }
 
 .max-w-\[1240px\] {
@@ -4226,6 +4243,10 @@ video {
   font-weight: 600;
 }
 
+.\!font-medium {
+  font-weight: 500 !important;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -4306,6 +4327,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.\!text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -4369,12 +4395,24 @@ video {
   font-size: clamp(0.75rem, calc(0.75rem + ((1.125 - 0.75) * ((100vw - 20rem) / (96 - 20)))), 1.125rem);
 }
 
+.\!text-1xbase {
+  font-size: clamp(0.75rem, calc(0.75rem + ((1.125 - 0.75) * ((100vw - 20rem) / (96 - 20)))), 1.125rem) !important;
+}
+
 .text-base {
   font-size: clamp(1rem, calc(1rem + ((1.25 - 1) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
 }
 
+.\!text-base {
+  font-size: clamp(1rem, calc(1rem + ((1.25 - 1) * ((100vw - 20rem) / (96 - 20)))), 1.25rem) !important;
+}
+
 .text-lg {
   font-size: clamp(1.125rem, calc(1.125rem + ((1.5 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.5rem);
+}
+
+.\!text-lg {
+  font-size: clamp(1.125rem, calc(1.125rem + ((1.5 - 1.125) * ((100vw - 20rem) / (96 - 20)))), 1.5rem) !important;
 }
 
 .text-mxl {
@@ -4386,7 +4424,7 @@ video {
 }
 
 .text-2xl {
-  font-size: clamp(1.5rem, calc(1.5rem + ((2.5 - 1.5) * ((100vw - 20rem) / (96 - 20)))), 2.5rem);
+  font-size: clamp(1.25rem, calc(1.25rem + ((2.25 - 1.25) * ((100vw - 20rem) / (96 - 20)))), 2.25rem);
 }
 
 .text-3xl {
@@ -4607,7 +4645,13 @@ input[type="number"] {
   left: 0px;
   z-index: 10;
   width: 100%;
-  background-color: rgb(255 255 255 / .8);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.has-sticky-header #masthead {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .admin-bar #masthead {
   top: 32px;

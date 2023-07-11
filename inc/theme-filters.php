@@ -55,3 +55,19 @@ function event_archive_pre_get_posts( $query ) {
     return $query;
 }
 add_action('pre_get_posts', 'event_archive_pre_get_posts');
+
+/**
+* used to override default settings when blocks are registered
+* @param $settings
+* @param $metadata
+* @return array
+ */
+function filter_metadata_registration( $settings, $metadata ) {
+    if($metadata['name'] === 'pb/accordion-item'){
+        $settings['attributes']['titleTag']['default'] = 'h3';
+    }
+
+
+    return $settings;
+};
+add_filter( 'block_type_metadata_settings', 'filter_metadata_registration', 10, 2 );

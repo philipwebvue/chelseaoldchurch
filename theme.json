@@ -46,11 +46,11 @@
         },
         {
           "slug": "xlarge",
-          "size": "2.5rem",
+          "size": "2.25rem",
           "name": "XLarge",
           "fluid": {
-            "min": "1.5rem",
-            "max": "2.5rem"
+            "min": "1.25rem",
+            "max": "2.25rem"
           }
         },
         {
@@ -387,6 +387,12 @@
         }
       },
       "core/pullquote": {
+        "attributes": {
+
+        },
+        "align": {
+
+        },
         "color": {
           "text": "var(--wp--preset--color--primary)"
         },

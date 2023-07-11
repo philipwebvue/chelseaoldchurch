@@ -1,7 +1,7 @@
-<?php $post_type = get_queried_object()->name; ?>
+<?php $post_type = get_post_type(); ?>
     <div class="banner-intro archive-intro mx-auto bg-white pt-4 lg:pt-9 relative has-banner">
         <div class="flex justify-center px-3">
-            <?php echo custom_breadcrumbs( [ 'separator' => '<span class="px-1.5">/</span>' ] ); ?>
+            <?php echo custom_breadcrumbs(['separator'=>'<span class="px-1.5">/</span>']);?>
         </div>
         <div class="content mx-auto max-w-content-left px-3 lg:px-8">
             <h1 class="heading font-prata text-3xl text-center mb-4 lg:mb-5"><?php echo get_field( $post_type . '_title', 'option' ) ?? get_the_archive_title(); ?></h1>
@@ -14,29 +14,6 @@
         <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies', [ 'taxonomy' => $post_type . '_category' ] ); ?>
     </div>
 <?php
-//get the post for this monday make an exception for sunday
-if ( wp_date( 'l', current_time( 'timestamp' ) ) !== 'Sunday' ):
-    $monday = date( 'Y-m-d', strtotime( 'Monday this week' ) );
-else:
-    $monday = date( 'Y-m-d', strtotime( "last Monday" ) );
-endif;
-
-$args = [
-    'post_type'      => 'week',
-    'posts_per_page' => 1,
-    'meta_query'     => array(
-        array(
-            'key'     => 'event_week_day',
-            'value'   => $monday,
-            'type'    => 'DATE',
-            'compare' => '=',
-        )
-    ),
-];
-
-$latest_posts = new WP_Query( $args );
-if ( $latest_posts->have_posts() ) :
-    while ( $latest_posts->have_posts() ) : $latest_posts->the_post();
 
         $start_date = get_field( 'event_week_day' );
         $days_of_the_week = [
@@ -70,11 +47,11 @@ if ( $latest_posts->have_posts() ) :
             <div class=" w-full max-w-content mx-auto"> <?php // xl:max-w-content ?>
                 <?php
                 $args = [
-                    'next'       => 'Next Week',
-                    'prev'       => 'Previous Week',
-                    'week_start' => date( 'jS F', strtotime( $start_date ) )
+                    'next' => 'Next Week',
+                    'prev' => 'Previous Week',
+                    'week_start' => date('jS F',strtotime($start_date))
                 ];
-                get_template_part( 'templates/navigation/menu', 'next-previous-week', $args );
+                get_template_part( 'templates/navigation/menu', 'next-previous-week',$args );
                 ?>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 ">
                     <div class="col-span-2 grid grid-cols-2 gap-4 lg:gap-8">
@@ -93,15 +70,15 @@ if ( $latest_posts->have_posts() ) :
                             <div class="flex card-week-feature-art">
                                 <div class=" w-1/2 overflow-hidden">
                                     <?php
-                                    $attachment_id = get_field( 'image' );
+                                    $attachment_id = get_field('image');
                                     $img_atts = wp_get_attachment_image_src( $attachment_id, 'medium_large' );
                                     ?>
-                                    <img class="object-cover" src="<?php echo $img_atts[ 0 ]; ?>"/>
+                                    <img class="object-cover" src="<?php echo $img_atts[0]; ?>" />
                                 </div>
                                 <div class="w-1/2">
-                                    <h4 class="mb-4"><?php echo get_field( 'section_title' ); ?></h4>
-                                    <h3><?php echo get_field( 'title' ); ?></h3>
-                                    <?php echo get_field( 'content' ); ?>
+                                    <h4 class="mb-4"><?php echo get_field('section_title'); ?></h4>
+                                    <h3><?php echo get_field('title'); ?></h3>
+                                    <?php echo get_field('content');?>
                                 </div>
                             </div>
 
@@ -125,16 +102,7 @@ if ( $latest_posts->have_posts() ) :
                             ?>
                             <?php get_template_part( 'templates/components/cards/card', 'dates-for-diary', $diary_args ); ?>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
-
-    <?php
-    endwhile;
-endif;
-
-// Reset Post Data
-wp_reset_postdata();
-?>

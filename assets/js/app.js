@@ -108,7 +108,7 @@
       $id=$(this).data('id');
       animateSubMenuOpenMenu($id);
   });
-    $(document).on('click','.primary_menu_has_children a',function(e){
+   $(document).on('click','.primary_menu_has_children a',function(e){
       e.stopPropagation();
       e.preventDefault();
       $id=$(this).closest('.primary_menu_has_children').data('id');

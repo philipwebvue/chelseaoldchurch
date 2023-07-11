@@ -35,7 +35,7 @@ $events_data = get_field( $args[ 'key' ] . '_day_events' ) ?? [];
                 <?php if ( is_array( $events_data ) ): ?>
                     <?php foreach ( $events_data as $event_data ): ?>
                         <div class="event mb-5">
-                            <p class="font-prata mb-0"><?php echo wp_date( 'h:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></p>
+                            <p class="font-prata mb-0"><?php echo wp_date( 'g:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></p>
                             <p class="event-meta font-theme font-light"><?php echo get_field( 'event_meta', $event_data->ID ); ?></p>
                         </div>
                     <?php endforeach; ?>
