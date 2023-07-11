@@ -17,12 +17,24 @@
     float:left;
 }
 
-.wp-block-pullquote{
-    @apply relative pb-[9px] md:pb-[18px] leading-normal after:content-[''] after:w-1/4 lg:after:w-[184px] after:absolute after:h-[2px] md:after:h-[4px] after:bg-primary after:bottom-0 after:left-0;
+#page-content #post-content blockquote.wp-block-quote cite,
+.wp-block-pullquote cite{
+    @apply uppercase;
 }
+
+#page-content #post-content blockquote.wp-block-quote{
+    @apply border-l-0;
+}
+#page-content #post-content blockquote.wp-block-quote,
+.wp-block-pullquote{
+    @apply relative pb-2 md:pb-4 mt-8 leading-normal after:content-[''] after:w-1/4 lg:after:w-[184px] after:absolute after:h-[2px] md:after:h-[4px] after:bg-primary after:bottom-0 after:left-0;
+}
+#page-content #post-content blockquote.wp-block-quote p,
 .wp-block-pullquote p{
     @apply last:mb-0;
 }
+
+
 .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright{
     @apply max-w-full md:max-w-[420px];
 }

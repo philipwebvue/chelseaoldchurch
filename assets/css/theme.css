@@ -1246,12 +1246,22 @@ p a {
     float:left;
 }
 
-.wp-block-pullquote{
-    position:relative;
-    padding-bottom:9px;
-    line-height:1.5;
+#page-content #post-content blockquote.wp-block-quote cite,
+.wp-block-pullquote cite{
+    text-transform:uppercase;
 }
 
+#page-content #post-content blockquote.wp-block-quote{
+    border-left-width:0;
+}
+#page-content #post-content blockquote.wp-block-quote,
+.wp-block-pullquote{
+    position:relative;
+    margin-top:2rem;
+    padding-bottom:0.5rem;
+    line-height:1.5;
+}
+#page-content #post-content blockquote.wp-block-quote::after,
 .wp-block-pullquote::after{
     position:absolute;
     bottom:0px;
@@ -1263,26 +1273,32 @@ p a {
     --tw-content:'';
     content:var(--tw-content);
 }
-
-@media (min-width: 768px){.wp-block-pullquote{
-        padding-bottom:18px;
-    }.wp-block-pullquote::after{
+@media (min-width: 768px){#page-content #post-content blockquote.wp-block-quote,
+.wp-block-pullquote{
+        padding-bottom:1rem;
+    }#page-content #post-content blockquote.wp-block-quote::after,
+.wp-block-pullquote::after{
         content:var(--tw-content);
         height:4px;
     }
 }
-
-@media (min-width: 1024px){.wp-block-pullquote::after{
+@media (min-width: 1024px){#page-content #post-content blockquote.wp-block-quote::after,
+.wp-block-pullquote::after{
         content:var(--tw-content);
         width:184px;
     }
 }
+#page-content #post-content blockquote.wp-block-quote p:last-child,
 .wp-block-pullquote p:last-child{
     margin-bottom:0px;
 }
+
+
 .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright{
     max-width:100%;
 }
+
+
 @media (min-width: 768px){.wp-block-pullquote.alignleft, .wp-block-pullquote.alignright{
         max-width:420px;
     }
@@ -5925,6 +5941,10 @@ section:last-child {
 
   .md\:pt-\[121px\] {
     padding-top: 121px;
+  }
+
+  .md\:pb-4 {
+    padding-bottom: 1rem;
   }
 
   .md\:after\:h-\[3px\]::after {
