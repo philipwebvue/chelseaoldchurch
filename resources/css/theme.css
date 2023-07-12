@@ -20,7 +20,7 @@
         @apply text-base;
     }
     p{
-        @apply mb-2.5;
+        @apply mb-4;
     }
 }
 

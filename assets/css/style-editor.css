@@ -30,3 +30,28 @@ ul > li::marker{
 ol > li::marker{
     color:var(--wp--preset--color--primary);
 }
+
+.wp-block-pullquote:not(.alignleft && .alignright) > blockquote{
+    margin-left:0;
+    margin-right:0;
+}
+
+blockquote.wp-block-quote,
+.wp-block-pullquote blockquote{
+    position:relative;
+    padding-bottom:1rem;
+    margin-top:2rem;
+    border-left:0;
+}
+
+blockquote.wp-block-quote:after,
+.wp-block-pullquote blockquote:after{
+    content:'';
+    width:185px;
+    height:4px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color:var(--wp--preset--color--primary);
+
+}

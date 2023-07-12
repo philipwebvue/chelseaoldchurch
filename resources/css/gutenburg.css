@@ -27,12 +27,12 @@
 }
 
 #page-content #post-content blockquote.wp-block-quote,
-.wp-block-pullquote{
+.wp-block-pullquote blockquote{
     @apply relative pb-2 md:pb-4 mt-8 leading-normal after:content-[''] after:w-1/4 lg:after:w-[184px] after:absolute after:h-[2px] md:after:h-[4px] after:bg-primary after:bottom-0 after:left-0;
 }
 
-#page-content #post-content .wp-block-pullquote.alignright,
-#page-content #post-content .wp-block-pullquote.alignleft{
+#page-content #post-content .wp-block-pullquote.alignright blockquote,
+#page-content #post-content .wp-block-pullquote.alignleft blockquote{
     @apply mt-0;
 }
 

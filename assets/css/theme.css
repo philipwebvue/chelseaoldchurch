@@ -1256,7 +1256,7 @@ p a {
 }
 
 #page-content #post-content blockquote.wp-block-quote,
-.wp-block-pullquote{
+.wp-block-pullquote blockquote{
     position:relative;
     margin-top:2rem;
     padding-bottom:0.5rem;
@@ -1264,7 +1264,7 @@ p a {
 }
 
 #page-content #post-content blockquote.wp-block-quote::after,
-.wp-block-pullquote::after{
+.wp-block-pullquote blockquote::after{
     position:absolute;
     bottom:0px;
     left:0px;
@@ -1277,24 +1277,24 @@ p a {
 }
 
 @media (min-width: 768px){#page-content #post-content blockquote.wp-block-quote,
-.wp-block-pullquote{
+.wp-block-pullquote blockquote{
         padding-bottom:1rem;
     }#page-content #post-content blockquote.wp-block-quote::after,
-.wp-block-pullquote::after{
+.wp-block-pullquote blockquote::after{
         content:var(--tw-content);
         height:4px;
     }
 }
 
 @media (min-width: 1024px){#page-content #post-content blockquote.wp-block-quote::after,
-.wp-block-pullquote::after{
+.wp-block-pullquote blockquote::after{
         content:var(--tw-content);
         width:184px;
     }
 }
 
-#page-content #post-content .wp-block-pullquote.alignright,
-#page-content #post-content .wp-block-pullquote.alignleft{
+#page-content #post-content .wp-block-pullquote.alignright blockquote,
+#page-content #post-content .wp-block-pullquote.alignleft blockquote{
     margin-top:0px;
 }
 
@@ -2977,7 +2977,7 @@ video {
   font-size: clamp(1rem, calc(1rem + ((1.25 - 1) * ((100vw - 20rem) / (96 - 20)))), 1.25rem);
 }
     p {
-  margin-bottom: 0.625rem;
+  margin-bottom: 1rem;
 }
 
 *, ::before, ::after {
