@@ -124,13 +124,13 @@ if ( ! function_exists( 'creativestream_setup' ) ) {
         // Add support for editor styles.
         add_theme_support( 'editor-styles' );
 
-        $editor_stylesheet_path = './assets/css/style-editor.css';
+        $editor_stylesheet_path = 'assets/css/style-editor.css';
 
         // Note, the is_IE global variable is defined by WordPress and is used
         // to detect if the current browser is internet explorer.
         global $is_IE;
         if ( $is_IE ) {
-            $editor_stylesheet_path = './assets/css/ie-editor.css';
+            $editor_stylesheet_path = 'assets/css/ie-editor.css';
         }
 
         // Enqueue editor styles.

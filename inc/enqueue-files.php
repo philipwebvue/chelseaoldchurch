@@ -59,6 +59,13 @@ add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_fonts_styles' );
 add_action( 'wp_enqueue_scripts', 'creativestream_enqueue_fonts_styles' );
 
 
+function creativestream_enqueue_acf_block_styles()
+{
+    /** Fonts */
+    wp_enqueue_style( 'acf-admin-block-styling-css', get_template_directory_uri() . '/assets/css/admin-blocks-styling.css', [],_THEME_VERSION );
+}
+add_action( 'admin_enqueue_scripts', 'creativestream_enqueue_acf_block_styles' );
+
 function creativestream_admin_datepicker_customisation_scripts()
 {
     ?>
