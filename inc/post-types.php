@@ -78,7 +78,7 @@ function chelseaoldchurch_create_week_post_type()
         'show_ui'             => true,
         'show_in_rest'        => true,
         'rewrite'             => array( 'slug' => 'weeks', 'with_front' => false ),
-        'supports'            => array( 'title', 'thumbnail','editor' ),
+        'supports'            => array( 'title', 'thumbnail', 'editor' ),
     ) );
 }
 
@@ -248,6 +248,7 @@ function chelseaoldchurch_register_event_taxonomy()
             'hierarchical'      => false,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
             'rewrite'           => array( 'slug' => 'event-category', 'with_front' => false ),
         )
     );
@@ -277,6 +278,7 @@ function chelseaoldchurch_register_story_taxonomy()
             'hierarchical'      => false,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
             'rewrite'           => array( 'slug' => 'story-category', 'with_front' => false ),
         )
     );
@@ -306,6 +308,7 @@ function chelseaoldchurch_register_staff_taxonomy()
             'hierarchical'      => false,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
             'rewrite'           => array( 'slug' => 'staff-category', 'with_front' => false ),
         )
     );
@@ -335,6 +338,7 @@ function chelseaoldchurch_register_monument_taxonomy()
             'hierarchical'      => true,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
             'rewrite'           => array( 'slug' => 'monument-category', 'with_front' => false ),
         )
     );
