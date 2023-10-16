@@ -163,17 +163,25 @@
     });
     $(document).on('click','.staff-filter',function(e){
         e.preventDefault();
-        $('.card-staff').hide();
-        var staff_catg = $(this).data('slug');
-        $(this).parents('.taxonomy-list').find('.staff-filter.active').removeClass('active');
-        $(this).addClass('active');
-        if(staff_catg!==".*"){
-            $('.card-staff').filter(staff_catg).show(200);        
+        filter_list_type($(this),'staff')
+    });
+    $(document).on('click','.monument-filter',function(e){
+        e.preventDefault();
+        filter_list_type($(this),'monument');
+    });
+
+    function filter_list_type($current,$type){
+        $('.card-'+$type).hide();
+        var catg = $current.data('slug');
+        $current.parents('.taxonomy-list').find('.'+$type+'-filter.active').removeClass('active');
+        $current.addClass('active');
+        if(catg!==".*"){
+            $('.card-'+$type).filter(catg).show(200);
         }
         else{
-            $('.card-staff').show(200);
-        }        
-    });
+            $('.card-'+$type).show(200);
+        }
+    }
 
     $(document).on('click','.menu-open',function(e){
         e.stopPropagation();
@@ -309,7 +317,55 @@
                   this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
                 }
             }
-        });        
+        });
+
+        $('.open-mm-popup').magnificPopup({
+            type:'inline',
+            gallery:{
+                enabled:true
+            },
+            closeBtnInside: true,
+            mainClass: "magnific-popup-monument",
+            fixedContentPos: true,
+            callbacks: {
+                buildControls: function() {
+                    // re-appends controls inside the main container
+                    this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
+            }
+        });
+
+        $('.monumenthead-m-popup').magnificPopup({
+            type:'inline',
+            gallery:{
+                enabled:true
+            },
+            closeBtnInside: true,
+            mainClass: "magnific-popup-monument",
+            fixedContentPos: true,
+            callbacks: {
+                buildControls: function() {
+                    // re-appends controls inside the main container
+                    this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
+            }
+        });
+
+        $('.monument-more-popup').magnificPopup({
+            type:'inline',
+            gallery:{
+                enabled:true
+            },
+            closeBtnInside: true,
+            mainClass: "magnific-popup-monument",
+            fixedContentPos: true,
+            callbacks: {
+                buildControls: function() {
+                    // re-appends controls inside the main container
+                    this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                }
+            }
+        });
 
         $('.image-gallery-large').magnificPopup({
             type:'image',

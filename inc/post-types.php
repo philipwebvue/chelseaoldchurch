@@ -103,7 +103,7 @@ function chelseaoldchurch_create_staff_post_type()
     register_post_type( 'staff', array(
         'labels'              => $labels,
         'public'              => true,
-        'has_archive'         => true,
+        'has_archive'         => false,
         'exclude_from_search' => false,
         'hierarchical'        => false,
         'menu_icon'           => 'dashicons-businessman',
@@ -138,7 +138,7 @@ function chelseaoldchurch_create_monument_post_type()
     register_post_type( 'monuments', array(
         'labels'              => $labels,
         'public'              => true,
-        'has_archive'         => true,
+        'has_archive'         => false,
         'exclude_from_search' => false,
         'hierarchical'        => false,
         'menu_icon'           => 'dashicons-bank',
@@ -332,7 +332,7 @@ function chelseaoldchurch_register_monument_taxonomy()
     ];
     register_taxonomy( 'monument_category', array( 'monuments' ), array(
             'labels'            => $labels,
-            'hierarchical'      => false,
+            'hierarchical'      => true,
             'show_admin_column' => true,
             'query_var'         => true,
             'rewrite'           => array( 'slug' => 'monument-category', 'with_front' => false ),

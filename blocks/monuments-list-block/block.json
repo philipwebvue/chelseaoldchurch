@@ -1,0 +1,25 @@
+{
+    "name": "acf/monuments-list-block",
+    "title": "Monuments Member List",
+    "description": "This block will display list view of Monuments.",
+    "style": "",
+    "script": "",
+    "apiVersion": 2,
+    "category": "chelseaoldchurch-blocks",
+    "icon": "grid-view",
+    "keywords": ["Monument", "Monument grid", "Monument list", "Monument"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        }
+    }
+}

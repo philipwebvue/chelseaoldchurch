@@ -116,44 +116,66 @@
 }
 
 /** Staff popup content **/
+.magnific-popup-monument .mfp-content,
 .magnific-popup-staff .mfp-content{
     @apply max-w-content-single bg-white my-20;
 }
+.monument-popup-content,
 .staff-popup-content{
     @apply px-5 lg:px-[50px] pt-5 lg:pt-[45px] pb-16 lg:pb-32 after:content-[''];
 }
+.monument-popup-container,
 .staff-popup-container{
     @apply after:content-[''] after:clear-both after:table;
 }
+
 .staff-popup-content .image-wrapper{
     @apply w-full sm:w-[200px] md:w-[250px] lg:w-[409px] aspect-square overflow-hidden relative md:float-right md:ml-5 mb-5;
 }
+.monument-popup-content .image-wrapper{
+    @apply w-full aspect-square overflow-hidden relative mb-5;
+}
+.monument-popup-content .image-wrapper img,
 .staff-popup-content .image-wrapper img{
     @apply absolute top-0 left-0 object-cover object-center duration-300;
 }
+.monument-popup-content .image-wrapper img{
+    @apply w-full;
+}
+
+.monument-popup-content .title,
 .staff-popup-content .title{
     @apply text-xl font-prata text-primary mb-2;
 }
+.monument-popup-content h3,
 .staff-popup-content h3{
     @apply my-2.5;
 }
+.magnific-popup-monument button.mfp-arrow,
 .magnific-popup-staff button.mfp-arrow{
     @apply before:hidden after:hidden;
 }
+
+.magnific-popup-monument .mfp-arrow,
 .magnific-popup-staff .mfp-arrow{
     top: inherit;
     @apply bg-no-repeat bg-contain w-[48px] lg:w-[168px] h-[20px] bottom-10;
 }
+
+.magnific-popup-monument .mfp-arrow-left,
 .magnific-popup-staff .mfp-arrow-left{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='167.703' height='21.676' viewBox='0 0 167.703 21.676'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_9' data-name='Rectangle 9' width='167.703' height='21.676' fill='%2390095c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='arrows' transform='translate(27.703 21.676) rotate(180)'%3E%3Cg id='Group_7' data-name='Group 7' transform='translate(-140)' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_107' data-name='Path 107' d='M154.25,7.731H7.462c-.513,0-.931-.812-.931-1.816S6.949,4.1,7.462,4.1H154.25c.513,0,.929.814.929,1.816s-.416,1.816-.929,1.816' transform='translate(4.941 4.946)' fill='%2390095c'/%3E%3Cpath id='Path_108' data-name='Path 108' d='M0,21.675,10.412,10.839,0,0H11.408L21.821,10.839,11.408,21.675Z' transform='translate(0 0)' fill='%2390095c'/%3E%3Cpath id='Path_109' data-name='Path 109' d='M9.05,21.675,19.462,10.839,9.05,0H20.458L30.871,10.839,20.458,21.675Z' transform='translate(6.846 0)' fill='%2390095c'/%3E%3Cpath id='Path_110' data-name='Path 110' d='M18.1,21.675,28.512,10.839,18.1,0H29.508L39.92,10.839,29.508,21.675Z' transform='translate(13.692 0)' fill='%2390095c'/%3E%3Cpath id='Path_111' data-name='Path 111' d='M82.439.225l22.9,10.365-22.9,10.365S84.42,13.039,84.42,10.59,82.439.225,82.439.225' transform='translate(62.364 0.272)' fill='%2390095c'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
     background-position: left center;
     @apply left-5 lg:left-[50px];
 }
+
+.magnific-popup-monument .mfp-arrow-right,
 .magnific-popup-staff .mfp-arrow-right{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='167.703' height='21.676' viewBox='0 0 167.703 21.676'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='Rectangle_9' data-name='Rectangle 9' width='167.703' height='21.676' fill='%2390095c'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='arrows' transform='translate(140)'%3E%3Cg id='Group_7' data-name='Group 7' transform='translate(-140)' clip-path='url(%23clip-path)'%3E%3Cpath id='Path_107' data-name='Path 107' d='M154.25,7.731H7.462c-.513,0-.931-.812-.931-1.816S6.949,4.1,7.462,4.1H154.25c.513,0,.929.814.929,1.816s-.416,1.816-.929,1.816' transform='translate(4.941 4.946)' fill='%2390095c'/%3E%3Cpath id='Path_108' data-name='Path 108' d='M0,21.675,10.412,10.839,0,0H11.408L21.821,10.839,11.408,21.675Z' transform='translate(0 0)' fill='%2390095c'/%3E%3Cpath id='Path_109' data-name='Path 109' d='M9.05,21.675,19.462,10.839,9.05,0H20.458L30.871,10.839,20.458,21.675Z' transform='translate(6.846 0)' fill='%2390095c'/%3E%3Cpath id='Path_110' data-name='Path 110' d='M18.1,21.675,28.512,10.839,18.1,0H29.508L39.92,10.839,29.508,21.675Z' transform='translate(13.692 0)' fill='%2390095c'/%3E%3Cpath id='Path_111' data-name='Path 111' d='M82.439.225l22.9,10.365-22.9,10.365S84.42,13.039,84.42,10.59,82.439.225,82.439.225' transform='translate(62.364 0.272)' fill='%2390095c'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
     background-position: right center;
     @apply right-5 lg:right-[50px];
 }
+.magnific-popup-monument button.mfp-close,
 .magnific-popup-staff button.mfp-close{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30.757' height='30.848' viewBox='0 0 30.757 30.848'%3E%3Cpath id='close_X' data-name='close X' d='M28.455,25.383,40.1,13.849a2.307,2.307,0,0,0,.22-2.966,2.087,2.087,0,0,0-3.3-.22L25.379,22.308,13.735,10.663a2.087,2.087,0,0,0-3.3.22,2.307,2.307,0,0,0,.22,2.966L22.3,25.383,10.659,36.918a2.307,2.307,0,0,0-.22,2.966,2.087,2.087,0,0,0,3.3.22L25.379,28.459,37.024,40.1a2.087,2.087,0,0,0,3.3-.22,2.307,2.307,0,0,0-.22-2.966Z' transform='translate(-10.001 -9.959)' fill='%23fff'/%3E%3C/svg%3E%0A");
     @apply bg-center bg-no-repeat text-transparent -top-12 w-[31px] h-[31px];
