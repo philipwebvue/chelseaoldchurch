@@ -43,6 +43,7 @@ function is_top_level()
 
 function chelseaoldchurch_archive_post_type_fields( $post_type, $page_name, $title )
 {
+    
     acf_add_local_field_group( array(
         'key'                   => 'group_' . $post_type,
         'title'                 => $title . ' page',

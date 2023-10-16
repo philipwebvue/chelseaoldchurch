@@ -53,6 +53,12 @@ if ( function_exists( 'acf_add_options_page' ) )
                 'page_name'   => 'acf-options-staff-settings',
                 'parent_slug' => 'edit.php?post_type=staff',
             ],
+            'monuments' => [
+                'post_type'   => 'monuments',
+                'page_title'  => 'Monument Settings',
+                'page_name'   => 'acf-options-monument-settings',
+                'parent_slug' => 'edit.php?post_type=monuments',
+            ],
             'news'  => [
                 'post_type'   => 'news',
                 'page_title'  => 'News Settings',

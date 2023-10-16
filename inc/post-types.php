@@ -117,6 +117,41 @@ function chelseaoldchurch_create_staff_post_type()
     ) );
 }
 
+add_action( 'init', 'chelseaoldchurch_create_monument_post_type' );
+function chelseaoldchurch_create_monument_post_type()
+{
+    $labels = [
+        'name'               => _x( 'Monuments', 'post type general name', 'chelseaoldchurch' ),
+        'singular_name'      => _x( 'Monument', 'post type singular name', 'chelseaoldchurch' ),
+        'add_new'            => __( 'Add Monument', 'chelseaoldchurch' ),
+        'add_new_item'       => __( 'Add Monument', 'chelseaoldchurch' ),
+        'edit_item'          => __( 'Edit', 'chelseaoldchurch' ),
+        'new_item'           => __( 'New', 'chelseaoldchurch' ),
+        'all_items'          => __( 'View Monument', 'chelseaoldchurch' ),
+        'view_item'          => __( 'View', 'chelseaoldchurch' ),
+        'search_items'       => __( 'Search', 'chelseaoldchurch' ),
+        'not_found'          => __( 'No Monuments found', 'chelseaoldchurch' ),
+        'not_found_in_trash' => __( 'No Monuments found in Trash', 'chelseaoldchurch' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => __( 'Monuments', 'chelseaoldchurch' ),
+    ];
+    register_post_type( 'monuments', array(
+        'labels'              => $labels,
+        'public'              => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'hierarchical'        => false,
+        'menu_icon'           => 'dashicons-bank',
+        'menu_position'       => 26,
+        'show_in_nav_menus'   => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_rest'        => true,
+        'rewrite'             => array( 'slug' => 'monuments', 'with_front' => false ),
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'author' ), //,excerpt,author,editor
+    ) );
+}
+
 add_action( 'init', 'chelseaoldchurch_create_news_post_type' );
 function chelseaoldchurch_create_news_post_type()
 {
@@ -272,6 +307,35 @@ function chelseaoldchurch_register_staff_taxonomy()
             'show_admin_column' => true,
             'query_var'         => true,
             'rewrite'           => array( 'slug' => 'staff-category', 'with_front' => false ),
+        )
+    );
+}
+
+add_action( 'init', 'chelseaoldchurch_register_monument_taxonomy' );
+function chelseaoldchurch_register_monument_taxonomy()
+{
+    $labels = [
+        'name'                       => _x( 'Monument Categories', 'taxonomy general name', 'chelseaoldchurch' ),
+        'singular_name'              => _x( 'Monument Category', 'taxonomy singular name', 'chelseaoldchurch' ),
+        'search_items'               => __( 'Search Monument Category', 'chelseaoldchurch' ),
+        'popular_items'              => __( 'Popular Monument Category', 'chelseaoldchurch' ),
+        'all_items'                  => __( 'All Monument Categories', 'chelseaoldchurch' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit Monument Category', 'chelseaoldchurch' ),
+        'update_item'                => __( 'Update Monument Category', 'chelseaoldchurch' ),
+        'add_new_item'               => __( 'Add New Monument Category', 'chelseaoldchurch' ),
+        'new_item_name'              => __( 'New Monument Category Name', 'chelseaoldchurch' ),
+        'separate_items_with_commas' => __( 'Separate Monument Category with commas', 'chelseaoldchurch' ),
+        'add_or_remove_items'        => __( 'Add or remove Monument Category', 'chelseaoldchurch' ),
+        'choose_from_most_used'      => __( 'Choose from the most used Monument Category', 'chelseaoldchurch' ),
+    ];
+    register_taxonomy( 'monument_category', array( 'monuments' ), array(
+            'labels'            => $labels,
+            'hierarchical'      => false,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'monument-category', 'with_front' => false ),
         )
     );
 }
