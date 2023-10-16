@@ -75,7 +75,7 @@ endif;
 </div>
 <div id="<?php echo sanitize_title(get_the_title());?>" class="bg-white mfp-hide max-w-content-single mx-auto monument-popup-content">
     <div class="monument-popup-container">
-        <div class="image-wrapper aspect-1"><?php //echo $image; ?> <?php echo get_the_post_thumbnail( $args['ID'], 'large', [] ); ?> </div>
+        <div class="image-wrapper "><?php //echo $image; ?> <?php echo get_the_post_thumbnail( $args['ID'], 'large', [] ); ?> </div>
         <h3 class="title"><?php the_title(); ?></h3>
         <?php the_content();?>        
     </div>
