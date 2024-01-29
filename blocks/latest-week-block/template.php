@@ -32,6 +32,7 @@ $qargs = [
         ]
     ]
 ];
+
 ?>
 <div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container mx-auto 3xl:max-w-content lg:px-5 3xl:px-0 pt-4 lg:pt-9 border-t-2 border-secondary">
@@ -107,6 +108,10 @@ $qargs = [
                                 'saturday'  => [
                                     'name' => 'Saturday',
                                     'date' => date( 'l jS F', strtotime( $start_date . ' +5 day' ) )
+                                ],
+                                'sunday'  => [
+                                    'name' => 'Sunday',
+                                    'date' => date( 'l jS F', strtotime( $start_date . ' +6 day' ) )
                                 ]
                             ];
                             
@@ -117,7 +122,10 @@ $qargs = [
                                 <li>
                                     <div class="text-xl font-prata mb-1"><?php echo $day[ 'date' ];?></div>                                    
                                     <?php foreach ( $events_data as $event_data ): ?>
-                                        <div class="font-theme text-lg font-light"><span class="font-medium"><?php echo wp_date( 'h:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></span> <?php echo get_field( 'event_meta', $event_data->ID ); ?></div>
+                                        <div class="font-theme text-lg font-light">
+                                            <span class="font-medium"><?php echo wp_date( 'h:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></span> <?php echo get_field( 'event_meta', $event_data->ID ); ?>
+                                        </div>
+                                        <div class="font-theme text-sm font-light"><?php echo get_field( 'list_information', $event_data->ID ); ?></div>
                                     <?php endforeach; ?>                            
                                 </li>
                                 <?php endif;?>
