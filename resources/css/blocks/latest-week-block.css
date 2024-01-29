@@ -28,3 +28,7 @@
 .latest-week-block .latest-week-events ul li{
     @apply py-5 border-b-[1px] border-b-white/[.5] last:border-b-0;
 }
+
+.latest-week-block .event-excerpt-container p{
+    @apply text-sm;
+}

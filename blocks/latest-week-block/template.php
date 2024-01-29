@@ -125,7 +125,7 @@ $qargs = [
                                         <div class="font-theme text-lg font-light">
                                             <span class="font-medium"><?php echo wp_date( 'h:ia', strtotime( get_field( 'event_date_time', $event_data->ID ) ) ); ?> <?php echo $event_data->post_title; ?></span> <?php echo get_field( 'event_meta', $event_data->ID ); ?>
                                         </div>
-                                        <div class="font-theme text-sm font-light"><?php echo get_field( 'list_information', $event_data->ID ); ?></div>
+                                        <div class="event-excerpt-container font-theme text-sm font-light"><?php echo get_field( 'list_information', $event_data->ID ); ?></div>
                                     <?php endforeach; ?>                            
                                 </li>
                                 <?php endif;?>
