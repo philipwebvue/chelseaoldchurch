@@ -31,13 +31,13 @@
         <div class="mb-4 lg:mb-14 pt-5 lg:pt-7 pb-0.5 flex justify-center flex-wrap">
             <?php get_template_part( 'templates/navigation/menu', 'custom-taxonomies-staff_category', [ 'taxonomy' => 'staff_category' ] ); ?>
         </div>
-        <div>
+        <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
             <?php while ( $query->have_posts() ) : ?>
                 <?php $query->the_post(); ?>
                 <?php
                 $args = [
-                    'show_date' => true,
-                    'show_body' => true,
+                    'show_date' => false,
+                    'show_body' => false,
                 ];
                 
                 get_template_part( 'templates/components/cards/card', 'staff', $args );

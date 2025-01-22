@@ -20,69 +20,46 @@ $default_args = [
 ];
 $args = array_merge($default_args, $args);
 
-$image = apply_filters('cs_display_featured_image',$args['ID']);
+$image = apply_filters('cs_display_featured_image', $args['ID']);
 $maincontent = get_the_content($args['ID']);
-$terms_list = get_the_terms( $args['ID'], 'staff_category' );
+$terms_list = get_the_terms($args['ID'], 'staff_category');
 
 $termClasses = [];
-if($terms_list):
-    foreach($terms_list as $sterms):
-        $termClasses[]=$sterms->slug;
+if ($terms_list):
+    foreach ($terms_list as $sterms):
+        $termClasses[] = $sterms->slug;
     endforeach;
 endif;
 ?>
-<div class="card-wide card-staff relative <?php echo implode(" ",$termClasses);?>">
-    <?php if ($args['show_image']):
-        if($maincontent!=""):
-        ?>
-        <a href="#<?php echo sanitize_title(get_the_title());?>" class="card-header staffhead-m-popup"">
-            <div class="image-wrapper">
+<div class="card card-staff p-0 relative <?php echo implode(" ", $termClasses); ?>"> <?php //card-wide ?>
+    <?php if ($args['show_image']): ?>
+        <div class="card-header-staff relative w-full overflow-hidden !aspect-square">
+            <div class="image-wrapper !aspect-square">
                 <?php echo $image; ?>
             </div>
-        </a>
-        <?php else: ?>
-            <div class="image-wrapper">
-                <?php echo $image; ?>
-            </div>
-        <?php endif;?>
+        </div>
     <?php endif; ?>
     <div class="card-body">
         <?php if ($args['show_title']): ?>
-            <h3 class="title">
-                <?php if($maincontent!=""): ?>
-                <a href="#<?php echo sanitize_title(get_the_title());?>" class="open-m-popup">
-                    <?php the_title(); ?>
-                </a>
-                <?php else: ?>
-                    <?php the_title(); ?>
-                <?php endif;?>
+            <h3 class="title text-primary text-base text-center">
+                <?php the_title(); ?>
             </h3>
         <?php endif; ?>
-        <?php if (get_field('staff_role',$args['ID'])): ?>
-            <div class="text-lg font-medium mb-3"><?php echo get_field('staff_role',$args['ID']); ?></div>
+        <?php if (get_field('staff_role', $args['ID'])): ?>
+            <div class="font-medium mb-3 text-base text-center"><?php echo get_field('staff_role', $args['ID']); ?></div>
         <?php endif; ?>
         <?php if ($args['show_body']): ?>
             <div class="excerpt">
                 <?php
-                    $excerpt = get_field('custom_excerpt',$args['ID']);
-                    if($maincontent!=""):
-                        $excerpt.=sprintf(' <a href=%s class="staff-more-popup">%s</a>','#'.sanitize_title(get_the_title()),'Find Out More');
-                    else:
-                        $excerpt.=sprintf(' <a href=%s class="staff-more-popup hidden">%s</a>','#'.sanitize_title(get_the_title()),'');
-                    endif;                   
-                    echo $excerpt;
+                $excerpt = get_field('custom_excerpt', $args['ID']);
+                if ($maincontent != ""):
+                    $excerpt .= sprintf(' <a href=%s class="staff-more-popup">%s</a>', '#' . sanitize_title(get_the_title()), 'Find Out More');
+                else:
+                    $excerpt .= sprintf(' <a href=%s class="staff-more-popup hidden">%s</a>', '#' . sanitize_title(get_the_title()), '');
+                endif;
+                echo $excerpt;
                 ?>
             </div>
         <?php endif; ?>
-    </div>
-</div>
-<div id="<?php echo sanitize_title(get_the_title());?>" class="bg-white mfp-hide max-w-content-single mx-auto staff-popup-content">
-    <div class="staff-popup-container">
-        <div class="image-wrapper aspect-1"><?php echo $image; ?></div>
-        <h3 class="title"><?php the_title(); ?></h3>
-        <?php if (get_field('staff_role',$args['ID'])): ?>
-            <p class="font-medium mb-3"><?php echo get_field('staff_role',$args['ID']); ?></p>
-        <?php endif; ?>
-        <?php the_content();?>        
     </div>
 </div>

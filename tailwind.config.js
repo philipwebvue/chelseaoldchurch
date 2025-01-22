@@ -43,6 +43,7 @@ module.exports = {
             '5xl': [2.313, 4.063] //65px
         },
         screens: {
+            'xs': '450px',
             'sm': '640px',
             'md': '768px',
             'lg': '1024px',
